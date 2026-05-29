@@ -1,0 +1,309 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Button from "../components/Button.astro";
+
+const phone = "34643515820";
+
+const buildWhatsApp = (product: string) =>
+  `https://wa.me/${phone}?text=${encodeURIComponent(
+    `Hola, me interesa el producto "${product}" del catálogo de Madrid Cheer Athletics. ¿Podéis darme detalles de tallas, precio y forma de pago?`
+  )}`;
+
+const apparel = [
+  {
+    title: "Camiseta de temporada",
+    description:
+      "Camiseta deportiva transpirable con logo del club bordado al frente.",
+    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    gradient: "from-mca-red to-mca-red-dark",
+  },
+  {
+    title: "Sudadera con capucha",
+    description:
+      "Sudadera oficial del club, perfecta para entrenamientos y uso diario.",
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    gradient: "from-mca-navy to-mca-navy-dark",
+  },
+  {
+    title: "Leggings de entrenamiento",
+    description: "Mallas deportivas de alta compresión con logo lateral.",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    gradient: "from-mca-navy-dark to-mca-red-dark",
+  },
+];
+
+const accessories = [
+  {
+    title: "Pom Poms oficiales",
+    description:
+      "Pompones profesionales en colores del club. Material metálico, gran volumen.",
+    sizes: ["Talla única"],
+    gradient: "from-mca-red-dark to-mca-navy",
+  },
+  {
+    title: "Mochila Madrid Cheer Athletics",
+    description:
+      "Mochila deportiva con compartimentos y logo bordado. Color negro con detalles en rojo.",
+    sizes: ["Talla única"],
+    gradient: "from-mca-navy-dark to-mca-red",
+  },
+  {
+    title: "Botella de agua del club",
+    description: "Botella reutilizable con logo del club. Capacidad 750ml.",
+    sizes: ["750 ml"],
+    gradient: "from-mca-red to-mca-navy",
+  },
+];
+
+const orderSteps = [
+  {
+    n: "01",
+    title: "Contáctanos",
+    description:
+      "Escríbenos por email, teléfono o WhatsApp indicando los artículos que quieres, tallas y cantidades.",
+  },
+  {
+    n: "02",
+    title: "Te confirmamos",
+    description:
+      "Validamos disponibilidad, te confirmamos precio final y formas de pago disponibles.",
+  },
+  {
+    n: "03",
+    title: "Recibe el pedido",
+    description:
+      "Entrega directa en el club durante los entrenamientos o coordinamos otra opción según convenga.",
+  },
+];
+---
+
+<SiteLayout
+  title="Tienda · Madrid Cheer Athletics"
+  description="Catálogo oficial de ropa y accesorios de Madrid Cheer Athletics. Camisetas, sudaderas, leggings, pom poms y más. Pedidos por WhatsApp."
+>
+  <!-- HERO -->
+  <section class="relative bg-mca-navy-dark text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
+    />
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
+      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
+        Tienda · Catálogo
+      </p>
+      <h1 class="text-5xl md:text-7xl leading-none font-display font-bold mb-6 max-w-3xl">
+        Equípate con MCA
+      </h1>
+      <p class="text-lg md:text-xl text-mca-white/70 max-w-2xl">
+        Selección de productos oficiales del club y artículos esenciales para
+        tu entrenamiento. Los pedidos se gestionan directamente con el club.
+      </p>
+    </div>
+  </section>
+
+  <!-- AVISO MODALIDAD PENDIENTE -->
+  <section class="bg-mca-warning/10 border-y border-mca-warning/30">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex items-start gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-mca-warning mt-0.5" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+      <p class="text-sm text-mca-slate-900">
+        <span class="font-medium">Modalidad provisional.</span>
+        Catálogo informativo sin precios ni carrito. Cada producto enlaza a
+        WhatsApp con un mensaje pre-rellenado. Pendiente de confirmar con el
+        club si se publican precios y/o se añade pago online.
+      </p>
+    </div>
+  </section>
+
+  <!-- ROPA OFICIAL -->
+  <section class="py-16 md:py-24 bg-mca-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          Ropa oficial del club
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">
+          Lleva el rojo MCA
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          apparel.map((p) => (
+            <article class="bg-mca-white border border-mca-slate-100 rounded-sm overflow-hidden flex flex-col">
+              <div class={`aspect-square bg-gradient-to-br ${p.gradient} flex flex-col items-center justify-center gap-3 p-6`}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/40" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+                <p class="text-mca-white/70 text-xs uppercase tracking-widest text-center">
+                  Foto producto<br />Placeholder
+                </p>
+              </div>
+
+              <div class="p-6 flex flex-col flex-1">
+                <h3 class="text-2xl mb-2">{p.title}</h3>
+                <p class="text-mca-slate-700 mb-4 flex-1">{p.description}</p>
+
+                <div class="mb-4">
+                  <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-2">Tallas</p>
+                  <ul class="flex flex-wrap gap-2">
+                    {p.sizes.map((s) => (
+                      <li class="text-xs uppercase tracking-widest font-medium px-2.5 py-1 rounded-sm bg-mca-slate-100 text-mca-slate-700">
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <p class="text-sm text-mca-slate-500 italic mb-4">
+                  Contacta para precio y disponibilidad
+                </p>
+
+                <Button variant="primary" href={buildWhatsApp(p.title)} class="w-full">
+                  Pedir por WhatsApp
+                </Button>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESORIOS -->
+  <section class="py-16 md:py-24 bg-mca-slate-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          Accesorios
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">
+          Para entrenar y representar
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          accessories.map((p) => (
+            <article class="bg-mca-white border border-mca-slate-100 rounded-sm overflow-hidden flex flex-col">
+              <div class={`aspect-square bg-gradient-to-br ${p.gradient} flex flex-col items-center justify-center gap-3 p-6`}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/40" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+                <p class="text-mca-white/70 text-xs uppercase tracking-widest text-center">
+                  Foto producto<br />Placeholder
+                </p>
+              </div>
+
+              <div class="p-6 flex flex-col flex-1">
+                <h3 class="text-2xl mb-2">{p.title}</h3>
+                <p class="text-mca-slate-700 mb-4 flex-1">{p.description}</p>
+
+                <div class="mb-4">
+                  <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-2">Formato</p>
+                  <ul class="flex flex-wrap gap-2">
+                    {p.sizes.map((s) => (
+                      <li class="text-xs uppercase tracking-widest font-medium px-2.5 py-1 rounded-sm bg-mca-slate-100 text-mca-slate-700">
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <p class="text-sm text-mca-slate-500 italic mb-4">
+                  Contacta para precio y disponibilidad
+                </p>
+
+                <Button variant="primary" href={buildWhatsApp(p.title)} class="w-full">
+                  Pedir por WhatsApp
+                </Button>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO PEDIR -->
+  <section class="py-16 md:py-24 bg-mca-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          Cómo pedir
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">
+          Tres pasos hasta tu pedido
+        </h2>
+      </div>
+
+      <ol class="grid md:grid-cols-3 gap-6 mb-12">
+        {
+          orderSteps.map((s) => (
+            <li>
+              <span class="block font-display text-6xl md:text-7xl text-mca-red leading-none mb-4">
+                {s.n}
+              </span>
+              <h3 class="text-2xl mb-2">{s.title}</h3>
+              <p class="text-mca-slate-700">{s.description}</p>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="bg-mca-slate-50 border-l-4 border-mca-red rounded-sm p-6 md:p-8">
+        <p class="text-sm uppercase tracking-widest font-medium text-mca-red mb-2">
+          Descuento miembros
+        </p>
+        <p class="text-mca-navy text-lg">
+          Los atletas inscritos en Madrid Cheer Athletics disfrutan de
+          condiciones especiales en productos oficiales del club.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="relative bg-mca-red text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute -left-24 -top-24 w-[28rem] h-[28rem] opacity-10 pointer-events-none"
+    />
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-display font-bold mb-4">
+          ¿Listo para hacer tu pedido?
+        </h2>
+        <p class="text-mca-white/90 text-lg max-w-xl">
+          Contáctanos por WhatsApp y te respondemos con precios y disponibilidad.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4 md:justify-end">
+        <a
+          href={buildWhatsApp("varios productos")}
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm bg-mca-white text-mca-red font-body font-medium uppercase tracking-wide text-sm transition-all duration-150 ease-out hover:bg-mca-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-white focus-visible:ring-offset-2 focus-visible:ring-offset-mca-red"
+        >
+          Contactar por WhatsApp
+        </a>
+        <Button
+          variant="ghost"
+          href="/contacto"
+          class="border-mca-white text-mca-white hover:bg-mca-white/10"
+        >
+          Otras vías de contacto
+        </Button>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

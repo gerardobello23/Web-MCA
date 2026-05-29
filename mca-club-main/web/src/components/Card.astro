@@ -1,0 +1,36 @@
+---
+interface Props {
+  href?: string;
+  class?: string;
+}
+
+const { href, class: className = "" } = Astro.props;
+
+const base =
+  "block bg-mca-white border border-mca-slate-100 rounded-sm p-4 md:p-6 transition-all duration-200 ease-out";
+const interactive =
+  "hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mca-navy focus-visible:ring-offset-2";
+
+const classes = [base, href && interactive, className].filter(Boolean).join(" ");
+---
+
+{
+  href ? (
+    <a href={href} class={classes}>
+      <slot />
+    </a>
+  ) : (
+    <div class={classes}>
+      <slot />
+    </div>
+  )
+}
+
+<style>
+  /* Sombra navy custom para coherencia con el design system */
+  a:hover,
+  div:hover {
+    box-shadow: 0 10px 15px -3px rgba(8, 59, 102, 0.15),
+      0 4px 6px -4px rgba(8, 59, 102, 0.1);
+  }
+</style>

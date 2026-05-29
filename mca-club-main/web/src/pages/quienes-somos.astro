@@ -1,0 +1,147 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+
+const pillars = [
+  {
+    title: "Excelencia deportiva",
+    description:
+      "Programas de entrenamiento diseñados para el desarrollo progresivo y seguro de cada atleta. Sin atajos.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>`,
+  },
+  {
+    title: "Inclusión y comunidad",
+    description:
+      "Un espacio donde todos son bienvenidos, independientemente del nivel o la experiencia previa.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  },
+  {
+    title: "Crecimiento personal",
+    description:
+      "Más allá de la técnica: trabajamos valores como el trabajo en equipo, la resiliencia y el liderazgo.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.24 7.76 2.83-2.83"/><path d="M18 12h4"/><path d="m16.24 16.24 2.83 2.83"/><path d="M12 18v4"/><path d="m7.76 16.24-2.83 2.83"/><path d="M6 12H2"/><path d="m7.76 7.76-2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>`,
+  },
+];
+---
+
+<SiteLayout
+  title="Quiénes somos · Madrid Cheer Athletics"
+  description="Madrid Cheer Athletics nace de la pasión por el cheerleading. Conoce nuestra filosofía, nuestro compromiso y por qué somos más que un club."
+>
+  <!-- HERO -->
+  <section class="relative bg-mca-navy-dark text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
+    />
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
+      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
+        Quiénes somos
+      </p>
+      <h1 class="text-5xl md:text-7xl leading-none font-display font-bold mb-6 max-w-3xl">
+        Somos Madrid Cheer Athletics
+      </h1>
+      <p class="text-lg md:text-xl text-mca-white/70 max-w-2xl">
+        Un club en pleno crecimiento, formado por entrenadores profesionales y
+        atletas dedicados que comparten un objetivo común: llevar el cheerleading
+        madrileño al siguiente nivel.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="py-16 md:py-24 bg-mca-white">
+    <div class="max-w-3xl mx-auto px-4 md:px-6 lg:px-8">
+      <p class="text-mca-slate-700 text-lg leading-relaxed mb-6">
+        Madrid Cheer Athletics nace de la pasión por el cheerleading y el
+        compromiso con la excelencia deportiva. Creemos en el poder
+        transformador del deporte de equipo: aquí no solo desarrollas fuerza,
+        flexibilidad y técnica, también construyes confianza, disciplina y
+        amistades que duran toda la vida.
+      </p>
+      <p class="text-mca-slate-700 text-lg leading-relaxed">
+        Nuestro enfoque combina entrenamientos estructurados y seguros con un
+        ambiente positivo donde cada atleta es valorado. Ya seas nuevo en el
+        cheerleading o vengas con experiencia, encontrarás tu lugar en nuestra
+        comunidad.
+      </p>
+    </div>
+  </section>
+
+  <!-- FILOSOFÍA -->
+  <section class="py-16 md:py-24 bg-mca-slate-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          Nuestra filosofía
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">
+          Tres pilares, una misión
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {
+          pillars.map((p) => (
+            <Card>
+              <div class="text-mca-red mb-4" set:html={p.icon} />
+              <h3 class="text-2xl mb-2">{p.title}</h3>
+              <p class="text-mca-slate-700">{p.description}</p>
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPROMISO -->
+  <section class="relative bg-mca-navy text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute -left-24 -top-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
+    />
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
+          Nuestro compromiso
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+          Atención personalizada para cada atleta
+        </h2>
+      </div>
+      <div>
+        <p class="text-mca-white/80 text-lg leading-relaxed">
+          En Madrid Cheer Athletics, cada atleta recibe atención individualizada.
+          Monitorizamos el progreso, celebramos los logros y nos aseguramos de
+          que el cheerleading sea una experiencia positiva y enriquecedora.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="py-16 md:py-24 bg-mca-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-mca-navy mb-4">
+        Ven a conocernos
+      </h2>
+      <p class="text-mca-slate-700 text-lg max-w-xl mx-auto mb-8">
+        La mejor forma de saber si encajas con nosotros es venir a entrenar.
+        Tu primera clase es gratis.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <Button variant="primary" href="/inscripcion">
+          Reserva tu prueba gratuita
+        </Button>
+        <Button variant="ghost" href="/contacto">
+          Contáctanos
+        </Button>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

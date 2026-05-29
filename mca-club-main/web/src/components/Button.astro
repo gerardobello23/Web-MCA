@@ -1,0 +1,54 @@
+---
+interface Props {
+  variant?: "primary" | "secondary" | "ghost" | "primary-on-navy";
+  href?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  class?: string;
+}
+
+const {
+  variant = "primary",
+  href,
+  type = "button",
+  disabled = false,
+  class: className = "",
+} = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm font-body font-medium uppercase tracking-wide text-sm transition-all duration-150 ease-out focus:outline-none";
+
+const variants = {
+  primary:
+    "bg-mca-red text-mca-white hover:bg-mca-red-dark focus-visible:ring-2 focus-visible:ring-mca-red focus-visible:ring-offset-2",
+  secondary:
+    "bg-mca-navy text-mca-white hover:bg-mca-navy-dark focus-visible:ring-2 focus-visible:ring-mca-navy focus-visible:ring-offset-2",
+  ghost:
+    "bg-transparent border border-mca-navy text-mca-navy hover:bg-mca-navy/5 focus-visible:ring-2 focus-visible:ring-mca-navy focus-visible:ring-offset-1",
+  "primary-on-navy":
+    "bg-mca-red text-mca-white ring-2 ring-mca-white ring-offset-2 ring-offset-mca-navy hover:bg-mca-red-dark focus-visible:ring-mca-white",
+};
+
+const disabledClasses =
+  "bg-mca-slate-100 text-mca-slate-300 cursor-not-allowed hover:bg-mca-slate-100";
+
+const classes = [
+  base,
+  disabled ? disabledClasses : variants[variant],
+  className,
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+{
+  href ? (
+    <a href={href} class={classes} aria-disabled={disabled || undefined}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes} disabled={disabled}>
+      <slot />
+    </button>
+  )
+}

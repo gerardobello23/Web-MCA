@@ -1,0 +1,56 @@
+/*
+ * Madrid Cheer Athletics · Design Tokens
+ * Hand-off v1.1 · Tailwind CSS v4 (@theme)
+ *
+ * Pegar este bloque dentro del global.css del proyecto Astro
+ * cuando se inicialice (Fase 1 del PROJECT.md).
+ *
+ * Fuente canónica: docs/brand/brand-guidelines.md
+ */
+
+@theme {
+  /* Fuentes */
+  --font-display: "Teko", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Brand core (colores oficiales) */
+  --color-mca-red: #E31837;
+  --color-mca-navy: #083B66;
+  --color-mca-white: #FFFFFF;
+
+  /* Brand accents y estados */
+  --color-mca-gold: #D4AF37;
+  --color-mca-red-dark: #B0122A;
+  --color-mca-navy-dark: #052642;
+
+  /* Escala neutral (slate fría, afín al navy) */
+  --color-mca-slate-50: #F8FAFC;
+  --color-mca-slate-100: #F1F5F9;
+  --color-mca-slate-200: #E2E8F0;
+  --color-mca-slate-300: #CBD5E1;
+  --color-mca-slate-400: #94A3B8;
+  --color-mca-slate-500: #64748B;
+  --color-mca-slate-700: #334155;
+  --color-mca-slate-900: #0F172A;
+
+  /* Semántica UI */
+  --color-mca-success: #10B981;
+  --color-mca-warning: #F59E0B;
+  --color-mca-error: var(--color-mca-red);
+}
+
+/* Resets base de tipografía */
+@layer base {
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+  }
+  h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-mca-white);
+    color: var(--color-mca-navy);
+  }
+}

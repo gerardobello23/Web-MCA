@@ -1,0 +1,317 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Button from "../components/Button.astro";
+import Input from "../components/Input.astro";
+
+const mapEmbedSrc =
+  "https://maps.google.com/maps?q=Cam.+de+las+Hormigueras+166+Madrid&t=&z=16&ie=UTF8&iwloc=&output=embed";
+const mapLink =
+  "https://www.google.com/maps/search/?api=1&query=Cam.+de+las+Hormigueras+166+Madrid";
+
+const subjectOptions = [
+  "Información general",
+  "Inscripciones",
+  "Equipos competitivos",
+  "Tienda",
+  "Otro",
+];
+---
+
+<SiteLayout
+  title="Contacto · Madrid Cheer Athletics"
+  description="Contacta con Madrid Cheer Athletics. Cam. de las Hormigueras, 166, Villa de Vallecas. Email, WhatsApp, redes sociales y formulario."
+>
+  <!-- HERO -->
+  <section class="relative bg-mca-navy-dark text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
+    />
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
+      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
+        Contacto
+      </p>
+      <h1 class="text-5xl md:text-7xl leading-none font-display font-bold mb-6 max-w-3xl">
+        Hablemos de cheerleading
+      </h1>
+      <p class="text-lg md:text-xl text-mca-white/70 max-w-2xl">
+        ¿Tienes preguntas? ¿Quieres más información sobre entrenamientos o
+        equipos? Estamos aquí para ayudarte. Te respondemos lo antes posible.
+      </p>
+    </div>
+  </section>
+
+  <!-- AVISO BACKEND PENDIENTE -->
+  <section class="bg-mca-warning/10 border-y border-mca-warning/30">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex items-start gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-mca-warning mt-0.5" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+      <p class="text-sm text-mca-slate-900">
+        <span class="font-medium">Formulario sin backend.</span>
+        El envío del formulario aún no está conectado. Pendiente de elegir
+        servicio (Resend, Formspree, Cloudflare Function) y configurar destino
+        de los mensajes. Mientras tanto, los CTAs de email y WhatsApp sí funcionan.
+      </p>
+    </div>
+  </section>
+
+  <!-- DATOS + FORMULARIO -->
+  <section class="py-16 md:py-24 bg-mca-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 grid lg:grid-cols-5 gap-12">
+      <!-- Datos -->
+      <div class="lg:col-span-2 space-y-8">
+        <div>
+          <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+            Datos directos
+          </p>
+          <h2 class="text-3xl md:text-4xl font-display font-bold text-mca-navy mb-6">
+            Escríbenos por donde te resulte cómodo
+          </h2>
+        </div>
+
+        <ul class="space-y-6">
+          <li class="flex items-start gap-4">
+            <span class="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-sm bg-mca-red/10 text-mca-red">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </span>
+            <div>
+              <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-1">Email</p>
+              <a href="mailto:hola@madridcheer.com" class="text-lg text-mca-navy hover:text-mca-red transition-colors">
+                hola@madridcheer.com
+              </a>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-4">
+            <span class="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-sm bg-mca-red/10 text-mca-red">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </span>
+            <div>
+              <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-1">Teléfono · WhatsApp</p>
+              <a href="https://wa.me/34643515820" class="text-lg text-mca-navy hover:text-mca-red transition-colors">
+                +34 643 51 58 20
+              </a>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-4">
+            <span class="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-sm bg-mca-red/10 text-mca-red">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </span>
+            <div>
+              <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-1">Dirección</p>
+              <p class="text-mca-navy leading-relaxed">
+                Cam. de las Hormigueras, 166<br />
+                Villa de Vallecas, 28031 Madrid
+              </p>
+              <a href={mapLink} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm text-mca-red hover:text-mca-red-dark transition-colors mt-2">
+                Cómo llegar
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17 17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="pt-8 border-t border-mca-slate-100">
+          <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-3">Síguenos</p>
+          <ul class="flex items-center gap-3">
+            <li>
+              <a
+                href="https://www.instagram.com/mca_cheerleadingclub/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-sm bg-mca-slate-100 text-mca-navy hover:bg-mca-red hover:text-mca-white transition-colors"
+                aria-label="Instagram"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com/@mca_cheerleadingclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-sm bg-mca-slate-100 text-mca-navy hover:bg-mca-red hover:text-mca-white transition-colors"
+                aria-label="TikTok"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.5a8.15 8.15 0 0 0 4.78 1.52V6.59a4.83 4.83 0 0 1-1.85.1z" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="lg:col-span-3">
+        <div class="bg-mca-slate-50 rounded-sm p-6 md:p-10">
+          <h2 class="text-2xl md:text-3xl font-display font-bold text-mca-navy mb-2">
+            Envíanos un mensaje
+          </h2>
+          <p class="text-mca-slate-700 mb-8">
+            Te respondemos en un plazo máximo de 24-48 horas, de lunes a viernes.
+          </p>
+
+          <form id="contact-form" class="grid gap-6" novalidate>
+            <Input id="contact-nombre" label="Nombre" placeholder="Tu nombre" required />
+            <Input id="contact-email" label="Email" type="email" placeholder="tu@email.com" required />
+            <Input id="contact-telefono" label="Teléfono (opcional)" type="tel" placeholder="+34 ..." />
+
+            <div class="flex flex-col">
+              <label for="contact-asunto" class="text-sm font-medium text-mca-navy mb-1">
+                Asunto <span class="text-mca-red ml-0.5" aria-hidden="true">*</span>
+              </label>
+              <select
+                id="contact-asunto"
+                name="asunto"
+                required
+                class="w-full px-4 py-2 rounded-sm border border-mca-slate-300 bg-mca-white text-mca-navy transition-shadow duration-150 ease-out focus:outline-none focus:ring-2 focus:ring-mca-navy focus:ring-offset-1"
+              >
+                <option value="" disabled selected>Selecciona un asunto</option>
+                {subjectOptions.map((opt) => <option value={opt}>{opt}</option>)}
+              </select>
+            </div>
+
+            <div class="flex flex-col">
+              <label for="contact-mensaje" class="text-sm font-medium text-mca-navy mb-1">
+                Mensaje <span class="text-mca-red ml-0.5" aria-hidden="true">*</span>
+              </label>
+              <textarea
+                id="contact-mensaje"
+                name="mensaje"
+                rows="5"
+                required
+                placeholder="Cuéntanos en qué podemos ayudarte..."
+                class="w-full px-4 py-2 rounded-sm border border-mca-slate-300 bg-mca-white text-mca-navy placeholder:text-mca-slate-400 transition-shadow duration-150 ease-out focus:outline-none focus:ring-2 focus:ring-mca-navy focus:ring-offset-1 resize-y"
+              ></textarea>
+            </div>
+
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input
+                type="checkbox"
+                name="privacidad"
+                required
+                class="w-4 h-4 mt-1 accent-mca-red shrink-0"
+              />
+              <span class="text-sm text-mca-navy">
+                Acepto la <a href="/privacidad" class="underline hover:text-mca-red transition-colors">política de privacidad</a> <span class="text-mca-red" aria-hidden="true">*</span>
+              </span>
+            </label>
+
+            <div
+              id="contact-feedback"
+              class="hidden rounded-sm p-4 text-sm"
+              role="status"
+              aria-live="polite"
+            ></div>
+
+            <Button variant="primary" type="submit">Enviar mensaje</Button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <section class="bg-mca-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pb-16 md:pb-24">
+      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+        Ubicación
+      </p>
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-mca-navy mb-6">
+        Aquí entrenamos
+      </h2>
+      <div class="aspect-video rounded-sm overflow-hidden border border-mca-slate-100 min-h-72">
+        <iframe
+          src={mapEmbedSrc}
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen={false}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Madrid Cheer Athletics en Google Maps"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORARIO + CTA final -->
+  <section class="relative bg-mca-navy text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute -left-24 -top-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
+    />
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          Horario de atención
+        </p>
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+          De lunes a viernes
+        </h2>
+        <p class="text-mca-white/70 text-lg max-w-xl">
+          Respondemos consultas de lunes a viernes en un plazo máximo de 24-48 horas.
+          Si es urgente, WhatsApp es el canal más rápido.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4 md:justify-end">
+        <a
+          href="https://wa.me/34643515820"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm bg-mca-white text-mca-navy font-body font-medium uppercase tracking-wide text-sm transition-all duration-150 ease-out hover:bg-mca-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-white focus-visible:ring-offset-2 focus-visible:ring-offset-mca-navy"
+        >
+          WhatsApp
+        </a>
+        <Button variant="primary-on-navy" href="/inscripcion">
+          Reservar prueba
+        </Button>
+      </div>
+    </div>
+  </section>
+</SiteLayout>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const feedback = document.getElementById("contact-feedback") as HTMLDivElement | null;
+
+  if (form && feedback) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        feedback.className = "rounded-sm p-4 text-sm bg-mca-error/10 text-mca-error border border-mca-error/30";
+        feedback.textContent = "Revisa los campos marcados antes de enviar.";
+        form.reportValidity();
+        return;
+      }
+
+      feedback.className = "rounded-sm p-4 text-sm bg-mca-success/10 text-mca-success border border-mca-success/30";
+      feedback.textContent =
+        "Mensaje validado correctamente. El envío real está pendiente de configurar el backend.";
+      form.reset();
+    });
+  }
+</script>

@@ -1,0 +1,227 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+
+const pillars = [
+  {
+    title: "Entrenadores certificados",
+    description:
+      "Personal cualificado con experiencia nacional e internacional en cheerleading competitivo.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15c2.5 0 4.5-2 4.5-4.5S14.5 6 12 6s-4.5 2-4.5 4.5S9.5 15 12 15z"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/><path d="M3 21v-2a4 4 0 0 1 3-3.87"/><path d="m9 22 3-3 3 3"/></svg>`,
+  },
+  {
+    title: "Todos los niveles",
+    description:
+      "Desde principiantes absolutos hasta equipos competitivos de alto rendimiento.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 17l4-4 4 4 6-6"/></svg>`,
+  },
+  {
+    title: "Comunidad Madrid Cheer",
+    description:
+      "Más que un club, una familia deportiva que te impulsa a crecer dentro y fuera del tatami.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  },
+];
+
+const galleryItems = [
+  { label: "Tumbling", color: "from-mca-red to-mca-red-dark" },
+  { label: "Stunts", color: "from-mca-navy to-mca-navy-dark" },
+  { label: "Jumps", color: "from-mca-red-dark to-mca-navy" },
+  { label: "Dance", color: "from-mca-navy to-mca-red" },
+  { label: "Pirámides", color: "from-mca-navy-dark to-mca-red-dark" },
+  { label: "Coreografía", color: "from-mca-red to-mca-navy-dark" },
+];
+
+const steps = [
+  {
+    n: "01",
+    title: "Rellena el formulario",
+    description:
+      "Cuéntanos quién eres y cuándo te viene bien venir. Tarda menos de un minuto.",
+  },
+  {
+    n: "02",
+    title: "Clase de prueba gratuita",
+    description:
+      "Te confirmamos por WhatsApp y vienes a entrenar con nosotros sin compromiso.",
+  },
+  {
+    n: "03",
+    title: "Únete al equipo",
+    description:
+      "Si te gusta lo que ves, te recomendamos el equipo que mejor encaje con tu nivel.",
+  },
+];
+---
+
+<SiteLayout title="Madrid Cheer Athletics · Cheerleading en Madrid">
+  <!-- HERO -->
+  <section class="relative bg-mca-navy-dark text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute -right-32 -bottom-32 w-[36rem] h-[36rem] opacity-5 pointer-events-none"
+    />
+
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-20 md:py-32">
+      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
+        Madrid · Villa de Vallecas
+      </p>
+      <h1 class="text-5xl md:text-8xl leading-none font-display font-bold mb-6 max-w-4xl">
+        Descubre tu mejor versión
+      </h1>
+      <p class="text-xl md:text-2xl text-mca-white/70 max-w-2xl mb-2">
+        El club de cheerleading donde la fuerza, el trabajo en equipo y la pasión se unen.
+      </p>
+      <p class="italic text-mca-white/60 mb-10">
+        "No soñamos con ganar. Entrenamos para hacerlo."
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <Button variant="primary-on-navy" href="/inscripcion">
+          Reserva tu prueba gratuita
+        </Button>
+        <Button variant="ghost" href="/inscripcion" class="border-mca-white text-mca-white hover:bg-mca-white/10">
+          Inscríbete
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Por qué elegirnos? -->
+  <section class="py-16 md:py-24 bg-mca-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          ¿Por qué elegirnos?
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">
+          Más que un club deportivo
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {
+          pillars.map((p) => (
+            <Card>
+              <div class="text-mca-red mb-4" set:html={p.icon} />
+              <h3 class="text-2xl mb-2">{p.title}</h3>
+              <p class="text-mca-slate-700">{p.description}</p>
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipos en acción -->
+  <section class="py-16 md:py-24 bg-mca-slate-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          Nuestros equipos en acción
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy mb-4">
+          Encuentra tu lugar
+        </h2>
+        <p class="text-mca-slate-700 text-lg">
+          Desde cheerleading recreativo hasta equipos competitivos de alto rendimiento.
+          Hay un sitio para ti, sea cual sea tu nivel.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        {
+          galleryItems.map((item) => (
+            <div
+              class={`group relative aspect-square rounded-sm overflow-hidden bg-gradient-to-br ${item.color}`}
+              aria-label={`Imagen placeholder de ${item.label}`}
+            >
+              <div class="absolute inset-0 flex items-end p-4 md:p-6">
+                <span class="text-mca-white font-display text-2xl md:text-3xl uppercase tracking-wide">
+                  {item.label}
+                </span>
+              </div>
+              <div class="absolute top-2 right-2 px-2 py-0.5 rounded-sm bg-mca-white/10 text-mca-white/80 text-xs uppercase tracking-widest">
+                Placeholder
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="mt-8 text-xs text-mca-slate-500 italic">
+        Las fotos finales serán reemplazadas por imágenes reales del club (ver pendientes con Gerardo).
+      </p>
+    </div>
+  </section>
+
+  <!-- Pasos -->
+  <section class="py-16 md:py-24 bg-mca-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          Cómo unirte
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">
+          Tres pasos hasta el primer entrenamiento
+        </h2>
+      </div>
+
+      <ol class="grid md:grid-cols-3 gap-6">
+        {
+          steps.map((s) => (
+            <li class="relative pl-8 md:pl-0">
+              <span class="block font-display text-6xl md:text-7xl text-mca-red leading-none mb-4">
+                {s.n}
+              </span>
+              <h3 class="text-2xl mb-2">{s.title}</h3>
+              <p class="text-mca-slate-700">{s.description}</p>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="mt-12">
+        <Button variant="primary" href="/inscripcion">Inscribirme ahora</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="relative bg-mca-red text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute -left-24 -top-24 w-[28rem] h-[28rem] opacity-10 pointer-events-none"
+    />
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-display font-bold mb-4">
+          ¿Listo para entrenar con nosotros?
+        </h2>
+        <p class="text-mca-white/90 text-lg max-w-xl">
+          Tu primera clase es gratis. Ven, prueba, y decide después.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4 md:justify-end">
+        <Button
+          variant="ghost"
+          href="/inscripcion"
+          class="border-mca-white text-mca-white hover:bg-mca-white/10"
+        >
+          Reserva tu prueba
+        </Button>
+        <a
+          href="https://wa.me/34643515820"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm bg-mca-white text-mca-red font-body font-medium uppercase tracking-wide text-sm transition-all duration-150 ease-out hover:bg-mca-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-white focus-visible:ring-offset-2 focus-visible:ring-offset-mca-red"
+        >
+          Escríbenos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

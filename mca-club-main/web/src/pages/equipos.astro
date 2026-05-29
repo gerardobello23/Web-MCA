@@ -1,0 +1,229 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+
+const recreational = [
+  {
+    title: "Mini Cheer",
+    age: "6 a 10 años",
+    description:
+      "Introducción al cheerleading en un entorno divertido y seguro. Fundamentos básicos y desarrollo de coordinación. Presentaciones en eventos locales.",
+    highlights: ["Coordinación", "Diversión", "Equipo"],
+  },
+  {
+    title: "Youth Cheer",
+    age: "11 a 15 años",
+    description:
+      "Técnica intermedia y coreografías más complejas. Inicio en stunts y tumbling básico. Espíritu de equipo y compañerismo.",
+    highlights: ["Stunts básicos", "Tumbling", "Coreografía"],
+  },
+  {
+    title: "Senior Cheer",
+    age: "16+ años",
+    description:
+      "Entrenamiento avanzado para jóvenes y adultos. Rutinas completas y presentaciones. Opción ideal para mantener forma física y divertirse.",
+    highlights: ["Rutinas completas", "Forma física", "Comunidad"],
+  },
+];
+
+const competitive = [
+  {
+    title: "Junior Elite",
+    level: "Iniciación competitiva",
+    description:
+      "Nivel competitivo de iniciación. Preparación para competiciones regionales. Desarrollo técnico acelerado.",
+    highlights: ["Regionales", "Técnica acelerada", "Compromiso"],
+  },
+  {
+    title: "Senior Elite",
+    level: "Alto rendimiento",
+    description:
+      "Alto rendimiento competitivo. Participación en campeonatos nacionales. Exigencia técnica y compromiso total.",
+    highlights: ["Nacionales", "Alto rendimiento", "Disciplina"],
+  },
+  {
+    title: "Open Elite",
+    level: "Élite, 16+ años",
+    description:
+      "Categoría abierta para mayores de 16 años. Máximo nivel técnico del club. Representación de MCA en competiciones de élite.",
+    highlights: ["Élite", "Representación", "Excelencia"],
+  },
+];
+---
+
+<SiteLayout
+  title="Equipos · Madrid Cheer Athletics"
+  description="Equipos recreativos y competitivos de cheerleading en Madrid. Por edad y nivel: Mini Cheer, Youth, Senior y equipos All Star competitivos."
+>
+  <!-- HERO -->
+  <section class="relative bg-mca-navy-dark text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
+    />
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
+      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
+        Equipos
+      </p>
+      <h1 class="text-5xl md:text-7xl leading-none font-display font-bold mb-6 max-w-3xl">
+        Encuentra tu equipo
+      </h1>
+      <p class="text-lg md:text-xl text-mca-white/70 max-w-2xl">
+        Organizados por nivel y edad para que cada atleta entrene en el grupo
+        más adecuado para su desarrollo. Desde recreativos hasta formaciones
+        competitivas de alto rendimiento.
+      </p>
+    </div>
+  </section>
+
+  <!-- AVISO ESTRUCTURA DE EJEMPLO -->
+  <section class="bg-mca-warning/10 border-y border-mca-warning/30">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex items-start gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-mca-warning mt-0.5" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+      <p class="text-sm text-mca-slate-900">
+        <span class="font-medium">Estructura de ejemplo.</span>
+        Los nombres, edades y categorías de equipos mostrados a continuación
+        son la propuesta del brief. Pendiente de confirmar con el club los
+        equipos reales y su denominación oficial.
+      </p>
+    </div>
+  </section>
+
+  <!-- RECREATIVOS -->
+  <section class="py-16 md:py-24 bg-mca-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          Recreativos
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">
+          Por edad, sin presión competitiva
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {
+          recreational.map((t) => (
+            <Card>
+              <span class="inline-block text-xs uppercase tracking-widest font-medium px-3 py-1 rounded-sm bg-mca-navy/5 text-mca-navy mb-4">
+                {t.age}
+              </span>
+              <h3 class="text-3xl mb-3">{t.title}</h3>
+              <p class="text-mca-slate-700 mb-6 leading-relaxed">{t.description}</p>
+              <ul class="flex flex-wrap gap-2">
+                {t.highlights.map((h) => (
+                  <li class="text-xs uppercase tracking-widest font-medium px-3 py-1 rounded-sm bg-mca-slate-100 text-mca-slate-700">
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETITIVOS -->
+  <section class="relative py-16 md:py-24 bg-mca-navy-dark text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute -left-32 top-1/2 -translate-y-1/2 w-[36rem] h-[36rem] opacity-5 pointer-events-none"
+    />
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          Competitivos · All Star
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold">
+          Para los que buscan competir
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {
+          competitive.map((t) => (
+            <article class="bg-mca-navy/40 border border-mca-white/10 rounded-sm p-6 md:p-8 transition-colors hover:bg-mca-navy/60">
+              <span class="inline-block text-xs uppercase tracking-widest font-medium px-3 py-1 rounded-sm bg-mca-red/15 text-mca-red mb-4">
+                {t.level}
+              </span>
+              <h3 class="text-3xl mb-3 text-mca-white">{t.title}</h3>
+              <p class="text-mca-white/70 mb-6 leading-relaxed">{t.description}</p>
+              <ul class="flex flex-wrap gap-2">
+                {t.highlights.map((h) => (
+                  <li class="text-xs uppercase tracking-widest font-medium px-3 py-1 rounded-sm bg-mca-white/10 text-mca-white/80">
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPORADA COMPETITIVA -->
+  <section class="py-16 md:py-24 bg-mca-slate-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          Temporada
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy mb-4">
+          Representamos a Madrid
+        </h2>
+        <p class="text-mca-slate-700 text-lg leading-relaxed">
+          Nuestros equipos All Star participan en competiciones oficiales
+          durante la temporada. Llevamos el nombre del club con orgullo,
+          disciplina y pasión por el cheerleading.
+        </p>
+      </div>
+
+      <div class="aspect-video rounded-sm bg-gradient-to-br from-mca-red to-mca-navy-dark flex flex-col items-center justify-center gap-4 p-8 min-h-72">
+        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/40" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+          <circle cx="8.5" cy="8.5" r="1.5" />
+          <polyline points="21 15 16 10 5 21" />
+        </svg>
+        <p class="text-mca-white/70 text-xs uppercase tracking-widest text-center">
+          Foto de competición<br />Placeholder reservado
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EN QUÉ EQUIPO ENCAJO -->
+  <section class="py-16 md:py-24 bg-mca-white">
+    <div class="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+        ¿No estás seguro?
+      </p>
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy mb-4">
+        Te ayudamos a encajar
+      </h2>
+      <p class="text-mca-slate-700 text-lg leading-relaxed mb-8">
+        Tras tu clase de prueba, nuestros entrenadores evalúan tu nivel y te
+        recomiendan el equipo más adecuado para ti. También ofrecemos
+        flexibilidad para cambiar de grupo según tu progresión.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <Button variant="primary" href="/inscripcion">
+          Quiero formar parte
+        </Button>
+        <Button variant="ghost" href="/entrenamientos">
+          Ver entrenamientos
+        </Button>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

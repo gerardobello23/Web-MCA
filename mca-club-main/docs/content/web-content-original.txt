@@ -1,0 +1,356 @@
+
+Madrid Cheer Athletics - Estructura y Contenido Web
+
+Paginas web de "inspiración"
+https://www.tvccsports.com/sports/cheer/index
+https://topguncheeranddance.com/home
+http://cheerxportalcobendas.com/
+
+Elementos visuales sugeridos:
+
+Home: Hero con imagen de equipo en acción, galería dinámica
+Quiénes somos: Foto del equipo de entrenadores, ambiente de entrenamiento
+Entrenamientos: Fotos de diferentes modalidades en acción
+Equipos: Fotos oficiales de cada equipo
+Inscripción: Imágenes motivadoras de atletas felices
+Tienda: Fotos de productos sobre fondo limpio
+Contacto: Mapa de ubicación, iconos de redes sociales
+
+Diseño recomendado:
+
+Paleta de colores: Colores relacioandos al Logo oficial
+Tipografía: Moderna, sans-serif, legible
+Espacios en blanco generosos
+Botones CTA destacados con contraste
+Responsive para móviles (fundamental)
+
+Funcionalidades técnicas:
+
+Formularios con validación
+Integración de Google Maps
+Enlaces directos a WhatsApp
+Iconos de redes sociales con enlaces
+Galería de imágenes optimizada
+Sección de noticias/blog (opcional, para futuro)
+
+
+📋 ESTRUCTURA COMPLETA
+Navegación Principal
+
+Logo Madrid Cheer Athletics
+Home
+Quiénes somos
+Entrenamientos
+Equipos
+Inscripción
+Tienda/Catálogo
+Contacto
+Botón CTA destacado: "Únete al equipo"
+
+
+🏠 HOME
+Hero Section
+Titular principal:
+"Descubre tu mejor versión en Madrid Cheer Athletics"
+Subtítulo:
+"El club de cheerleading donde la fuerza, el trabajo en equipo y la pasión se unen."
+CTA principal: "Reserva tu clase de prueba gratuita"
+CTA secundario: "Inscríbete"
+Sección: ¿Por qué elegirnos?
+3 bloques visuales con iconos:
+
+Entrenadores Certificados
+Personal cualificado con experiencia nacional e internacional
+
+Todos los niveles
+Desde principiantes hasta equipos competitivos de alto rendimiento
+
+Comunidad Madrid Cheer
+Más que un club, una familia deportiva que te impulsa a crecer
+
+
+Sección: Nuestros Equipos en Acción
+
+Galería visual de 4-6 imágenes de equipos entrenando/compitiendo
+Texto: "Desde cheerleading recreativo hasta equipos competitivos. Encuentra tu lugar."
+Rellena el formulario de inscripción
+Asiste a tu clase de prueba gratuita
+Únete al equipo que mejor se adapte a ti
+
+CTA: "Inscribirme ahora"
+
+
+👥 QUIÉNES SOMOS
+Introducción
+Titular: "Somos Madrid Cheer Athletics"
+
+Texto:
+"Madrid Cheer Athletics nace de la pasión por el cheerleading y el compromiso con la excelencia deportiva. Somos un club en pleno crecimiento, formado por entrenadores profesionales y atletas dedicados que comparten un objetivo común: llevar el cheerleading madrileño al siguiente nivel.
+Creemos en el poder transformador del deporte de equipo. Aquí no solo desarrollas fuerza, flexibilidad y técnica; también construyes confianza, disciplina y amistades que duran toda la vida.
+Nuestro enfoque combina entrenamientos estructurados y seguros con un ambiente positivo donde cada atleta es valorado. Ya seas nuevo en el cheerleading o vengas con experiencia, encontrarás tu lugar en nuestra comunidad."
+
+Nuestra Filosofía
+
+Tres pilares visuales:
+
+Excelencia Deportiva
+Programas de entrenamiento diseñados para el desarrollo progresivo y seguro de cada atleta
+
+Inclusión y Comunidad
+Un espacio donde todos son bienvenidos, independientemente de su nivel o experiencia previa
+
+Crecimiento Personal
+Más allá de la técnica: trabajamos valores como el trabajo en equipo, la resiliencia y el liderazgo
+
+
+Nuestro Compromiso
+
+"En Madrid Cheer Athletics, cada atleta recibe atención personalizada. Monitorizamos el progreso, celebramos los logros y nos aseguramos de que el cheerleading sea una experiencia positiva y enriquecedora para todos."
+
+CTA: "Ven a conocernos"
+
+
+
+💪 ENTRENAMIENTOS
+Introducción
+Titular: "Entrenamientos diseñados para ti"
+
+Texto:
+"En Madrid Cheer Athletics ofrecemos sesiones de entrenamiento estructuradas que combinan técnica, acondicionamiento físico y diversión. Nuestros programas están diseñados para adaptarse a diferentes niveles y objetivos deportivos."
+Modalidades de Entrenamiento
+
+1. Cheerleading Recreativo
+
+Perfecto para quienes quieren iniciarse en el deporte
+Sesiones centradas en fundamentos, acondicionamiento y coreografías básicas
+Ambiente relajado y motivador
+Ideal para: Principiantes absolutos, personas que buscan actividad física en equipo
+
+2. Cheerleading para niños (MCA Kids)
+
+Coming soon..
+
+3. Cheerleading competitivo
+
+Entrenamiento intensivo para equipos que compiten a nivel nacional
+Técnicas avanzadas: stunts, tumbling, jumps, dance
+Preparación física específica y trabajo coreográfico complejo
+Ideal para: Atletas con experiencia que buscan competir
+
+4. Tumbling
+
+Clases especializadas en acrobacia de suelo
+Desde volteretas básicas hasta pases avanzados
+Grupos reducidos para atención personalizada
+Ideal para: Atletas que quieren mejorar sus habilidades acrobáticas
+
+5. Stunts y Técnica
+
+Sesiones enfocadas en pirámides, elevaciones y trabajo de bases y flyers
+Seguridad como prioridad absoluta
+Progresión técnica guiada
+Ideal para: Todos los niveles que quieren perfeccionar esta disciplina
+
+¿Qué incluyen nuestras sesiones?
+
+Calentamiento y preparación física
+Técnica específica de cheerleading
+Trabajo en equipo y construcción de rutinas
+Estiramientos y prevención de lesiones
+Feedback individualizado de entrenadores certificados
+
+Instalaciones
+"Entrenamos en instalaciones deportivas equipadas en Madrid, con todo el material necesario para un entrenamiento seguro y profesional: colchonetas, airtrack para tumbling, equipamiento de stunts y más."
+CTA principal: "Consulta horarios y grupos"
+CTA secundario: "Reserva tu clase de prueba"
+
+
+
+🏆 EQUIPOS
+Introducción
+Titular: "Encuentra tu equipo en Madrid Cheer Athletics"
+Texto:
+"Nuestros equipos están organizados por nivel y edad para garantizar que cada atleta entrene en el grupo más adecuado para su desarrollo. Desde equipos recreativos hasta formaciones competitivas de alto rendimiento."
+Nuestros Equipos (estructura de ejemplo)
+
+EQUIPOS RECREATIVOS
+
+Mini Cheer (6-10 años)
+
+Introducción al cheerleading en un entorno divertido y seguro
+Fundamentos básicos y desarrollo de coordinación
+Presentaciones en eventos locales
+
+Youth Cheer (11-15 años)
+
+Técnica intermedia y coreografías más complejas
+Inicio en stunts y tumbling básico
+Espíritu de equipo y compañerismo
+
+Senior Cheer (16+ años)
+
+Entrenamiento avanzado para jóvenes y adultos
+Rutinas completas y presentaciones
+Opción ideal para mantener forma física y divertirse
+
+
+EQUIPOS COMPETITIVOS
+Junior Elite
+
+Nivel competitivo iniciación
+Preparación para competiciones regionales
+Desarrollo técnico acelerado
+
+Senior Elite
+
+Alto rendimiento competitivo
+Participación en campeonatos nacionales
+Exigencia técnica y compromiso total
+
+Open Elite
+
+Categoría abierta, edad 16+
+Máximo nivel técnico del club
+Representación del club en competiciones de élite
+
+
+Temporada Competitiva
+"Nuestros equipos All Star participan en competiciones oficiales durante la temporada. Representamos a Madrid con orgullo, disciplina y pasión por el cheerleading."
+¿En qué equipo encajo?
+"No te preocupes si no estás seguro. Tras tu clase de prueba, nuestros entrenadores evaluarán tu nivel y te recomendarán el equipo más adecuado para ti. También ofrecemos flexibilidad para cambiar de grupo según tu progresión."
+CTA: "Quiero formar parte"
+
+
+✍️ INSCRIPCIÓN
+Introducción
+Titular: "Únete a Madrid Cheer Athletics"
+Texto:
+"Estamos encantados de que quieras formar parte de nuestra comunidad. El proceso de inscripción es sencillo y comenzarás a entrenar antes de lo que imaginas."
+
+Proceso de Inscripción
+Paso 1: Solicita tu clase de prueba gratuita
+
+Rellena el formulario con tus datos básicos
+Indícanos tu experiencia previa (si la tienes)
+Te confirmaremos fecha y hora por email o teléfono (whatsapp)
+
+Paso 2: Asiste a tu clase de prueba
+
+Ven con ropa deportiva cómoda y ganas de divertirte
+Conocerás al equipo de entrenadores y atletas
+Probarás una sesión real de entrenamiento
+
+Paso 3: Inscripción oficial
+
+Si decides continuar, completarás la documentación necesaria
+Seleccionarás tu equipo y horario
+¡Bienvenido oficialmente a Madrid Cheer Athletics!
+
+Formulario de Inscripción
+Link de Google forms
+
+
+Preguntas Frecuentes
+¿Necesito experiencia previa?
+No. Tenemos grupos para todos los niveles, desde principiantes absolutos hasta atletas avanzados.
+¿Qué debo traer a la clase de prueba?
+Ropa deportiva cómoda, zapatillas de deporte y una botella de agua. Nosotros ponemos el resto.
+¿Hay límite de edad?
+Trabajamos con niños desde 6 años hasta adultos. Nunca es tarde para empezar.
+CTA final: "¿Tienes más dudas? Contáctanos"
+
+
+🛍️ TIENDA / CATÁLOGO
+Introducción
+Titular: "Equípate con Madrid Cheer Athletics"
+Texto:
+"Descubre nuestra selección de productos oficiales del club y artículos esenciales para tu entrenamiento. Los pedidos se gestionan directamente con el club. Contáctanos para consultar disponibilidad, tallas y formas de pago."
+Categorías de Productos
+ROPA OFICIAL DEL CLUB
+
+Camiseta de temporada - Madrid Cheer Athletics
+
+Descripción: Camiseta deportiva transpirable con logo del club
+Tallas: XXS a XXL
+Contacta para precio y pedido
+
+Sudadera con capucha
+
+Descripción: Sudadera oficial del club, perfecta para entrenamientos y uso diario
+Tallas: XS a XXL
+Contacta para precio y pedido
+
+Leggings de entrenamiento
+
+Descripción: Mallas deportivas de alta compresión
+Tallas: XS a XL
+Contacta para precio y pedido
+
+
+ACCESORIOS
+
+Pom Poms oficiales
+
+Descripción: Pompones profesionales en colores del club
+Material: Metálico, gran volumen
+Contacta para precio y pedido
+
+Mochila Madrid Cheer Athletics
+
+Descripción: Mochila deportiva con compartimentos, logo bordado
+Color: Negro con detalles en azul
+Contacta para precio y pedido
+
+Botella de agua del club
+
+Descripción: Botella reutilizable con logo
+Capacidad: 750ml
+Contacta para precio y pedido
+
+Información Importante
+"¿Cómo hacer un pedido?
+Contacta con nosotros por email, teléfono o WhatsApp indicando los artículos que deseas, tallas y cantidades. Te confirmaremos disponibilidad, precio final y forma de pago.
+Entregas:
+Los pedidos se entregan directamente en el club durante los entrenamientos o coordinamos entrega según convenga.
+Descuentos para miembros:
+Los atletas inscritos en Madrid Cheer Athletics disfrutan de condiciones especiales en productos oficiales."
+CTA: "Contacta para hacer tu pedido"
+
+
+
+📞 CONTACTO
+Introducción
+Titular: "Hablemos de cheerleading"
+Texto:
+"¿Tienes preguntas? ¿Quieres más información sobre nuestros entrenamientos o equipos? Estamos aquí para ayudarte. Ponte en contacto con nosotros y te responderemos lo antes posible."
+Información de Contacto
+Email:
+hola@madridcheer.com
+Teléfono / WhatsApp: +34 643 51 58 20
+
+Redes Sociales:
+Instagram: @mca_cheerleadingclub
+TikTok: @mca_cheerleadingclub
+
+Ubicación:
+link: https://www.google.com/maps/place//data=!4m2!3m1!1s0xd42257aa5cef109:0x18820f9a4b5e8a79?sa=X&ved=1t:8290&ictx=111
+
+
+Formulario de Contacto
+Campos:
+
+Nombre
+Email
+Teléfono (opcional)
+Asunto: (Desplegable: Información general / Inscripciones / Equipos competitivos / Tienda / Otro)
+Mensaje
+Checkbox: "Acepto la política de privacidad"
+
+CTA del formulario: "Enviar mensaje"
+Horario de Atención
+"Respondemos consultas de lunes a viernes. Te contestaremos en un plazo máximo de 24-48 horas."
+Síguenos
+"Mantente al día con nuestras novedades, eventos y logros siguiéndonos en redes sociales. ¡Somos una comunidad activa y nos encanta compartir nuestra pasión por el cheerleading!"
+CTA final: "Síguenos en Instagram"
+
+
