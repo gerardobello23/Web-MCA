@@ -173,7 +173,10 @@ const subjectOptions = [
             Te respondemos en un plazo máximo de 24-48 horas, de lunes a viernes.
           </p>
 
-          <form id="contact-form" class="grid gap-6" novalidate>
+          <form id="contact-form" class="grid gap-6" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="54764054-bd5a-417d-b138-c333a0f96bc1">
+  <input type="hidden" name="subject" value="Nuevo mensaje de contacto - Madrid Cheer Athletics">
+  <input type="hidden" name="redirect" value="false">
             <Input id="contact-nombre" label="Nombre" placeholder="Tu nombre" required />
             <Input id="contact-email" label="Email" type="email" placeholder="tu@email.com" required />
             <Input id="contact-telefono" label="Teléfono (opcional)" type="tel" placeholder="+34 ..." />
