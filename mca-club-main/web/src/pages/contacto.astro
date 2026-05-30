@@ -152,7 +152,7 @@ const subjectOptions = [
             Envíanos un mensaje
           </h2>
           <p class="text-mca-slate-700 mb-8">
-            Te respondemos en la brevedad posible.
+            Te respondemos a la brevedad posible.
           </p>
 
           <form id="contact-form" class="grid gap-6" action="https://api.web3forms.com/submit" method="POST">
@@ -259,7 +259,7 @@ const subjectOptions = [
           De lunes a viernes
         </h2>
         <p class="text-mca-white/70 text-lg max-w-xl">
-          Respondemos en la brevedad posible.
+          Respondemos a la brevedad posible.
           Si es urgente, WhatsApp es el canal más rápido.
         </p>
       </div>
@@ -303,15 +303,15 @@ const subjectOptions = [
 
         if (response.ok) {
           feedback.className = "rounded-sm p-4 text-sm bg-mca-success/10 text-mca-success border border-mca-success/30";
-          feedback.textContent = "Mensaje enviado correctamente. Te responderemos en la brevedad posible.";
+          feedback.textContent = "Mensaje enviado correctamente. Te responderemos a la brevedad posible.";
           form.reset();
         } else {
           feedback.className = "rounded-sm p-4 text-sm bg-mca-error/10 text-mca-error border border-mca-error/30";
-          feedback.textContent = "Error al enviar. Por favor inténtalo de nuevo.";
+          feedback.textContent = "Error al enviar. Por favor, inténtalo de nuevo.";
         }
       } catch {
         feedback.className = "rounded-sm p-4 text-sm bg-mca-error/10 text-mca-error border border-mca-error/30";
-        feedback.textContent = "Error de conexión. Por favor inténtalo de nuevo.";
+        feedback.textContent = "Error de conexión. Por favor, inténtalo de nuevo.";
       }
     });
   }
