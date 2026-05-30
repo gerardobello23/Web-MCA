@@ -111,9 +111,7 @@ const { title, description } = Astro.props;
     </div>
   </div>
 
-  <script is:inline>
-  if (window.__mcaModalInit) return;
-  window.__mcaModalInit = true;
+  <script>
 
     const modal = document.getElementById("modal-prueba");
     const modalClose = document.getElementById("modal-close");
