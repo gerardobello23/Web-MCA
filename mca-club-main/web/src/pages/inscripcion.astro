@@ -141,51 +141,6 @@ const steps = [
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="py-16 md:py-24 bg-mca-white">
-    <div class="max-w-3xl mx-auto px-4 md:px-6 lg:px-8">
-      <div class="mb-12">
-        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
-          Preguntas frecuentes
-        </p>
-        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">
-          Antes de venir, lo más preguntado
-        </h2>
-      </div>
-
-      <ul class="space-y-6">
-        {
-          faqs.map((f) => (
-            <li>
-              <details class="group border border-mca-slate-200 rounded-sm bg-mca-white open:border-mca-navy transition-colors">
-                <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-[30px] font-medium text-mca-navy">
-                  <span class="text-lg">{f.q}</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="shrink-0 text-mca-red transition-transform duration-200 group-open:rotate-45"
-                    aria-hidden="true"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </summary>
-                <div class="px-[30px] pb-[30px] text-mca-slate-700">{f.a}</div>
-              </details>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </section>
-
   <!-- CTA final -->
   <section class="bg-mca-navy text-mca-white">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-20 text-center">
