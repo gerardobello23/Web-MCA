@@ -54,22 +54,60 @@ Si buscas un equipo donde crecer a nivel deportivo y personal, aquí tienes tu s
     </div>
   </section>
 
-  <!-- INTRO -->
+<!-- DIRECTIVA -->
   <section class="py-16 md:py-24 bg-mca-white">
-    <div class="max-w-3xl mx-auto px-4 md:px-6 lg:px-8">
-      <p class="text-mca-slate-700 text-lg leading-relaxed mb-6">
-        Madrid Cheer Athletics nace de la pasión por el cheerleading y el
-        compromiso con la excelencia deportiva. Creemos en el poder
-        transformador del deporte de equipo: aquí no solo desarrollas fuerza,
-        flexibilidad y técnica, también construyes confianza, disciplina y
-        amistades que duran toda la vida.
-      </p>
-      <p class="text-mca-slate-700 text-lg leading-relaxed">
-        Nuestro enfoque combina entrenamientos estructurados y seguros con un
-        ambiente positivo donde cada atleta es valorado. Ya seas nuevo en el
-        cheerleading o vengas con experiencia, encontrarás tu lugar en nuestra
-        comunidad.
-      </p>
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">Equipo</p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">La directiva</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        {[
+          { name: "Gerardo Bello", role: "Presidente", email: "gerardo" },
+          { name: "Antonia Ramirez", role: "Secretaria", email: "antonia" },
+          { name: "Daniel Bello", role: "Imagen", email: "daniel" },
+        ].map((member) => (
+          <div class="bg-mca-slate-50 rounded-sm overflow-hidden">
+            <div class="aspect-square bg-gradient-to-br from-mca-navy to-mca-navy-dark flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/20" aria-hidden="true">
+                <circle cx="12" cy="8" r="5"/>
+                <path d="M20 21a8 8 0 1 0-16 0"/>
+              </svg>
+            </div>
+            <div class="p-6">
+              <p class="text-xs uppercase tracking-widest text-mca-red font-medium mb-1">{member.role}</p>
+              <h3 class="text-xl font-display font-bold text-mca-navy mb-2">{member.name}</h3>
+              <a href={`mailto:${member.email}@madridcheer.com`} class="text-sm text-mca-slate-500 hover:text-mca-red transition-colors">
+                {member.email}@madridcheer.com
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="max-w-3xl mb-12">
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">Head Coach</h2>
+      </div>
+
+      <div class="max-w-2xl">
+        <div class="bg-mca-slate-50 rounded-sm overflow-hidden flex flex-col md:flex-row">
+          <div class="md:w-64 shrink-0 aspect-square md:aspect-auto bg-gradient-to-br from-mca-navy to-mca-navy-dark flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/20" aria-hidden="true">
+              <circle cx="12" cy="8" r="5"/>
+              <path d="M20 21a8 8 0 1 0-16 0"/>
+            </svg>
+          </div>
+          <div class="p-8">
+            <p class="text-xs uppercase tracking-widest text-mca-red font-medium mb-1">Head Coach</p>
+            <h3 class="text-2xl font-display font-bold text-mca-navy mb-3">Fernando Arismendy</h3>
+            <a href="mailto:fernando@madridcheer.com" class="text-sm text-mca-slate-500 hover:text-mca-red transition-colors">
+              fernando@madridcheer.com
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
