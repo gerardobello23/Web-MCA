@@ -10,7 +10,7 @@ const navItemsLeft = [
 
 const navItemsRight = [
   { href: "/equipos", label: "Equipos" },
-  { href: "/inscripcion", label: "Inscripción" },
+  { href: "/inscripcion", label: "Inscripcion" },
   { href: "/tienda", label: "Tienda" },
   { href: "/contacto", label: "Contacto" },
 ];
@@ -26,59 +26,25 @@ const isActive = (href: string) =>
   <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
     <div class="flex items-center justify-center h-16 md:h-20 relative">
 
-      <nav class="hidden lg:flex items-center gap-8" aria-label="Navegación principal">
+      <nav class="hidden lg:flex items-center gap-8" aria-label="Navegacion principal">
         {navItemsLeft.map((item) => (
-          
-            href={item.href}
-            class:list={[
-              "text-sm font-medium uppercase tracking-wide transition-colors duration-150",
-              isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red",
-            ]}
-            aria-current={isActive(item.href) ? "page" : undefined}
-          >
-            {item.label}
-          </a>
+          <a href={item.href} class={`text-sm font-medium uppercase tracking-wide transition-colors duration-150 ${isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
         ))}
 
-        <a href="/" aria-label="Madrid Cheer Athletics · Inicio" class="mx-4">
-          <img
-            src="/brand/wordmark-mca-rojo.png"
-            alt="Madrid Cheer Athletics"
-            class="h-14 md:h-16 w-auto"
-          />
+        <a href="/" aria-label="Madrid Cheer Athletics Inicio" class="mx-4">
+          <img src="/brand/wordmark-mca-rojo.png" alt="Madrid Cheer Athletics" class="h-14 md:h-16 w-auto" />
         </a>
 
         {navItemsRight.map((item) => (
-          
-            <a
-            href={item.href}
-            class:list={[
-              "text-sm font-medium uppercase tracking-wide transition-colors duration-150",
-              isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red",
-            ]}
-            aria-current={isActive(item.href) ? "page" : undefined}
-          >
-            {item.label}
-          </a>
+          <a href={item.href} class={`text-sm font-medium uppercase tracking-wide transition-colors duration-150 ${isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
         ))}
       </nav>
 
-      <a href="/" class="lg:hidden" aria-label="Madrid Cheer Athletics · Inicio">
-        <img
-          src="/brand/wordmark-mca-rojo.png"
-          alt="Madrid Cheer Athletics"
-          class="h-14 md:h-16 w-auto"
-        />
+      <a href="/" class="lg:hidden" aria-label="Madrid Cheer Athletics Inicio">
+        <img src="/brand/wordmark-mca-rojo.png" alt="Madrid Cheer Athletics" class="h-14 md:h-16 w-auto" />
       </a>
 
-      <button
-        type="button"
-        class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-mca-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-navy rounded-sm absolute right-0"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="mobile-drawer"
-        data-drawer-toggle
-      >
+      <button type="button" class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-mca-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-navy rounded-sm absolute right-0" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-drawer" data-drawer-toggle>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <line x1="4" y1="6" x2="20" y2="6"></line>
           <line x1="4" y1="12" x2="20" y2="12"></line>
@@ -90,28 +56,12 @@ const isActive = (href: string) =>
   </div>
 </header>
 
-<div
-  id="mobile-drawer-overlay"
-  class="lg:hidden fixed inset-0 z-40 bg-mca-slate-900/60 opacity-0 pointer-events-none transition-opacity duration-200 ease-out"
-  data-drawer-overlay
-  aria-hidden="true"
-></div>
+<div id="mobile-drawer-overlay" class="lg:hidden fixed inset-0 z-40 bg-mca-slate-900/60 opacity-0 pointer-events-none transition-opacity duration-200 ease-out" data-drawer-overlay aria-hidden="true"></div>
 
-<aside
-  id="mobile-drawer"
-  class="lg:hidden fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm bg-mca-navy-dark text-mca-white translate-x-full transition-transform duration-200 ease-out flex flex-col"
-  aria-hidden="true"
-  aria-label="Menú móvil"
-  data-drawer-panel
->
+<aside id="mobile-drawer" class="lg:hidden fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm bg-mca-navy-dark text-mca-white translate-x-full transition-transform duration-200 ease-out flex flex-col" aria-hidden="true" aria-label="Menu movil" data-drawer-panel>
   <div class="flex items-center justify-between px-4 py-4 border-b border-mca-white/10">
     <img src="/brand/logo-circular-blanco.png" alt="" class="h-10 w-10" />
-    <button
-      type="button"
-      class="inline-flex items-center justify-center w-10 h-10 text-mca-white focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-white rounded-sm"
-      aria-label="Cerrar menú"
-      data-drawer-close
-    >
+    <button type="button" class="inline-flex items-center justify-center w-10 h-10 text-mca-white focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-white rounded-sm" aria-label="Cerrar menu" data-drawer-close>
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -119,22 +69,11 @@ const isActive = (href: string) =>
     </button>
   </div>
 
-  <nav class="flex-1 overflow-y-auto px-4 py-6" aria-label="Navegación móvil">
+  <nav class="flex-1 overflow-y-auto px-4 py-6" aria-label="Navegacion movil">
     <ul class="space-y-2">
       {allNavItems.map((item) => (
         <li>
-          
-            href={item.href}
-            class:list={[
-              "block py-3 px-3 text-2xl font-display uppercase tracking-wide rounded-sm transition-colors duration-150",
-              isActive(item.href)
-                ? "bg-mca-red text-mca-white"
-                : "text-mca-white hover:bg-mca-white/5",
-            ]}
-            aria-current={isActive(item.href) ? "page" : undefined}
-          >
-            {item.label}
-          </a>
+          <a href={item.href} class={`block py-3 px-3 text-2xl font-display uppercase tracking-wide rounded-sm transition-colors duration-150 ${isActive(item.href) ? "bg-mca-red text-mca-white" : "text-mca-white hover:bg-mca-white/5"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
         </li>
       ))}
     </ul>
@@ -142,10 +81,10 @@ const isActive = (href: string) =>
 </aside>
 
 <script>
-  const toggle = document.querySelector<HTMLButtonElement>("[data-drawer-toggle]");
-  const closeBtn = document.querySelector<HTMLButtonElement>("[data-drawer-close]");
-  const overlay = document.querySelector<HTMLDivElement>("[data-drawer-overlay]");
-  const panel = document.querySelector<HTMLDivElement>("[data-drawer-panel]");
+  const toggle = document.querySelector("[data-drawer-toggle]");
+  const closeBtn = document.querySelector("[data-drawer-close]");
+  const overlay = document.querySelector("[data-drawer-overlay]");
+  const panel = document.querySelector("[data-drawer-panel]");
 
   if (toggle && closeBtn && overlay && panel) {
     const open = () => {
