@@ -1,16 +1,21 @@
 ---
 import Button from "./Button.astro";
 
-const navItems = [
+const navItemsLeft = [
   { href: "/", label: "Home" },
   { href: "/quienes-somos", label: "¿Quiénes somos?" },
   { href: "/mca-kids", label: "MCA Kids" },
   { href: "/entrenamientos", label: "Entrenamientos" },
+];
+
+const navItemsRight = [
   { href: "/equipos", label: "Equipos" },
   { href: "/inscripcion", label: "Inscripción" },
   { href: "/tienda", label: "Tienda" },
   { href: "/contacto", label: "Contacto" },
 ];
+
+const allNavItems = [...navItemsLeft, ...navItemsRight];
 
 const currentPath = Astro.url.pathname;
 const isActive = (href: string) =>
@@ -19,37 +24,47 @@ const isActive = (href: string) =>
 
 <header class="sticky top-0 z-40 bg-mca-white border-b border-mca-slate-100">
   <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 md:h-20">
-      <a href="/" class="flex items-center" aria-label="Madrid Cheer Athletics · Inicio">
-        <img
-          src="/brand/wordmark-mca-rojo.png"
-          alt="Madrid Cheer Athletics"
-          class="h-14 md:h-16 w-auto"
-        />
-      </a>
+    <div class="flex items-center justify-center h-16 md:h-20">
 
       <nav class="hidden lg:flex items-center gap-8" aria-label="Navegación principal">
-        {
-          navItems.map((item) => (
-            <a
-              href={item.href}
-              class:list={[
-                "text-sm font-medium uppercase tracking-wide transition-colors duration-150",
-                isActive(item.href)
-                  ? "text-mca-red"
-                  : "text-mca-navy hover:text-mca-red",
-              ]}
-              aria-current={isActive(item.href) ? "page" : undefined}
-            >
-              {item.label}
-            </a>
-          ))
-        }
+        {navItemsLeft.map((item) => (
+          
+            href={item.href}
+            class:list={[
+              "text-sm font-medium uppercase tracking-wide transition-colors duration-150",
+              isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red",
+            ]}
+            aria-current={isActive(item.href) ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        ))}
+
+        <a href="/" aria-label="Madrid Cheer Athletics · Inicio" class="mx-4">
+          <img
+            src="/brand/wordmark-mca-rojo.png"
+            alt="Madrid Cheer Athletics"
+            class="h-14 md:h-16 w-auto"
+          />
+        </a>
+
+        {navItemsRight.map((item) => (
+          
+            href={item.href}
+            class:list={[
+              "text-sm font-medium uppercase tracking-wide transition-colors duration-150",
+              isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red",
+            ]}
+            aria-current={isActive(item.href) ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        ))}
       </nav>
 
       <button
         type="button"
-        class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-mca-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-navy rounded-sm"
+        class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-mca-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-navy rounded-sm absolute right-4"
         aria-label="Abrir menú"
         aria-expanded="false"
         aria-controls="mobile-drawer"
@@ -61,6 +76,15 @@ const isActive = (href: string) =>
           <line x1="4" y1="18" x2="20" y2="18"></line>
         </svg>
       </button>
+
+      <a href="/" class="lg:hidden" aria-label="Madrid Cheer Athletics · Inicio">
+        <img
+          src="/brand/wordmark-mca-rojo.png"
+          alt="Madrid Cheer Athletics"
+          class="h-14 md:h-16 w-auto"
+        />
+      </a>
+
     </div>
   </div>
 </header>
@@ -96,27 +120,24 @@ const isActive = (href: string) =>
 
   <nav class="flex-1 overflow-y-auto px-4 py-6" aria-label="Navegación móvil">
     <ul class="space-y-2">
-      {
-        navItems.map((item) => (
-          <li>
-            <a
-              href={item.href}
-              class:list={[
-                "block py-3 px-3 text-2xl font-display uppercase tracking-wide rounded-sm transition-colors duration-150",
-                isActive(item.href)
-                  ? "bg-mca-red text-mca-white"
-                  : "text-mca-white hover:bg-mca-white/5",
-              ]}
-              aria-current={isActive(item.href) ? "page" : undefined}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))
-      }
+      {allNavItems.map((item) => (
+        <li>
+          
+            href={item.href}
+            class:list={[
+              "block py-3 px-3 text-2xl font-display uppercase tracking-wide rounded-sm transition-colors duration-150",
+              isActive(item.href)
+                ? "bg-mca-red text-mca-white"
+                : "text-mca-white hover:bg-mca-white/5",
+            ]}
+            aria-current={isActive(item.href) ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
     </ul>
   </nav>
-
 </aside>
 
 <script>
