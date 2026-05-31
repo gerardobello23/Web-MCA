@@ -24,7 +24,7 @@ const isActive = (href: string) =>
 
 <header class="sticky top-0 z-40 bg-mca-white border-b border-mca-slate-100">
   <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-    <div class="flex items-center justify-center h-16 md:h-20">
+    <div class="flex items-center justify-center h-16 md:h-20 relative">
 
       <nav class="hidden lg:flex items-center gap-8" aria-label="Navegación principal">
         {navItemsLeft.map((item) => (
@@ -62,9 +62,17 @@ const isActive = (href: string) =>
         ))}
       </nav>
 
+      <a href="/" class="lg:hidden" aria-label="Madrid Cheer Athletics · Inicio">
+        <img
+          src="/brand/wordmark-mca-rojo.png"
+          alt="Madrid Cheer Athletics"
+          class="h-14 md:h-16 w-auto"
+        />
+      </a>
+
       <button
         type="button"
-        class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-mca-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-navy rounded-sm absolute right-4"
+        class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-mca-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-navy rounded-sm absolute right-0"
         aria-label="Abrir menú"
         aria-expanded="false"
         aria-controls="mobile-drawer"
@@ -76,14 +84,6 @@ const isActive = (href: string) =>
           <line x1="4" y1="18" x2="20" y2="18"></line>
         </svg>
       </button>
-
-      <a href="/" class="lg:hidden" aria-label="Madrid Cheer Athletics · Inicio">
-        <img
-          src="/brand/wordmark-mca-rojo.png"
-          alt="Madrid Cheer Athletics"
-          class="h-14 md:h-16 w-auto"
-        />
-      </a>
 
     </div>
   </div>
