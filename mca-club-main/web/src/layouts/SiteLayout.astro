@@ -194,6 +194,9 @@ if (!(window as any).__mcaModalInit) {
     pruebaForm?.addEventListener("submit", async (e) => {
       e.preventDefault();
       const formData = new FormData(pruebaForm as HTMLFormElement);
+const prefijo = (document.getElementById("prefijo-tel") as HTMLSelectElement)?.value || "+34";
+const telInput = pruebaForm.querySelector('input[name="telefono"]') as HTMLInputElement;
+if (telInput) telInput.value = prefijo + " " + telInput.value.trim();
       try {
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
