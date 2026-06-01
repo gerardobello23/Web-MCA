@@ -60,7 +60,6 @@ const steps = [
   description="Club de cheerleading en Madrid, Ciudad Lineal. Entrena con nosotros. Reserva tu clase de prueba gratuita."
 >
   <!-- HERO -->
-  <!-- HERO -->
 <section class="relative text-mca-white overflow-hidden" style="min-height: 520px;">
 
   <!-- Carrusel de fondo -->
@@ -119,12 +118,24 @@ const steps = [
 </section>
 
 <script>
-  const slides = document.querySelectorAll("[data-slide]");
+  const track = document.getElementById("hero-carousel");
+  const slides = Array.from(document.querySelectorAll("[data-slide]")) as HTMLElement[];
+  const total = slides.length;
   let current = 0;
+
+  // Posiciona todas las imágenes en fila horizontal
+  slides.forEach((slide, i) => {
+    slide.style.transition = "none";
+    slide.style.opacity = "1";
+    slide.style.transform = `translateX(${i * 100}%)`;
+  });
+
   setInterval(() => {
-    (slides[current] as HTMLElement).style.opacity = "0";
-    current = (current + 1) % slides.length;
-    (slides[current] as HTMLElement).style.opacity = "1";
+    current = (current + 1) % total;
+    slides.forEach((slide, i) => {
+      slide.style.transition = "transform 0.8s ease-in-out";
+      slide.style.transform = `translateX(${(i - current) * 100}%)`;
+    });
   }, 4000);
 </script>
 
