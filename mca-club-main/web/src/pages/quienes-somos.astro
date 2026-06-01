@@ -6,20 +6,17 @@ import Card from "../components/Card.astro";
 const pillars = [
   {
     title: "Excelencia deportiva",
-    description:
-      "Programas de entrenamiento diseñados para el desarrollo progresivo y seguro de cada atleta. Sin atajos.",
+    description: "Programas de entrenamiento diseñados para el desarrollo progresivo y seguro de cada atleta. Sin atajos.",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>`,
   },
   {
     title: "Inclusión y comunidad",
-    description:
-      "Un espacio donde todos son bienvenidos, independientemente del nivel o la experiencia previa.",
+    description: "Un espacio donde todos son bienvenidos, independientemente del nivel o la experiencia previa.",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
   },
   {
     title: "Crecimiento personal",
-    description:
-      "Más allá de la técnica: trabajamos valores como el trabajo en equipo, la resiliencia y el liderazgo.",
+    description: "Más allá de la técnica: trabajamos valores como el trabajo en equipo, la resiliencia y el liderazgo.",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.24 7.76 2.83-2.83"/><path d="M18 12h4"/><path d="m16.24 16.24 2.83 2.83"/><path d="M12 18v4"/><path d="m7.76 16.24-2.83 2.83"/><path d="M6 12H2"/><path d="m7.76 7.76-2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>`,
   },
 ];
@@ -31,30 +28,17 @@ const pillars = [
 >
   <!-- HERO -->
   <section class="relative bg-mca-navy-dark text-mca-white overflow-hidden">
-    <img
-      src="/brand/logo-circular-blanco.png"
-      alt=""
-      aria-hidden="true"
-      class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
-    />
+    <img src="/brand/logo-circular-blanco.png" alt="" aria-hidden="true" class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none" />
     <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
-      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
-        ¿Quiénes somos?
-      </p>
-      <h1 class="text-5xl md:text-7xl leading-none font-display font-bold mb-6 max-w-3xl">
-        Somos Madrid Cheer Athletics
-      </h1>
+      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">¿Quiénes somos?</p>
+      <h1 class="text-5xl md:text-7xl leading-none font-display font-bold mb-6 max-w-3xl">Somos Madrid Cheer Athletics</h1>
       <p class="text-lg md:text-xl text-mca-white/70 max-w-2xl">
-Madrid Cheer Athletics no es un club más de cheerleading en Madrid. 
-Somos un proyecto deportivo serio, con entrenadores profesionales, metodología estructurada y atletas que compiten a nivel nacional temporada tras temporada.
-En MCA el cheerleading se trabaja con disciplina y se vive con pasión. 
-
-Si buscas un equipo donde crecer a nivel deportivo y personal, aquí tienes tu sitio.
+        Madrid Cheer Athletics no es un club más de cheerleading en Madrid. Somos un proyecto deportivo serio, con entrenadores profesionales, metodología estructurada y atletas que compiten a nivel nacional temporada tras temporada. En MCA el cheerleading se trabaja con disciplina y se vive con pasión. Si buscas un equipo donde crecer a nivel deportivo y personal, aquí tienes tu sitio.
       </p>
     </div>
   </section>
 
-<!-- DIRECTIVA -->
+  <!-- DIRECTIVA -->
   <section class="py-16 md:py-24 bg-mca-white">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
@@ -71,13 +55,13 @@ Si buscas un equipo donde crecer a nivel deportivo y personal, aquí tienes tu s
         ].map((member) => (
           <div class="bg-mca-slate-50 rounded-sm overflow-hidden flex flex-row">
             <div class="w-24 shrink-0 relative overflow-hidden group" style="min-height: 96px;">
-  <div class="absolute inset-0 bg-gradient-to-br from-mca-navy to-mca-navy-dark flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/20"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-  </div>
-  <div class="absolute inset-0 bg-gradient-to-br from-mca-red to-mca-navy flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/40"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-  </div>
-</div>
+              <div class="absolute inset-0 bg-gradient-to-br from-mca-navy to-mca-navy-dark flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/20"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-br from-mca-red to-mca-navy flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/40"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+              </div>
+            </div>
             <div class="p-4">
               <p class="text-xs uppercase tracking-widest text-mca-red font-medium mb-1">{member.role}</p>
               <h3 class="text-lg font-display font-bold text-mca-navy mb-1">{member.name}</h3>
@@ -92,76 +76,37 @@ Si buscas un equipo donde crecer a nivel deportivo y personal, aquí tienes tu s
       <div class="max-w-3xl mb-8">
         <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">Head Coach</h2>
       </div>
-<div class="max-w-4xl mx-auto">
-  <div class="bg-mca-slate-50 rounded-sm overflow-hidden flex flex-col md:flex-row">
-    <div class="md:w-80 shrink-0 relative overflow-hidden group" style="min-height: 320px;">
-      <div class="absolute inset-0 bg-gradient-to-br from-mca-navy to-mca-navy-dark flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
-        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/20"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-br from-mca-red to-mca-navy flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/40"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-      </div>
-    </div>
-  <div class="absolute inset-0 bg-gradient-to-br from-mca-navy to-mca-navy-dark ...">
-    <svg .../>
-  </div>
-  <div class="absolute inset-0 bg-gradient-to-br from-mca-red to-mca-navy ...">
-    <svg .../>
-  </div>
-</div>
-      </svg>
-    </div>
-            </svg>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-mca-slate-50 rounded-sm overflow-hidden flex flex-col md:flex-row">
+          <div class="md:w-80 shrink-0 relative overflow-hidden group" style="min-height: 320px;">
+            <div class="absolute inset-0 bg-gradient-to-br from-mca-navy to-mca-navy-dark flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/20"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-br from-mca-red to-mca-navy flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/40"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+            </div>
           </div>
           <div class="p-8 flex flex-col justify-center">
             <p class="text-xs uppercase tracking-widest text-mca-red font-medium mb-1">Head Coach</p>
             <h3 class="text-3xl font-display font-bold text-mca-navy mb-4">Fernando Arismendy</h3>
             <ul class="space-y-2 mb-6">
-              <li class="flex items-start gap-2 text-sm text-mca-slate-700">
-                <span class="text-mca-red mt-1 shrink-0">—</span>
-                Graduado en Entrenamiento Deportivo, profesor de danza y coreógrafo
-              </li>
-              <li class="flex items-start gap-2 text-sm text-mca-slate-700">
-                <span class="text-mca-red mt-1 shrink-0">—</span>
-                Más de 20 años de experiencia en el ámbito deportivo y artístico
-              </li>
-              <li class="flex items-start gap-2 text-sm text-mca-slate-700">
-                <span class="text-mca-red mt-1 shrink-0">—</span>
-                Especializado en programas técnicos de cheerleading niveles 1 a 7, acrobacia y gimnasia de suelo
-              </li>
-              <li class="flex items-start gap-2 text-sm text-mca-slate-700">
-                <span class="text-mca-red mt-1 shrink-0">—</span>
-                Amplia trayectoria en cheerleading colegial con títulos distritales y nacionales — base del programa MCA Kids
-              </li>
-              <li class="flex items-start gap-2 text-sm text-mca-slate-700">
-                <span class="text-mca-red mt-1 shrink-0">—</span>
-                Certificaciones: primer respondiente, juzgamiento de cheerleading, campamentos formativos y capacitaciones técnicas
-              </li>
-              <li class="flex items-start gap-2 text-sm text-mca-slate-700">
-                <span class="text-mca-red mt-1 shrink-0">—</span>
-                Coreógrafo para Pepsi y Madrid Bravos
-              </li>
+              <li class="flex items-start gap-2 text-sm text-mca-slate-700"><span class="text-mca-red mt-1 shrink-0">—</span>Graduado en Entrenamiento Deportivo, profesor de danza y coreógrafo</li>
+              <li class="flex items-start gap-2 text-sm text-mca-slate-700"><span class="text-mca-red mt-1 shrink-0">—</span>Más de 20 años de experiencia en el ámbito deportivo y artístico</li>
+              <li class="flex items-start gap-2 text-sm text-mca-slate-700"><span class="text-mca-red mt-1 shrink-0">—</span>Especializado en programas técnicos de cheerleading niveles 1 a 7, acrobacia y gimnasia de suelo</li>
+              <li class="flex items-start gap-2 text-sm text-mca-slate-700"><span class="text-mca-red mt-1 shrink-0">—</span>Amplia trayectoria en cheerleading colegial con títulos distritales y nacionales — base del programa MCA Kids</li>
+              <li class="flex items-start gap-2 text-sm text-mca-slate-700"><span class="text-mca-red mt-1 shrink-0">—</span>Certificaciones: primer respondiente, juzgamiento de cheerleading, campamentos formativos y capacitaciones técnicas</li>
+              <li class="flex items-start gap-2 text-sm text-mca-slate-700"><span class="text-mca-red mt-1 shrink-0">—</span>Coreógrafo para Pepsi y Madrid Bravos</li>
             </ul>
             <div class="mb-6">
               <p class="text-xs uppercase tracking-widest text-mca-navy font-medium mb-3">Logros destacados</p>
               <ul class="space-y-2">
-                <li class="flex items-start gap-2 text-sm text-mca-slate-700">
-                  <span class="text-mca-red mt-1 shrink-0">—</span>
-                  The Cheerleading Worlds 2010 · 7º puesto International Open Coed Nivel 6 · 3º en ranking por países
-                </li>
-                <li class="flex items-start gap-2 text-sm text-mca-slate-700">
-                  <span class="text-mca-red mt-1 shrink-0">—</span>
-                  Campeones nacionales en España en todos los equipos dirigidos desde 2023 (niveles 1, 3 y 4)
-                </li>
-                <li class="flex items-start gap-2 text-sm text-mca-slate-700">
-                  <span class="text-mca-red mt-1 shrink-0">—</span>
-                  Más de 10 años liderando Linces All Stars como referente nacional en Colombia
-                </li>
+                <li class="flex items-start gap-2 text-sm text-mca-slate-700"><span class="text-mca-red mt-1 shrink-0">—</span>The Cheerleading Worlds 2010 · 7º puesto International Open Coed Nivel 6 · 3º en ranking por países</li>
+                <li class="flex items-start gap-2 text-sm text-mca-slate-700"><span class="text-mca-red mt-1 shrink-0">—</span>Campeones nacionales en España en todos los equipos dirigidos desde 2023 (niveles 1, 3 y 4)</li>
+                <li class="flex items-start gap-2 text-sm text-mca-slate-700"><span class="text-mca-red mt-1 shrink-0">—</span>Más de 10 años liderando Linces All Stars como referente nacional en Colombia</li>
               </ul>
             </div>
-            <a href="mailto:fernando@madridcheer.com" class="text-sm text-mca-slate-500 hover:text-mca-red transition-colors">
-              fernando@madridcheer.com
-            </a>
+            <a href="mailto:fernando@madridcheer.com" class="text-sm text-mca-slate-500 hover:text-mca-red transition-colors">fernando@madridcheer.com</a>
           </div>
         </div>
       </div>
@@ -173,50 +118,32 @@ Si buscas un equipo donde crecer a nivel deportivo y personal, aquí tienes tu s
   <section class="py-16 md:py-24 bg-mca-slate-50">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
       <div class="max-w-3xl mb-12">
-        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
-          Nuestra filosofía
-        </p>
-        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">
-          Tres pilares, una misión
-        </h2>
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">Nuestra filosofía</p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">Tres pilares, una misión</h2>
       </div>
-
       <div class="grid md:grid-cols-3 gap-6">
-        {
-          pillars.map((p) => (
-            <Card>
-              <div class="text-mca-red mb-4" set:html={p.icon} />
-              <h3 class="text-2xl mb-2">{p.title}</h3>
-              <p class="text-mca-slate-700">{p.description}</p>
-            </Card>
-          ))
-        }
+        {pillars.map((p) => (
+          <Card>
+            <div class="text-mca-red mb-4" set:html={p.icon} />
+            <h3 class="text-2xl mb-2">{p.title}</h3>
+            <p class="text-mca-slate-700">{p.description}</p>
+          </Card>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- COMPROMISO -->
   <section class="relative bg-mca-navy text-mca-white overflow-hidden">
-    <img
-      src="/brand/logo-circular-blanco.png"
-      alt=""
-      aria-hidden="true"
-      class="absolute -left-24 -top-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
-    />
+    <img src="/brand/logo-circular-blanco.png" alt="" aria-hidden="true" class="absolute -left-24 -top-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none" />
     <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
       <div>
-        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
-          Nuestro compromiso
-        </p>
-        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
-          Atención personalizada para cada atleta
-        </h2>
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">Nuestro compromiso</p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">Atención personalizada para cada atleta</h2>
       </div>
       <div>
         <p class="text-mca-white/80 text-lg leading-relaxed">
-          En Madrid Cheer Athletics, cada atleta recibe atención individualizada.
-          Monitorizamos el progreso, celebramos los logros y nos aseguramos de
-          que el cheerleading sea una experiencia positiva y enriquecedora.
+          En Madrid Cheer Athletics, cada atleta recibe atención individualizada. Monitorizamos el progreso, celebramos los logros y nos aseguramos de que el cheerleading sea una experiencia positiva y enriquecedora.
         </p>
       </div>
     </div>
@@ -225,20 +152,11 @@ Si buscas un equipo donde crecer a nivel deportivo y personal, aquí tienes tu s
   <!-- CTA final -->
   <section class="py-16 md:py-24 bg-mca-white">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-display font-bold text-mca-navy mb-4">
-        ¡Ven a conocernos!
-      </h2>
-      <p class="text-mca-slate-700 text-lg max-w-xl mx-auto mb-8">
-        La mejor forma de saber si encajas con nosotros es venir a entrenar.
-        Tu primera clase es gratis.
-      </p>
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-mca-navy mb-4">¡Ven a conocernos!</h2>
+      <p class="text-mca-slate-700 text-lg max-w-xl mx-auto mb-8">La mejor forma de saber si encajas con nosotros es venir a entrenar. Tu primera clase es gratis.</p>
       <div class="flex flex-wrap gap-4 justify-center">
-        <Button variant="primary" href="#" data-prueba-modal>
-          Reserva tu prueba gratuita
-        </Button>
-        <Button variant="ghost" href="/contacto">
-          Contáctanos
-        </Button>
+        <Button variant="primary" href="#" data-prueba-modal>Reserva tu prueba gratuita</Button>
+        <Button variant="ghost" href="/contacto">Contáctanos</Button>
       </div>
     </div>
   </section>
