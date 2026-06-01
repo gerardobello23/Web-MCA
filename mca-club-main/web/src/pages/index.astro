@@ -60,35 +60,73 @@ const steps = [
   description="Club de cheerleading en Madrid, Ciudad Lineal. Entrena con nosotros. Reserva tu clase de prueba gratuita."
 >
   <!-- HERO -->
-  <section class="relative bg-mca-navy-dark text-mca-white overflow-hidden">
-    <img
-      src="/brand/logo-circular-blanco.png"
-      alt=""
-      aria-hidden="true"
-      class="absolute -right-32 -bottom-32 w-[36rem] h-[36rem] opacity-5 pointer-events-none"
-    />
+  <!-- HERO -->
+<section class="relative text-mca-white overflow-hidden" style="min-height: 520px;">
 
-    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-20 md:py-32">
-      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
-        Madrid · Ciudad Lineal
-      </p>
-      <h1 class="text-5xl md:text-8xl leading-none font-display font-bold mb-6 max-w-4xl">
-        Descubre tu mejor versión
-      </h1>
-      <p class="text-xl md:text-2xl text-mca-white/70 max-w-2xl mb-8">
-        El club de cheer en Madrid donde la fuerza, el trabajo en equipo y la pasión se unen.
-      </p>
+  <!-- Carrusel de fondo -->
+  <div id="hero-carousel" class="absolute inset-0 z-0">
+    {[
+      "/images/Fotos Gerardo-02.webp",
+      "/images/Fotos Gerardo-03.webp",
+      "/images/Fotos Gerardo-05.webp",
+      "/images/Fotos Gerardo-08.webp",
+      "/images/Fotos Gerardo-09.webp",
+      "/images/Fotos Gerardo-10.webp",
+      "/images/Fotos Gerardo-12.webp",
+      "/images/Fotos Gerardo-13.webp",
+    ].map((src, i) => (
+      <img
+        src={src}
+        alt=""
+        aria-hidden="true"
+        class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === 0 ? "opacity-100" : "opacity-0"}`}
+        data-slide={i}
+      />
+    ))}
+  </div>
 
-      <div class="flex flex-wrap gap-4">
-        <Button variant="primary-on-navy" href="#" data-prueba-modal>
-          Reserva tu prueba gratuita
-        </Button>
-        <Button variant="ghost" href="/inscripcion" class="border-mca-white text-mca-white hover:bg-mca-white/10">
-          Inscríbete
-        </Button>
-      </div>
+  <!-- Overlay oscuro -->
+  <div class="absolute inset-0 z-10 bg-mca-navy-dark/70"></div>
+
+  <!-- Logo circular -->
+  <img
+    src="/brand/logo-circular-blanco.png"
+    alt=""
+    aria-hidden="true"
+    class="absolute z-20 -right-32 -bottom-32 w-[36rem] h-[36rem] opacity-5 pointer-events-none"
+  />
+
+  <!-- Contenido -->
+  <div class="relative z-20 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-20 md:py-32">
+    <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
+      Madrid · Ciudad Lineal
+    </p>
+    <h1 class="text-5xl md:text-8xl leading-none font-display font-bold mb-6 max-w-4xl">
+      Descubre tu mejor versión
+    </h1>
+    <p class="text-xl md:text-2xl text-mca-white/70 max-w-2xl mb-8">
+      El club de cheer en Madrid donde la fuerza, el trabajo en equipo y la pasión se unen.
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <Button variant="primary-on-navy" href="#" data-prueba-modal>
+        Reserva tu prueba gratuita
+      </Button>
+      <Button variant="ghost" href="/inscripcion" class="border-mca-white text-mca-white hover:bg-mca-white/10">
+        Inscríbete
+      </Button>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+  const slides = document.querySelectorAll("[data-slide]");
+  let current = 0;
+  setInterval(() => {
+    (slides[current] as HTMLElement).style.opacity = "0";
+    current = (current + 1) % slides.length;
+    (slides[current] as HTMLElement).style.opacity = "1";
+  }, 4000);
+</script>
 
   <!-- ¿Por qué elegirnos? -->
   <section class="py-16 md:py-24 bg-mca-white">
