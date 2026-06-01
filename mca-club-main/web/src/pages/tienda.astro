@@ -149,9 +149,13 @@ const orderSteps = [
                   </ul>
                 </div>
 
-                <p class="text-sm text-mca-slate-500 italic mb-4">
-                  Contacta para precio y disponibilidad
-                </p>
+<div class="mb-4">
+  <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-2">Precio</p>
+  <ul class="flex flex-col gap-1">
+    <li class="text-sm text-mca-slate-700">Chica — {p.prices.chica}</li>
+    <li class="text-sm text-mca-slate-700">Chico — {p.prices.chico}</li>
+  </ul>
+</div>
 
                 <Button variant="primary" href={buildWhatsApp(p.title)} class="w-full">
                   Pedir por WhatsApp
