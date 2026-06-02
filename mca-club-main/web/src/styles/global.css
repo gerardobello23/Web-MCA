@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @font-face {
   font-family: "MN Ligahura Sans";
   src: url("/fonts/MNLigahura-Sans.woff2") format("woff2");
@@ -6,17 +7,24 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Hello GoodNotes";
+  src: url("/fonts/Hello-GoodNotes.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*
  * Madrid Cheer Athletics · Design Tokens
  * Hand-off v1.1 · Tailwind CSS v4 (@theme)
  * Fuente canónica: ../../docs/brand/brand-guidelines.md
  */
-
 @theme {
   /* Fuentes */
   --font-display: "MN Ligahura Sans", sans-serif;
-  --font-display: "MN Ligahura Sans", sans-serif;
-
+  --font-body: "MN Ligahura Sans", sans-serif;
   /* Brand core */
   --color-mca-red: #E31837;
   --color-mca-navy: #083B66;
