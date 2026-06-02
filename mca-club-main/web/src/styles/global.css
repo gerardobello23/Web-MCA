@@ -16,6 +16,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Hello GoodNotes Doodles";
+  src: url("/fonts/Hello-GoodNotes-Doodles.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*
  * Madrid Cheer Athletics · Design Tokens
  * Hand-off v1.1 · Tailwind CSS v4 (@theme)
@@ -26,6 +34,7 @@
   --font-display: "MN Ligahura Sans", sans-serif;
   --font-body: "MN Ligahura Sans", sans-serif;
   --font-kids: "Hello GoodNotes", cursive;
+  --font-doodles: "Hello GoodNotes Doodles", cursive;
   /* Brand core */
   --color-mca-red: #E31837;
   --color-mca-navy: #083B66;
