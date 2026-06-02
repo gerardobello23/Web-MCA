@@ -28,7 +28,7 @@ const isActive = (href: string) =>
 
       <nav class="hidden lg:flex items-center gap-8" aria-label="Navegacion principal">
         {navItemsLeft.map((item) => (
-       <a href={item.href} class={`font-medium uppercase tracking-wide transition-colors duration-150 ${(item as any).kids ? "font-kids text-2xl leading-none overflow-visible translate-y-2" : "text-sm"} ${isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
+       <a href={item.href} class={`font-medium uppercase tracking-wide transition-colors duration-150 ${(item as any).kids ? "font-kids text-2xl leading-none overflow-visible translate-y-0.5" : "text-sm"} ${isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
         ))}
 
         <a href="/" aria-label="Madrid Cheer Athletics Inicio" class="mx-4">
