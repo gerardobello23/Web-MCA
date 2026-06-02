@@ -56,9 +56,9 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
       <div class="max-w-3xl mb-12">
-        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">El programa</p>
+        <p class="font-kids text-sm uppercase tracking-widest text-mca-red font-medium mb-2">El programa</p>
         <h2 class="font-kids text-5xl md:text-6xl text-mca-navy mb-6">Más que un deporte</h2>
-        <p class="text-lg text-mca-slate-700 leading-relaxed">
+        <p class="font-kids text-lg text-mca-slate-700 leading-relaxed">
           El cheerleading ofrece a los niños mucho más que actividad física. Les brinda confianza, disciplina y un entorno donde crecer rodeados de compañeros y entrenadores especializados.
         </p>
       </div>
@@ -72,10 +72,10 @@ import SiteLayout from "../layouts/SiteLayout.astro";
   ].map((item) => (
     <li>
       <div class="relative inline-block mb-6">
-        <h3 class="font-kids text-2xl text-mca-navy relative z-10">{item.title}</h3>
+        <h3 class="font-kids text-3xl text-mca-navy relative z-10">{item.title}</h3>
         <span class="font-doodles absolute -bottom-3 left-0 w-full text-5xl text-mca-red leading-none pointer-events-none select-none" aria-hidden="true">{item.doodle}</span>
       </div>
-      <p class="font-kids text-mca-slate-700 leading-relaxed">{item.text}</p>
+      <p class="font-kids text-lg text-mca-slate-700 leading-relaxed">{item.text}</p>
     </li>
   ))}
 </ul>
