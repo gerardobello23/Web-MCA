@@ -101,49 +101,33 @@ import SiteLayout from "../layouts/SiteLayout.astro";
         <h2 class="font-kids text-5xl md:text-6xl text-mca-white">Empieza en septiembre</h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+<div class="grid md:grid-cols-3 gap-8">
 
-        <div class="flex flex-col items-center text-center gap-6 bg-mca-navy/40 rounded-sm p-8 border border-mca-white/10">
-          <div class="w-28 h-28 rounded-full border-4 border-mca-red flex items-center justify-center shrink-0">
-            <span class="font-kids text-mca-red text-4xl leading-none">5+</span>
-          </div>
-          <div>
-            <p class="font-kids text-xs uppercase tracking-widest text-mca-red mb-2">Edad</p>
-            <p class="font-kids text-mca-white text-2xl">Desde 5 años</p>
-          </div>
+        <div class="bg-mca-navy/40 rounded-sm p-8 border border-mca-white/10">
+          <p class="font-kids text-xs uppercase tracking-widest text-mca-red mb-4">Edades</p>
+          <p class="font-kids text-8xl text-mca-white leading-none">+5</p>
         </div>
 
-        <div class="flex flex-col items-center text-center gap-6 bg-mca-navy/40 rounded-sm p-8 border border-mca-white/10">
-          <div class="w-28 h-28 rounded-full border-4 border-mca-red flex items-center justify-center shrink-0">
-            <span class="font-kids text-mca-red text-xl leading-tight text-center px-2">Sáb · Dom</span>
-          </div>
-          <div>
-            <p class="font-kids text-xs uppercase tracking-widest text-mca-red mb-2">Horarios</p>
-            <p class="font-kids text-mca-white text-2xl">Sábados y domingos</p>
-            <p class="font-kids text-mca-white/50 text-base mt-1">Horarios a consultar</p>
-          </div>
+        <div class="bg-mca-navy/40 rounded-sm p-8 border border-mca-white/10">
+          <p class="font-kids text-xs uppercase tracking-widest text-mca-red mb-4">Horarios</p>
+          <p class="font-kids text-3xl text-mca-white leading-tight">Sábados y domingos</p>
+          <p class="font-kids text-mca-white/50 text-lg mt-2">Horarios a consultar</p>
         </div>
 
-        <div class="flex flex-col items-center text-center gap-6 bg-mca-navy/40 rounded-sm p-8 border border-mca-white/10">
-          <div class="w-28 h-28 rounded-full border-4 border-mca-red flex items-center justify-center shrink-0">
-            <span class="font-kids text-mca-red text-xl leading-tight text-center px-2">Madrid</span>
-          </div>
-          <div>
-            <p class="font-kids text-xs uppercase tracking-widest text-mca-red mb-2">Lugar</p>
-            
-              href="https://maps.google.com/?q=C.+de+Vital+Aza,+56,+Madrid"
-              target="_blank"
-              rel="noopener"
-              class="font-kids text-mca-white text-2xl hover:text-mca-red transition-colors"
-            >
-              C. de Vital Aza, 56
-            </a>
-            <p class="font-kids text-mca-white/50 text-base mt-1">Ciudad Lineal, Madrid</p>
-          </div>
+        <div class="bg-mca-navy/40 rounded-sm p-8 border border-mca-white/10">
+          <p class="font-kids text-xs uppercase tracking-widest text-mca-red mb-4">Ubicación</p>
+          <p class="font-kids text-2xl text-mca-white mb-6">C. de Vital Aza, 56<br/><span class="text-mca-white/50 text-lg">Ciudad Lineal, Madrid</span></p>
+          
+            href="https://maps.google.com/?q=C.+de+Vital+Aza,+56,+Madrid"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-mca-red text-mca-red font-kids text-sm uppercase tracking-wide hover:bg-mca-red hover:text-mca-white transition-colors rounded-sm"
+          >
+            ¿Cómo llegar?
+          </a>
         </div>
 
       </div>
-    </div>
 
     <!-- Onda inferior hacia rojo -->
     <div class="absolute bottom-0 left-0 right-0 leading-none">
