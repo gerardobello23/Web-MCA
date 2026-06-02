@@ -73,7 +73,7 @@ const isActive = (href: string) =>
     <ul class="space-y-2">
       {allNavItems.map((item) => (
         <li>
-          <a href={item.href} class={`block py-3 px-3 text-2xl font-display uppercase tracking-wide rounded-sm transition-colors duration-150 ${isActive(item.href) ? "bg-mca-red text-mca-white" : "text-mca-white hover:bg-mca-white/5"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
+        <a href={item.href} class={`block py-3 px-3 text-2xl uppercase tracking-wide rounded-sm transition-colors duration-150 ${(item as any).kids ? "font-kids" : "font-display"} ${isActive(item.href) ? "bg-mca-red text-mca-white" : "text-mca-white hover:bg-mca-white/5"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
         </li>
       ))}
     </ul>
