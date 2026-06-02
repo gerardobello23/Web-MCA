@@ -4,7 +4,7 @@ import Button from "./Button.astro";
 const navItemsLeft = [
   { href: "/", label: "Home" },
   { href: "/quienes-somos", label: "¿Quiénes somos?" },
-  { href: "/mca-kids", label: "MCA Kids" },
+  { href: "/mca-kids", label: "MCA Kids", kids: true },
   { href: "/entrenamientos", label: "Entrenamientos" },
 ];
 
@@ -28,7 +28,7 @@ const isActive = (href: string) =>
 
       <nav class="hidden lg:flex items-center gap-8" aria-label="Navegacion principal">
         {navItemsLeft.map((item) => (
-          <a href={item.href} class={`text-sm font-medium uppercase tracking-wide transition-colors duration-150 ${isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
+       <a href={item.href} class={`text-sm font-medium uppercase tracking-wide transition-colors duration-150 ${(item as any).kids ? "font-kids" : ""} ${isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
         ))}
 
         <a href="/" aria-label="Madrid Cheer Athletics Inicio" class="mx-4">
