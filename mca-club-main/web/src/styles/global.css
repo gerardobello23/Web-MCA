@@ -1,5 +1,11 @@
 @import "tailwindcss";
-
+@font-face {
+  font-family: "MN Ligahura Sans";
+  src: url("/fonts/MNLigahura-Sans.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 /*
  * Madrid Cheer Athletics · Design Tokens
  * Hand-off v1.1 · Tailwind CSS v4 (@theme)
@@ -8,8 +14,8 @@
 
 @theme {
   /* Fuentes */
-  --font-display: "Teko", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-display: "MN Ligahura Sans", sans-serif;
+  --font-display: "MN Ligahura Sans", sans-serif;
 
   /* Brand core */
   --color-mca-red: #E31837;
