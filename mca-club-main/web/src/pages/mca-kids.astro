@@ -14,12 +14,20 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     <span class="font-doodles absolute top-24 left-6 text-4xl text-mca-white/15 select-none pointer-events-none" aria-hidden="true">ú</span>
     <span class="font-doodles absolute top-12 left-1/2 text-4xl text-mca-white/10 select-none pointer-events-none" aria-hidden="true">û</span>
 
-    <img
-      src="/brand/logo-circular-blanco.png"
-      alt=""
-      aria-hidden="true"
-      class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-10 pointer-events-none"
-    />
+<div class="absolute right-0 top-0 bottom-0 w-1/2 hidden md:block overflow-hidden">
+  <img
+    src="/images/Niños-07.webp"
+    alt="Niños practicando cheerleading en MCA Kids"
+    class="w-full h-full object-cover opacity-80"
+  />
+</div>
+
+<img
+  src="/brand/logo-circular-blanco.png"
+  alt=""
+  aria-hidden="true"
+  class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-10 pointer-events-none md:hidden"
+/>
 
     <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
       <div class="max-w-3xl">
