@@ -179,5 +179,34 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 </div>
 </div>
   </section>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsClub",
+  "name": "MCA Kids · Madrid Cheer Athletics",
+  "description": "Programa de cheerleading para niños desde 5 años en Madrid. Actividad extraescolar los sábados y domingos.",
+  "url": "https://www.madridcheer.com/mca-kids",
+  "telephone": "+34643515820",
+  "email": "hola@madridcheer.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C. de Vital Aza, 56",
+    "addressLocality": "Madrid",
+    "addressRegion": "Madrid",
+    "postalCode": "28017",
+    "addressCountry": "ES"
+  },
+  "sport": "Cheerleading",
+  "audience": {
+    "@type": "PeopleAudience",
+    "suggestedMinAge": 5
+  },
+  "offers": {
+    "@type": "Offer",
+    "name": "Primera clase gratuita",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
+}
+</script>
 </SiteLayout>
