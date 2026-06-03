@@ -138,6 +138,33 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     </div>
   </section>
 
+<!-- FAQ -->
+  <section class="bg-mca-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="font-kids text-sm uppercase tracking-widest text-mca-red mb-2">Preguntas frecuentes</p>
+        <h2 class="font-kids text-5xl md:text-6xl text-mca-navy">Lo que nos preguntan los padres</h2>
+      </div>
+
+      <dl class="max-w-3xl space-y-8">
+        {[
+          { q: "¿Desde qué edad pueden apuntarse los niños?", a: "MCA Kids está abierto a niños desde 5 años en adelante. No hace falta experiencia previa en cheerleading ni en ningún otro deporte." },
+          { q: "¿Es una actividad extraescolar?", a: "Sí. Los entrenamientos son los sábados y domingos, fuera del horario escolar, por lo que es perfectamente compatible con el colegio y otras actividades." },
+          { q: "¿Necesitan experiencia previa en gimnasia o danza?", a: "No. MCA Kids está diseñado para que los niños empiecen desde cero. Nuestros entrenadores especializados adaptan cada sesión al nivel de cada participante." },
+          { q: "¿Dónde se realizan los entrenamientos?", a: "En el gimnasio KAIROS, C. de Vital Aza, 56, Ciudad Lineal, Madrid. Una zona bien comunicada y de fácil acceso." },
+          { q: "¿Qué aprenden los niños en las clases?", a: "Aprenden fundamentos de cheerleading: acrobacias básicas, coreografías, trabajo en equipo y disciplina deportiva. Todo en un ambiente seguro, divertido y supervisado." },
+          { q: "¿Pueden los niños llegar a competir?", a: "Sí. Los niños que progresen pueden incorporarse a la categoría competitiva del club, participar en campeonatos e incluso optar a becas deportivas." },
+          { q: "¿Cómo puedo apuntar a mi hijo o hija?", a: "La primera clase es gratuita y sin compromiso. Solo tienes que contactarnos por WhatsApp o rellenar el formulario de inscripción y te confirmamos fecha y horario." },
+        ].map((item) => (
+          <div class="border-b border-mca-slate-100 pb-8">
+            <dt class="font-kids text-2xl text-mca-navy mb-3">{item.q}</dt>
+            <dd class="font-kids text-xl text-mca-slate-700 leading-relaxed">{item.a}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
   <!-- CTA FINAL -->
   <section class="relative bg-mca-red text-mca-white py-20 md:py-28 overflow-hidden">
 
