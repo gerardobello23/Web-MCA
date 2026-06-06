@@ -28,7 +28,7 @@ const isActive = (href: string) =>
 
       <nav class="hidden lg:flex items-center gap-8" aria-label="Navegacion principal">
         {navItemsLeft.map((item) => (
-       class={`font-medium tracking-wide transition-colors duration-150 ${(item as any).kids ? "font-kids text-xl leading-none overflow-visible translate-y-0.5" : "text-sm uppercase"} ${isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red"}`}
+       <a href={item.href} class={`font-medium tracking-wide transition-colors duration-150 ${(item as any).kids ? "font-kids text-xl leading-none overflow-visible translate-y-0.5" : "text-sm uppercase"} ${isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
 
         <a href="/" aria-label="Madrid Cheer Athletics Inicio" class="mx-4">
           <img src="/brand/wordmark-mca-rojo.png" alt="Madrid Cheer Athletics" class="h-16 md:h-20 w-auto" />
@@ -72,7 +72,7 @@ const isActive = (href: string) =>
     <ul class="space-y-2">
       {allNavItems.map((item) => (
         <li>
-        class={`block py-3 px-3 text-2xl tracking-wide rounded-sm transition-colors duration-150 ${(item as any).kids ? "font-kids" : "font-display uppercase"} ${isActive(item.href) ? "bg-mca-red text-mca-white" : "text-mca-white hover:bg-mca-white/5"}`}
+        <a href={item.href} class={`block py-3 px-3 text-2xl tracking-wide rounded-sm transition-colors duration-150 ${(item as any).kids ? "font-kids" : "font-display uppercase"} ${isActive(item.href) ? "bg-mca-red text-mca-white" : "text-mca-white hover:bg-mca-white/5"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
         </li>
       ))}
     </ul>
