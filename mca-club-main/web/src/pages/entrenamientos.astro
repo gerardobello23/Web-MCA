@@ -223,4 +223,22 @@ const sessionIncludes = [
       </div>
     </div>
   </section>
+<script>
+  const slides = Array.from(document.querySelectorAll("[data-slide-inst]")) as HTMLElement[];
+  const total = slides.length;
+  let current = 0;
+
+  slides.forEach((slide, i) => {
+    slide.style.transition = "none";
+    slide.style.transform = `translateX(${i * 100}%)`;
+  });
+
+  setInterval(() => {
+    current = (current + 1) % total;
+    slides.forEach((slide, i) => {
+      slide.style.transition = "transform 0.8s ease-in-out";
+      slide.style.transform = `translateX(${(i - current) * 100}%)`;
+    });
+  }, 4000);
+</script>
 </SiteLayout>
