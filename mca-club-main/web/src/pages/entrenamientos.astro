@@ -182,15 +182,23 @@ const sessionIncludes = [
 </a>
       </div>
 
-      <div class="aspect-video rounded-sm bg-gradient-to-br from-mca-red to-mca-navy-dark flex flex-col items-center justify-center gap-4 p-8 min-h-72">
-        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-mca-white/40" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <polyline points="21 15 16 10 5 21" />
-        </svg>
-        <p class="text-mca-white/70 text-xs uppercase tracking-widest text-center">
-          Foto de instalaciones<br />Placeholder reservado
-        </p>
+      <div id="instalaciones-carousel" class="relative aspect-video rounded-sm overflow-hidden min-h-72">
+{[
+          "/images/IMG_6468.webp",
+          "/images/IMG_6471.webp",
+          "/images/IMG_6473.webp",
+          "/images/IMG_6459.webp",
+          "/images/IMG_6464.webp",
+          "/images/IMG_6458.webp",
+        ].map((src, i) => (
+          <img
+            src={src}
+            alt=""
+            aria-hidden="true"
+            class="absolute inset-0 w-full h-full object-cover"
+            data-slide-inst={i}
+          />
+        ))}
       </div>
     </div>
   </section>
