@@ -26,6 +26,34 @@ const isActive = (href: string) =>
   <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
     <div class="flex items-center justify-center h-16 md:h-20 relative">
 
+      ---
+import Button from "./Button.astro";
+
+const navItemsLeft = [
+  { href: "/", label: "Home" },
+  { href: "/quienes-somos", label: "¿Quiénes somos?" },
+  { href: "/mca-kids", label: "MCA Kids", kids: true },
+  { href: "/entrenamientos", label: "Entrenamientos" },
+];
+
+const navItemsRight = [
+  { href: "/equipos", label: "Equipos" },
+  { href: "/inscripcion", label: "Inscripción" },
+  { href: "/tienda", label: "Tienda" },
+  { href: "/contacto", label: "Contacto" },
+];
+
+const allNavItems = [...navItemsLeft, ...navItemsRight];
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+---
+
+<header class="sticky top-0 z-40 bg-mca-white border-b border-mca-slate-100">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+    <div class="flex items-center justify-center h-16 md:h-20 relative">
+
       <nav class="hidden lg:flex items-center gap-8" aria-label="Navegacion principal">
         {navItemsLeft.map((item) => (
        <a href={item.href} class={`font-medium tracking-wide transition-colors duration-150 ${(item as any).kids ? "font-kids text-xl leading-none overflow-visible translate-y-0.5" : "text-sm uppercase"} ${isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
@@ -38,6 +66,81 @@ const isActive = (href: string) =>
           <a href={item.href} class={`text-sm font-medium uppercase tracking-wide transition-colors duration-150 ${isActive(item.href) ? "text-mca-red" : "text-mca-navy hover:text-mca-red"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
         ))}
       </nav>
+
+      <a href="/" class="lg:hidden" aria-label="Madrid Cheer Athletics Inicio">
+        <img src="/brand/wordmark-mca-rojo.png" alt="Madrid Cheer Athletics" class="h-14 md:h-16 w-auto" />
+      </a>
+
+      <button type="button" class="lg:hidden inline-flex items-center justify-center w-10 h-10 text-mca-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-navy rounded-sm absolute right-0" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-drawer" data-drawer-toggle>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+</header>
+
+<div id="mobile-drawer-overlay" class="lg:hidden fixed inset-0 z-40 bg-mca-slate-900/60 opacity-0 pointer-events-none transition-opacity duration-200 ease-out" data-drawer-overlay aria-hidden="true"></div>
+
+<aside id="mobile-drawer" class="lg:hidden fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm bg-mca-navy-dark text-mca-white translate-x-full transition-transform duration-200 ease-out flex flex-col" aria-hidden="true" aria-label="Menu movil" data-drawer-panel>
+  <div class="flex items-center justify-between px-4 py-4 border-b border-mca-white/10">
+    <img src="/brand/logo-circular-blanco.png" alt="" class="h-10 w-10" />
+    <button type="button" class="inline-flex items-center justify-center w-10 h-10 text-mca-white focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-white rounded-sm" aria-label="Cerrar menu" data-drawer-close>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="flex-1 overflow-y-auto px-4 py-6" aria-label="Navegacion movil">
+    <ul class="space-y-2">
+      {allNavItems.map((item) => (
+        <li>
+        <a href={item.href} class={`block py-3 px-3 text-2xl tracking-wide rounded-sm transition-colors duration-150 ${(item as any).kids ? "font-kids" : "font-display uppercase"} ${isActive(item.href) ? "bg-mca-red text-mca-white" : "text-mca-white hover:bg-mca-white/5"}`} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</aside>
+
+<script>
+  const toggle = document.querySelector("[data-drawer-toggle]");
+  const closeBtn = document.querySelector("[data-drawer-close]");
+  const overlay = document.querySelector("[data-drawer-overlay]");
+  const panel = document.querySelector("[data-drawer-panel]");
+
+  if (toggle && closeBtn && overlay && panel) {
+    const open = () => {
+      panel.classList.remove("translate-x-full");
+      panel.setAttribute("aria-hidden", "false");
+      overlay.classList.remove("opacity-0", "pointer-events-none");
+      toggle.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    };
+
+    const close = () => {
+      panel.classList.add("translate-x-full");
+      panel.setAttribute("aria-hidden", "true");
+      overlay.classList.add("opacity-0", "pointer-events-none");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    };
+
+    toggle.addEventListener("click", open);
+    closeBtn.addEventListener("click", close);
+    overlay.addEventListener("click", close);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && panel.getAttribute("aria-hidden") === "false") {
+        close();
+      }
+    });
+  }
+</script>
 
       <a href="/" class="lg:hidden" aria-label="Madrid Cheer Athletics Inicio">
         <img src="/brand/wordmark-mca-rojo.png" alt="Madrid Cheer Athletics" class="h-14 md:h-16 w-auto" />
