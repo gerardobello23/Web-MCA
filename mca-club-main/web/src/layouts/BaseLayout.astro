@@ -40,5 +40,33 @@ const {
   </head>
   <body class="min-h-screen antialiased">
     <slot />
+<!-- MODAL PRIVACIDAD -->
+<div id="modal-privacidad" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4">
+  <div class="relative bg-white rounded-lg w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden">
+    <div class="flex items-center justify-between px-5 py-3 border-b border-gray-200 shrink-0">
+      <span class="text-base font-bold text-mca-navy">Política de Privacidad</span>
+      <button id="modal-privacidad-close" aria-label="Cerrar" class="text-gray-400 hover:text-gray-700 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <iframe src="/privacidad" class="flex-1 w-full min-h-0" title="Política de Privacidad" loading="lazy"></iframe>
+  </div>
+</div>
+
+<script>
+  if (!(window as any).__mcaPrivacyInit) {
+    (window as any).__mcaPrivacyInit = true;
+    const pModal = document.getElementById('modal-privacidad');
+    const pClose = document.getElementById('modal-privacidad-close');
+    const openP = () => { pModal?.classList.replace('hidden','flex'); document.body.style.overflow='hidden'; };
+    const closeP = () => { pModal?.classList.replace('flex','hidden'); document.body.style.overflow=''; };
+    document.addEventListener('click', (e) => {
+      if ((e.target as Element)?.closest('[data-privacy-modal]')) { e.preventDefault(); openP(); }
+    });
+    pClose?.addEventListener('click', closeP);
+    pModal?.addEventListener('click', (e) => { if (e.target === pModal) closeP(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeP(); });
+  }
+</script>
   </body>
 </html>
