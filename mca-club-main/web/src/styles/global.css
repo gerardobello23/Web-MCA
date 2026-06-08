@@ -9,8 +9,8 @@
 }
 
 @font-face {
-  font-family: "Hello GoodNotes";
-  src: url("/fonts/Hello-GoodNotes.woff2") format("woff2");
+  font-family: "Gochi Hand";
+  src: url("https://fonts.gstatic.com/s/gochihand/v22/hES06XlnZDdA1gazKx1uJ6s.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -33,7 +33,7 @@
   --font-display: "MN Ligahura Sans", sans-serif;
   --font-body: "MN Ligahura Sans", sans-serif;
   --font-kids: "Hello GoodNotes", cursive;
-  --font-doodles: "Hello GoodNotes Doodles", cursive;
+  --font-kids: "Gochi Hand", cursive;
   /* Brand core */
   --color-mca-red: #E31837;
   --color-mca-navy: #083B66;
