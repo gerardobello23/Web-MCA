@@ -76,8 +76,7 @@ const steps = [
     ].map((src, i) => (
       <img
         src={src}
-        alt=""
-        aria-hidden="true"
+        alt={`Entrenamiento de cheerleading en Madrid Cheer Athletics - foto ${i + 1}`}
         class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === 0 ? "opacity-100" : "opacity-0"}`}
         data-slide={i}
       />
