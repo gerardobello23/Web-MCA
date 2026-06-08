@@ -20,6 +20,7 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {Astro.props.noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="description" content={description} />
+    <link rel="canonical" href={`https://www.madridcheer.com${Astro.url.pathname}`} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="theme-color" content="#E31837" />
