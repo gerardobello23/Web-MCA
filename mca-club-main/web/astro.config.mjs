@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://madridcheer.com',
+  site: 'https://www.madridcheer.com',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
