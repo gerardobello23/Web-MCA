@@ -251,7 +251,6 @@ if (!(window as any).__mcaModalInit) {
       }
     });
 
-    // RGPD: mostrar sección tutor y consentimiento parental si el solicitante es menor de 18
     const fechaNacInput = pruebaForm?.querySelector('input[name="fecha_nacimiento"]') as HTMLInputElement;
     const tutorSection = document.getElementById('tutor-section');
     const privacidadAdulto = document.getElementById('privacidad-adulto');
@@ -283,8 +282,8 @@ if (!(window as any).__mcaModalInit) {
     }
 
     fechaNacInput?.addEventListener('change', checkAge);
-fechaNacInput?.addEventListener('input', checkAge);
-fechaNacInput?.addEventListener('blur', checkAge);
+    fechaNacInput?.addEventListener('input', checkAge);
+    fechaNacInput?.addEventListener('blur', checkAge);
 }
   </script>
 </BaseLayout>
