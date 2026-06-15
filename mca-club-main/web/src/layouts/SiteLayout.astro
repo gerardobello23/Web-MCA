@@ -283,6 +283,8 @@ if (!(window as any).__mcaModalInit) {
     }
 
     fechaNacInput?.addEventListener('change', checkAge);
+fechaNacInput?.addEventListener('input', checkAge);
+fechaNacInput?.addEventListener('blur', checkAge);
 }
   </script>
 </BaseLayout>
