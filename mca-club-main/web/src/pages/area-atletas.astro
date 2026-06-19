@@ -1,0 +1,70 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout
+  title="Área de Atletas · Madrid Cheer Athletics"
+  description="Accede a tu panel de socio en la app de Madrid Cheer Athletics: cuotas, calendario, notificaciones y más."
+>
+  <!-- HERO -->
+  <section class="relative bg-mca-navy-dark text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      alt=""
+      aria-hidden="true"
+      class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
+    />
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
+      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
+        Área de Atletas
+      </p>
+      <h1 class="text-5xl md:text-7xl leading-none font-display font-bold mb-6 max-w-3xl">
+        Tu panel, siempre a mano
+      </h1>
+      <p class="text-lg md:text-xl text-mca-white/70 max-w-2xl mb-8">
+        Cuotas, calendario, notificaciones y domiciliación, todo desde la app de socios de MCA.
+        El acceso es solo por invitación — si ya eres atleta o tutor, revisa tu email.
+      </p>
+      <a
+        href="https://app.madridcheer.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-sm bg-mca-red text-mca-white font-body font-semibold uppercase tracking-wide text-sm transition-all duration-150 ease-out hover:bg-mca-red-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-white focus-visible:ring-offset-2 focus-visible:ring-offset-mca-navy"
+      >
+        Entrar a la app
+      </a>
+    </div>
+  </section>
+
+  <!-- INSTALACION -->
+  <section class="py-16 md:py-24 bg-mca-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+        Instalación
+      </p>
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-mca-navy mb-10">
+        Instala la app en tu móvil
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-mca-slate-50 rounded-sm p-6 md:p-10">
+          <h3 class="text-xl font-display font-bold text-mca-navy mb-4">Android (Chrome)</h3>
+          <ol class="space-y-3 text-mca-navy list-decimal list-inside">
+            <li>Abre <span class="font-medium">app.madridcheer.com</span> en Chrome.</li>
+            <li>Pulsa el icono de instalación en la barra de direcciones, o el menú (⋮) y selecciona "Instalar app".</li>
+            <li>Confirma. El icono de MCA aparecerá en tu pantalla de inicio.</li>
+          </ol>
+        </div>
+
+        <div class="bg-mca-slate-50 rounded-sm p-6 md:p-10">
+          <h3 class="text-xl font-display font-bold text-mca-navy mb-4">iPhone (Safari)</h3>
+          <ol class="space-y-3 text-mca-navy list-decimal list-inside">
+            <li>Abre <span class="font-medium">app.madridcheer.com</span> en Safari (no en Chrome).</li>
+            <li>Pulsa el botón de compartir (cuadrado con flecha hacia arriba).</li>
+            <li>Selecciona "Añadir a pantalla de inicio" y confirma.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+</SiteLayout>
