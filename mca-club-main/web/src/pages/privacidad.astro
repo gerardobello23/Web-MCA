@@ -19,11 +19,11 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
         <!-- 1 -->
         <div>
-          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">1. Quién es el responsable</h2>
-          <p>El responsable del tratamiento de tus datos es:</p>
+          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">1. Responsable del tratamiento</h2>
           <div class="mt-3 bg-mca-slate-50 rounded-sm p-5 space-y-1 text-sm">
             <p><span class="font-medium text-mca-navy">Nombre:</span> Madrid Cheer Athletics</p>
             <p><span class="font-medium text-mca-navy">CIF:</span> G24741480</p>
+            <p><span class="font-medium text-mca-navy">Registro:</span> Club Deportivo Básico nº 483 — Comunidad de Madrid</p>
             <p><span class="font-medium text-mca-navy">Dirección:</span> C. de Vital Aza, 56, Ciudad Lineal, 28017 Madrid</p>
             <p><span class="font-medium text-mca-navy">Email:</span> <a href="mailto:hola@madridcheer.com" class="text-mca-red hover:underline">hola@madridcheer.com</a></p>
             <p><span class="font-medium text-mca-navy">Teléfono:</span> +34 643 51 58 20</p>
@@ -33,62 +33,96 @@ import SiteLayout from "../layouts/SiteLayout.astro";
         <!-- 2 -->
         <div>
           <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">2. Qué datos recogemos y para qué</h2>
+          <div class="space-y-8">
 
-          <div class="space-y-6">
             <div>
-              <h3 class="font-semibold text-mca-navy mb-2">Formulario de contacto y prueba gratuita</h3>
-              <p>Nombre, email y teléfono. Se usan exclusivamente para responder a tu solicitud. Base legal: tu consentimiento (art. 6.1.a RGPD).</p>
+              <h3 class="font-semibold text-mca-navy mb-2">2.1 Formulario de contacto y solicitud de prueba gratuita</h3>
+              <p>Nombre, apellidos, email, teléfono, rol deportivo y nivel de experiencia. Se usan para responder a tu solicitud e informarte sobre las actividades del club, incluyendo el envío de una secuencia de emails informativos sobre Madrid Cheer Athletics.</p>
+              <p class="mt-2">Base legal: tu consentimiento (art. 6.1.a RGPD). Puedes darte de baja de los emails en cualquier momento mediante el enlace que aparece en cada correo.</p>
+              <p class="mt-2"><span class="font-medium text-mca-navy">Conservación:</span> mientras seas prospecto activo del club y, en caso de no inscribirte, un máximo de 24 meses desde tu última interacción.</p>
             </div>
 
             <div>
-              <h3 class="font-semibold text-mca-navy mb-2">Formulario de inscripción</h3>
-              <p>Nombre completo, fecha de nacimiento, DNI/NIE, domicilio, teléfono, talla, forma de pago, contacto de emergencia y, en su caso, alergias o lesiones relevantes.</p>
-              <p class="mt-2">Los datos de salud (alergias, lesiones) son datos de categoría especial conforme al art. 9 RGPD. Su tratamiento se basa en tu consentimiento explícito y en la necesidad de garantizar tu seguridad durante los entrenamientos.</p>
-              <p class="mt-2">El resto de datos de inscripción se tratan para gestionar la relación contractual con el club y cumplir con las obligaciones legales derivadas de la inscripción federativa y el seguro deportivo (arts. 6.1.b y 6.1.c RGPD).</p>
+              <h3 class="font-semibold text-mca-navy mb-2">2.2 Inscripción como socio/atleta</h3>
+              <p>Nombre completo, fecha de nacimiento, DNI/NIE, domicilio, teléfono, email, tallas (camiseta, short, calzado), contacto de emergencia y, en su caso, condiciones médicas o lesiones relevantes.</p>
+              <p class="mt-2">Los datos de salud son datos de categoría especial conforme al art. 9 RGPD. Su tratamiento se basa en tu consentimiento explícito y en la necesidad de garantizar tu seguridad durante los entrenamientos.</p>
+              <p class="mt-2">Base legal: ejecución de contrato (art. 6.1.b RGPD), obligación legal (art. 6.1.c RGPD) y consentimiento explícito para datos de salud (art. 9.2.a RGPD).</p>
+              <p class="mt-2"><span class="font-medium text-mca-navy">Conservación:</span> mientras dure tu relación con el club y, una vez finalizada, el tiempo que exija la normativa aplicable (mínimo 5 años por obligaciones fiscales y administrativas).</p>
             </div>
 
             <div>
-              <h3 class="font-semibold text-mca-navy mb-2">Navegación en la web</h3>
-              <p>Usamos Google Analytics para obtener estadísticas de uso en formato agregado y anonimizado. No identificamos a usuarios individuales. Base legal: interés legítimo en mejorar el sitio web (art. 6.1.f RGPD).</p>
+              <h3 class="font-semibold text-mca-navy mb-2">2.3 Panel de socio — app.madridcheer.com</h3>
+              <p>A través de la plataforma de socios gestionamos adicionalmente:</p>
+              <ul class="mt-2 space-y-1 pl-5 list-disc">
+                <li><span class="font-medium text-mca-navy">Historial de pagos:</span> cuotas, inscripciones y pagos extraordinarios.</li>
+                <li><span class="font-medium text-mca-navy">Asistencias a entrenamientos:</span> registro de presencia, ausencia o justificación.</li>
+                <li><span class="font-medium text-mca-navy">Bonos:</span> saldo y uso de bonos de sesiones.</li>
+                <li><span class="font-medium text-mca-navy">Fotografía de perfil:</span> almacenada voluntariamente por el usuario.</li>
+              </ul>
+              <p class="mt-2">Base legal: ejecución de contrato (art. 6.1.b RGPD) e interés legítimo en la gestión deportiva del club (art. 6.1.f RGPD).</p>
             </div>
+
+            <div>
+              <h3 class="font-semibold text-mca-navy mb-2">2.4 Pagos</h3>
+              <p>Los pagos se procesan a través de <span class="font-medium text-mca-navy">Stripe</span>, que actúa como encargado del tratamiento. Madrid Cheer Athletics no almacena datos de tarjeta bancaria en sus sistemas. Stripe gestiona los datos de pago bajo sus propias medidas de seguridad y cumplimiento PCI-DSS.</p>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-mca-navy mb-2">2.5 Emails de marketing y campañas</h3>
+              <p>Si has solicitado información o eres socio del club, podemos enviarte emails informativos sobre actividades, novedades y eventos de Madrid Cheer Athletics.</p>
+              <p class="mt-2">Base legal: consentimiento prestado al completar el formulario de contacto o de inscripción (art. 6.1.a RGPD) e interés legítimo en la comunicación con socios activos (art. 6.1.f RGPD).</p>
+              <p class="mt-2">Puedes cancelar la recepción de emails de marketing en cualquier momento mediante el enlace "Darme de baja" al pie de cada correo, o escribiéndonos a <a href="mailto:hola@madridcheer.com" class="text-mca-red hover:underline">hola@madridcheer.com</a>. La baja de emails de marketing no afecta a las comunicaciones relacionadas con tu cuenta, pagos o actividad como socio.</p>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-mca-navy mb-2">2.6 Navegación web</h3>
+              <p>Usamos Google Analytics para obtener estadísticas de uso en formato agregado y anonimizado. No identificamos a usuarios individuales. Base legal: interés legítimo en mejorar el sitio web (art. 6.1.f RGPD). Consulta nuestra <a href="/cookies" class="text-mca-red hover:underline">Política de Cookies</a> para más información.</p>
+            </div>
+
           </div>
         </div>
 
         <!-- 3 -->
         <div>
           <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">3. Menores de edad</h2>
-          <p>El programa mca Kids está dirigido a niños desde 5 años. Conforme al art. 7 de la LOPDGDD, <strong>los menores de 14 años no pueden prestar por sí mismos el consentimiento</strong> para el tratamiento de sus datos personales. Por tanto:</p>
+          <p>El programa MCA Kids está dirigido a niños desde 5 años. Conforme al art. 7 de la LOPDGDD, <strong>los menores de 14 años no pueden prestar por sí mismos el consentimiento</strong> para el tratamiento de sus datos personales. Por tanto:</p>
           <ul class="mt-3 space-y-2 pl-5 list-disc">
-            <li>La inscripción de menores de 14 años requiere el consentimiento expreso de los padres o tutores legales.</li>
+            <li>La inscripción de menores de 14 años requiere el consentimiento expreso del padre, madre o tutor legal.</li>
             <li>Las fotografías o vídeos en los que aparezcan menores solo se publicarán con autorización escrita de ambos progenitores o tutores.</li>
             <li>No recogemos más datos de menores que los estrictamente necesarios para la prestación del servicio y el cumplimiento de las obligaciones legales.</li>
+            <li>Los datos de salud de menores se tratan bajo el consentimiento explícito del tutor y la necesidad de garantizar la seguridad del menor durante los entrenamientos (art. 9.2.a RGPD).</li>
           </ul>
         </div>
 
         <!-- 4 -->
         <div>
-          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">4. A quién cedemos los datos</h2>
-          <p>No vendemos ni cedemos tus datos a terceros, salvo en los casos siguientes:</p>
-          <ul class="mt-3 space-y-2 pl-5 list-disc">
-            <li><span class="font-medium text-mca-navy">Federación Española de Baile Deportivo (FEDB):</span> para la tramitación de licencias deportivas.</li>
-            <li><span class="font-medium text-mca-navy">Entidad aseguradora:</span> para la gestión del seguro deportivo obligatorio.</li>
-            <li><span class="font-medium text-mca-navy">Proveedores tecnológicos (encargados del tratamiento):</span> Google LLC (Analytics y formularios) y Web3Forms, que actúan bajo acuerdos de confidencialidad y las garantías del RGPD para transferencias internacionales.</li>
-          </ul>
+          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">4. Encargados del tratamiento</h2>
+          <p>Tus datos pueden ser tratados por los siguientes proveedores tecnológicos, que actúan como encargados del tratamiento bajo acuerdos de confidencialidad y las garantías del RGPD:</p>
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="bg-mca-slate-50">
+                  <th class="text-left p-3 font-semibold text-mca-navy border border-mca-slate-200">Proveedor</th>
+                  <th class="text-left p-3 font-semibold text-mca-navy border border-mca-slate-200">Servicio</th>
+                  <th class="text-left p-3 font-semibold text-mca-navy border border-mca-slate-200">País</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="p-3 border border-mca-slate-200">Supabase Inc.</td><td class="p-3 border border-mca-slate-200">Base de datos, autenticación y almacenamiento</td><td class="p-3 border border-mca-slate-200">EE.UU. (datos en UE)</td></tr>
+                <tr class="bg-mca-slate-50"><td class="p-3 border border-mca-slate-200">Stripe Inc.</td><td class="p-3 border border-mca-slate-200">Procesamiento de pagos</td><td class="p-3 border border-mca-slate-200">EE.UU.</td></tr>
+                <tr><td class="p-3 border border-mca-slate-200">Resend Inc.</td><td class="p-3 border border-mca-slate-200">Envío de emails transaccionales y de marketing</td><td class="p-3 border border-mca-slate-200">EE.UU.</td></tr>
+                <tr class="bg-mca-slate-50"><td class="p-3 border border-mca-slate-200">Vercel Inc.</td><td class="p-3 border border-mca-slate-200">Alojamiento web y de la aplicación</td><td class="p-3 border border-mca-slate-200">EE.UU.</td></tr>
+                <tr><td class="p-3 border border-mca-slate-200">Google LLC</td><td class="p-3 border border-mca-slate-200">Analítica web (Google Analytics)</td><td class="p-3 border border-mca-slate-200">EE.UU.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4">Para las transferencias internacionales se aplican las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea (art. 46 RGPD).</p>
+          <p class="mt-3">Adicionalmente, cedemos datos a la <span class="font-medium text-mca-navy">Federación Española de Baile Deportivo (FEDB)</span> para la tramitación de licencias deportivas, y a la <span class="font-medium text-mca-navy">entidad aseguradora</span> para la gestión del seguro deportivo obligatorio.</p>
         </div>
 
         <!-- 5 -->
         <div>
-          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">5. Cuánto tiempo guardamos los datos</h2>
-          <ul class="mt-3 space-y-2 pl-5 list-disc">
-            <li><span class="font-medium text-mca-navy">Contacto y prueba gratuita:</span> hasta resolver tu solicitud y durante un máximo de 12 meses adicionales.</li>
-            <li><span class="font-medium text-mca-navy">Inscripción:</span> mientras dure tu relación con el club y, una vez finalizada, el tiempo que exija la normativa aplicable (mínimo 5 años por obligaciones fiscales y administrativas).</li>
-            <li><span class="font-medium text-mca-navy">Datos de navegación:</span> según la configuración de retención de Google Analytics (26 meses por defecto).</li>
-          </ul>
-        </div>
-
-        <!-- 6 -->
-        <div>
-          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">6. Tus derechos</h2>
+          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">5. Tus derechos</h2>
           <p>En cualquier momento puedes ejercer los siguientes derechos:</p>
           <ul class="mt-3 space-y-1 pl-5 list-disc">
             <li><span class="font-medium text-mca-navy">Acceso:</span> saber qué datos tuyos tratamos.</li>
@@ -97,27 +131,22 @@ import SiteLayout from "../layouts/SiteLayout.astro";
             <li><span class="font-medium text-mca-navy">Oposición y limitación:</span> oponerte o limitar el tratamiento en determinadas circunstancias.</li>
             <li><span class="font-medium text-mca-navy">Portabilidad:</span> recibir tus datos en formato reutilizable.</li>
             <li><span class="font-medium text-mca-navy">Retirada del consentimiento:</span> en cualquier momento, sin que ello afecte a la licitud del tratamiento anterior.</li>
+            <li><span class="font-medium text-mca-navy">Baja de emails de marketing:</span> a través del enlace en cualquier email o escribiéndonos a <a href="mailto:hola@madridcheer.com" class="text-mca-red hover:underline">hola@madridcheer.com</a>.</li>
           </ul>
-          <p class="mt-4">Para ejercer estos derechos, escríbenos a <a href="mailto:hola@madridcheer.com" class="text-mca-red hover:underline">hola@madridcheer.com</a> con el asunto <em>Derechos RGPD</em> e indicando el derecho que quieres ejercer. Te pediremos una copia de tu documento de identidad para verificar tu identidad.</p>
+          <p class="mt-4">Para ejercer estos derechos, escríbenos a <a href="mailto:hola@madridcheer.com" class="text-mca-red hover:underline">hola@madridcheer.com</a> con el asunto <em>Derechos RGPD</em> indicando el derecho que quieres ejercer. Te pediremos una copia de tu documento de identidad para verificar tu identidad.</p>
           <p class="mt-3">Si consideras que el tratamiento no se ajusta a la normativa, puedes reclamar ante la <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" class="text-mca-red hover:underline">Agencia Española de Protección de Datos (AEPD)</a>.</p>
+        </div>
+
+        <!-- 6 -->
+        <div>
+          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">6. Seguridad</h2>
+          <p>Aplicamos medidas técnicas y organizativas adecuadas al riesgo: conexión HTTPS en todos los servicios, acceso restringido a los datos mediante autenticación y control de roles, cifrado en tránsito y en reposo, y uso de plataformas con sus propias certificaciones de seguridad. En caso de brecha de seguridad que afecte a tus datos, lo comunicaremos a la AEPD en el plazo de 72 horas y a los afectados cuando sea necesario.</p>
         </div>
 
         <!-- 7 -->
         <div>
-          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">7. Cookies</h2>
-          <p>Usamos Google Analytics para análisis estadístico de navegación. Las cookies de Analytics recogen información de forma anonimizada y no se usan con fines publicitarios. Puedes desactivarlas instalando el <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-mca-red hover:underline">complemento de inhabilitación de Google Analytics</a>.</p>
-        </div>
-
-        <!-- 8 -->
-        <div>
-          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">8. Seguridad</h2>
-          <p>Aplicamos medidas técnicas y organizativas adecuadas al riesgo: conexión HTTPS, acceso restringido a los datos y uso de plataformas con sus propias medidas de seguridad. En caso de brecha de seguridad que afecte a tus datos, lo comunicaremos a la AEPD en el plazo de 72 horas y a los afectados cuando sea necesario.</p>
-        </div>
-
-        <!-- 9 -->
-        <div>
-          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">9. Cambios en esta política</h2>
-          <p>Podemos actualizar esta política cuando sea necesario. Si los cambios son relevantes, lo comunicaremos en el sitio web. La fecha de la última actualización aparece al inicio de esta página.</p>
+          <h2 class="text-2xl font-display font-bold text-mca-navy mb-3">7. Cambios en esta política</h2>
+          <p>Podemos actualizar esta política cuando sea necesario. Si los cambios son relevantes, lo comunicaremos en el sitio web o por email a los afectados. La fecha de la última actualización aparece al inicio de esta página.</p>
         </div>
 
       </div>
