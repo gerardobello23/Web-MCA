@@ -105,18 +105,23 @@ const steps = [
     <p class="text-xl md:text-2xl text-mca-white/70 max-w-2xl mb-8">
       El club de cheer en Madrid donde la fuerza, el trabajo en equipo y la pasión se unen.
     </p>
-    <div class="flex flex-wrap gap-4">
+    <div class="flex flex-wrap items-center gap-4">
+      <!-- INTENSIVO_VERANO_2026 START — eliminar este bloque en agosto 2026 -->
+      <div class="relative">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-mca-white text-mca-red text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">
+          Plazas limitadas
+        </span>
+        <Button variant="primary" href="#" data-prueba-modal data-source="intensivo_verano" class="animate-pulse">
+          Intensivos de Verano
+        </Button>
+      </div>
+      <!-- INTENSIVO_VERANO_2026 END -->
       <Button variant="primary-on-navy" href="#" data-prueba-modal>
         Reserva tu prueba gratuita
       </Button>
       <Button variant="ghost" href="/inscripcion" class="border-mca-white text-mca-white hover:bg-mca-white/10">
         Inscríbete
       </Button>
-      <!-- INTENSIVO_VERANO_2026 START — eliminar este botón en agosto 2026 -->
-      <Button variant="ghost" href="#" data-prueba-modal data-source="intensivo_verano" class="border-mca-red text-mca-red hover:bg-mca-red hover:text-mca-white">
-        Intensivos de Verano
-      </Button>
-      <!-- INTENSIVO_VERANO_2026 END -->
     </div>
   </div>
 </section>
