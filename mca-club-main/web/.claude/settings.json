@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c -maxdepth 4 -name \"route.js\" -path \"*prospects*\")",
+      "Bash(find /c -maxdepth 3 -type d -name \"mca-app\")"
+    ]
+  }
+}

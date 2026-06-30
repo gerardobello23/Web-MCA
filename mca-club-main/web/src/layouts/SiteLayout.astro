@@ -24,11 +24,12 @@ const { title, description } = Astro.props;
       <button id="modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-      <h2 class="text-2xl font-bold text-mca-navy mb-1">Reserva tu clase gratuita</h2>
-      <p class="text-sm text-gray-500 mb-6">Sin compromiso. Te confirmamos por WhatsApp.</p>
+      <h2 id="modal-prueba-title" class="text-2xl font-bold text-mca-navy mb-1">Reserva tu clase gratuita</h2>
+      <p id="modal-prueba-subtitle" class="text-sm text-gray-500 mb-6">Sin compromiso. Te confirmamos por WhatsApp.</p>
 
       <form id="prueba-form" class="space-y-4">
         <input type="hidden" name="subject" value="Nueva solicitud de prueba gratuita - Madrid Cheer Athletics">
+        <input type="hidden" name="fuente" id="prueba-fuente" value="">
 
         <div>
           <label class="block text-sm font-medium text-mca-navy mb-1">Nombre completo <span class="text-mca-red">*</span></label>
@@ -188,6 +189,29 @@ const { title, description } = Astro.props;
     </div>
   </div>
 
+  <!-- INTENSIVO_VERANO_2026 START — eliminar este bloque completo en agosto 2026 -->
+  <div id="modal-intensivo" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4">
+    <div class="relative bg-white rounded-lg max-w-md w-full p-6 md:p-8">
+      <button id="modal-intensivo-close" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <p class="text-xs uppercase tracking-widest text-mca-red font-semibold mb-2">Julio 2026</p>
+      <h2 class="text-2xl font-bold text-mca-navy mb-3">Intensivo de Verano</h2>
+      <p class="text-sm text-gray-600 mb-4">
+        Cinco viernes de julio para perfeccionar tu técnica: subidas con giro, desmontes con giro, tictocs y switch ups, invertidas y figuras de flexibilidad.
+      </p>
+      <ul class="text-sm text-gray-700 space-y-1 mb-5">
+        <li>📅 Viernes 3, 10, 17, 24 y 31 de julio</li>
+        <li>🕖 19:00 – 22:00h</li>
+        <li>💶 10€ por sesión, o 40€ el pack completo (la 5ª sesión, gratis)</li>
+      </ul>
+      <button data-prueba-modal data-source="intensivo_verano" class="w-full bg-mca-red text-white font-bold py-3 rounded hover:opacity-90 transition-opacity uppercase tracking-wide text-sm">
+        Reservar mi plaza para las clases dirigidas
+      </button>
+    </div>
+  </div>
+  <!-- INTENSIVO_VERANO_2026 END -->
+
   <script>
 import { supabase } from "../lib/supabase";
 if (!(window as any).__mcaModalInit) {
@@ -200,6 +224,21 @@ if (!(window as any).__mcaModalInit) {
 
     function openModal(e: Event) {
       e.preventDefault();
+      const trigger = e.currentTarget as HTMLElement;
+      const source = trigger?.getAttribute("data-source") || "";
+      const fuenteInput = document.getElementById("prueba-fuente") as HTMLInputElement;
+      if (fuenteInput) fuenteInput.value = source;
+
+      const titleEl = document.getElementById("modal-prueba-title");
+      const subtitleEl = document.getElementById("modal-prueba-subtitle");
+      if (source === "intensivo_verano") {
+        if (titleEl) titleEl.textContent = "Reserva tu plaza para el Intensivo de Verano";
+        if (subtitleEl) subtitleEl.textContent = "Viernes de julio · 19h–22h. Sin compromiso.";
+      } else {
+        if (titleEl) titleEl.textContent = "Reserva tu clase gratuita";
+        if (subtitleEl) subtitleEl.textContent = "Sin compromiso. Te confirmamos por WhatsApp.";
+      }
+
       modal?.classList.remove("hidden");
       modal?.classList.add("flex");
       document.body.style.overflow = "hidden";
@@ -253,6 +292,7 @@ if (!(window as any).__mcaModalInit) {
         tutor_nombre: esMenor ? formData.get("tutor_nombre") : null,
         tutor_relacion: esMenor ? formData.get("tutor_relacion") : null,
         tutor_dni: esMenor ? formData.get("tutor_dni") : null,
+        fuente: formData.get("fuente") || null,
         status: "interesado",
       };
 
@@ -275,6 +315,7 @@ if (!(window as any).__mcaModalInit) {
                 telefono: payload.telefono,
                 rol: payload.rol,
                 experiencia: payload.experiencia,
+                fuente: payload.fuente,
               }),
             }).then(r => console.log('notify status:', r.status)).catch(err => console.error('notify error:', err));
           } else {
@@ -325,6 +366,38 @@ if (!(window as any).__mcaModalInit) {
     fechaNacInput?.addEventListener('change', checkAge);
     fechaNacInput?.addEventListener('input', checkAge);
     fechaNacInput?.addEventListener('blur', checkAge);
+
+    // INTENSIVO_VERANO_2026 START — eliminar este bloque completo en agosto 2026
+    (function () {
+      const cutoff = new Date('2026-08-01T00:00:00');
+      if (new Date() >= cutoff) return;
+
+      const modalIntensivo = document.getElementById('modal-intensivo');
+      const closeIntensivo = document.getElementById('modal-intensivo-close');
+      if (!modalIntensivo) return;
+
+      function closeIntensivoModal() {
+        modalIntensivo?.classList.add('hidden');
+        modalIntensivo?.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      if (!sessionStorage.getItem('intensivoPopupShown')) {
+        setTimeout(() => {
+          modalIntensivo.classList.remove('hidden');
+          modalIntensivo.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }, 1200);
+        sessionStorage.setItem('intensivoPopupShown', '1');
+      }
+
+      closeIntensivo?.addEventListener('click', closeIntensivoModal);
+      modalIntensivo.addEventListener('click', (e) => {
+        if (e.target === modalIntensivo) closeIntensivoModal();
+      });
+      modalIntensivo.querySelector('[data-prueba-modal]')?.addEventListener('click', closeIntensivoModal);
+    })();
+    // INTENSIVO_VERANO_2026 END
 }
   </script>
 </BaseLayout>
