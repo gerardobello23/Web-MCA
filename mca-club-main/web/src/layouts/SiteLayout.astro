@@ -261,6 +261,8 @@ if (!(window as any).__mcaModalInit) {
 
     pruebaForm?.addEventListener("submit", async (e) => {
       e.preventDefault();
+      const submitBtn = (pruebaForm as HTMLFormElement).querySelector('button[type="submit"]') as HTMLButtonElement;
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Enviando..."; }
       const formData = new FormData(pruebaForm as HTMLFormElement);
       const prefijo = (document.getElementById("prefijo-tel") as HTMLSelectElement)?.value || "+34";
       const telefonoRaw = (formData.get("telefono") as string || "").trim();
@@ -322,6 +324,7 @@ if (!(window as any).__mcaModalInit) {
           } else {
             pruebaFeedback.className = "rounded p-3 text-sm bg-red-50 text-red-700 border border-red-200";
             pruebaFeedback.textContent = "Error al enviar. Por favor inténtalo de nuevo.";
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Reservar"; }
           }
         }
       } catch (err) {
@@ -331,6 +334,7 @@ if (!(window as any).__mcaModalInit) {
           pruebaFeedback.className = "rounded p-3 text-sm bg-red-50 text-red-700 border border-red-200";
           pruebaFeedback.textContent = "Error de conexión. Por favor inténtalo de nuevo.";
         }
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Reservar"; }
       }
     });
 
