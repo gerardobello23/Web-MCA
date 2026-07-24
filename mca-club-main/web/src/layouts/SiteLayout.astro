@@ -374,8 +374,16 @@ if (!(window as any).__mcaModalInit) {
 
     // INTENSIVO_VERANO_2026 START — eliminar este bloque completo en agosto 2026
     (function () {
-      const cutoff = new Date('2026-08-01T00:00:00');
-      if (new Date() >= cutoff) return;
+      // cutoff = 2026-08-01 00:00 Europe/Madrid (CEST = UTC+2)
+      const isPast = new Date() >= new Date('2026-07-31T22:00:00Z');
+
+      if (isPast) {
+        document.getElementById('modal-intensivo')?.style.setProperty('display', 'none', 'important');
+        document.querySelectorAll('[data-source="intensivo_verano"]').forEach(el => {
+          (el.parentElement as HTMLElement)?.style.setProperty('display', 'none', 'important');
+        });
+        return;
+      }
 
       const modalIntensivo = document.getElementById('modal-intensivo');
       const closeIntensivo = document.getElementById('modal-intensivo-close');
