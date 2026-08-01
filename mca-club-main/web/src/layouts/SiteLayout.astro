@@ -189,42 +189,49 @@ const { title, description } = Astro.props;
     </div>
   </div>
 
-  <!-- INTENSIVO_VERANO_2026 START — eliminar este bloque completo en agosto 2026 -->
-  <div id="modal-intensivo" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4">
-    <div class="relative bg-white rounded-lg max-w-md w-full p-6 md:p-8">
-      <button id="modal-intensivo-close" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <p class="text-xs uppercase tracking-widest text-mca-red font-semibold mb-2">Julio 2026</p>
-      <h2 class="text-2xl font-bold text-mca-navy mb-3">Intensivo de Verano</h2>
-      <p class="text-sm text-gray-600 mb-4">
-        Cinco viernes de julio para perfeccionar tu técnica: subidas con giro, desmontes con giro, tictocs y switch ups, invertidas y figuras de flexibilidad.
-      </p>
-      <ul class="text-sm text-gray-700 space-y-1 mb-5">
-        <li>📅 Viernes 3, 10, 17, 24 y 31 de julio</li>
-        <li>🕖 19:00 – 22:00h</li>
-        <li>💶 10€ por sesión, o 40€ el pack completo (la 5ª sesión, gratis)</li>
-      </ul>
-      <button data-prueba-modal data-source="intensivo_verano" class="w-full bg-mca-red text-white font-bold py-3 rounded hover:opacity-90 transition-opacity uppercase tracking-wide text-sm">
-        Reservar mi plaza para las clases dirigidas
-      </button>
-    </div>
-  </div>
-  <!-- INTENSIVO_VERANO_2026 END -->
   <!-- TEMPORADA_2026_2027 START — eliminar este bloque cuando se publique la información completa de la temporada -->
-  <div id="modal-temporada" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4">
-    <div class="relative bg-white rounded-lg max-w-md w-full p-6 md:p-8">
-      <button id="modal-temporada-close" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      #modal-temporada .modal-temporada-card {
+        animation: temporada-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+    }
+    @keyframes temporada-pop {
+      from { opacity: 0; transform: scale(0.92) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+  </style>
+
+  <div id="modal-temporada" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 p-4">
+    <div class="modal-temporada-card relative bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl">
+
+      <div class="absolute top-[22px] -right-[42px] rotate-45 bg-mca-red text-white text-[10px] font-black uppercase tracking-[0.15em] py-1.5 w-[160px] text-center shadow-md z-20">
+        Próximamente
+      </div>
+
+      <button id="modal-temporada-close" class="absolute top-3 left-3 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/30 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-      <p class="text-xs uppercase tracking-widest text-mca-red font-semibold mb-2">Temporada 2026-2027</p>
-      <h2 class="text-2xl font-bold text-mca-navy mb-3">Nueva temporada, muy pronto</h2>
-      <p class="text-sm text-gray-600 mb-4">
-        Estamos preparando toda la información de la temporada 2026-2027: niveles, horarios y fechas de inscripción. Muy pronto lo compartimos.
-      </p>
-      <button id="modal-temporada-ok" class="w-full bg-mca-red text-white font-bold py-3 rounded hover:opacity-90 transition-opacity uppercase tracking-wide text-sm">
-        Entendido
-      </button>
+
+      <div class="bg-gradient-to-br from-mca-navy to-[#0a4d85] px-7 pt-12 pb-8 md:px-8 md:pt-14">
+        <p class="text-xs uppercase tracking-[0.2em] text-mca-red font-bold mb-2">Temporada 2026–2027</p>
+        <h2 class="text-3xl md:text-[2.25rem] font-black text-white leading-[0.95] uppercase">
+          Se acerca<br/>la nueva<br/>temporada
+        </h2>
+      </div>
+
+      <div class="relative -mt-6 bg-white rounded-t-[1.75rem] px-7 pt-6 pb-7 md:px-8 md:pb-8">
+        <div class="inline-flex items-center gap-2 bg-mca-navy/5 text-mca-navy font-bold text-sm rounded-full px-4 py-2 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Empezamos el viernes 4 de septiembre
+        </div>
+        <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+          Estamos cerrando niveles, horarios y fechas de inscripción. Muy pronto lo compartimos aquí.
+        </p>
+        <button id="modal-temporada-ok" class="w-full bg-mca-red text-white font-bold py-3.5 rounded-lg hover:opacity-90 active:scale-[0.98] transition-all uppercase tracking-wide text-sm shadow-lg shadow-mca-red/30">
+          Entendido
+        </button>
+      </div>
     </div>
   </div>
   <!-- TEMPORADA_2026_2027 END -->
@@ -389,45 +396,6 @@ if (!(window as any).__mcaModalInit) {
     fechaNacInput?.addEventListener('input', checkAge);
     fechaNacInput?.addEventListener('blur', checkAge);
 
-    // INTENSIVO_VERANO_2026 START — eliminar este bloque completo en agosto 2026
-    (function () {
-      // cutoff = 2026-08-01 00:00 Europe/Madrid (CEST = UTC+2)
-      const isPast = new Date() >= new Date('2026-07-31T22:00:00Z');
-
-      if (isPast) {
-        document.getElementById('modal-intensivo')?.style.setProperty('display', 'none', 'important');
-        document.querySelectorAll('[data-source="intensivo_verano"]').forEach(el => {
-          (el.parentElement as HTMLElement)?.style.setProperty('display', 'none', 'important');
-        });
-        return;
-      }
-
-      const modalIntensivo = document.getElementById('modal-intensivo');
-      const closeIntensivo = document.getElementById('modal-intensivo-close');
-      if (!modalIntensivo) return;
-
-      function closeIntensivoModal() {
-        modalIntensivo?.classList.add('hidden');
-        modalIntensivo?.classList.remove('flex');
-        document.body.style.overflow = '';
-      }
-
-      if (!sessionStorage.getItem('intensivoPopupShown')) {
-        setTimeout(() => {
-          modalIntensivo.classList.remove('hidden');
-          modalIntensivo.classList.add('flex');
-          document.body.style.overflow = 'hidden';
-        }, 1200);
-        sessionStorage.setItem('intensivoPopupShown', '1');
-      }
-
-      closeIntensivo?.addEventListener('click', closeIntensivoModal);
-      modalIntensivo.addEventListener('click', (e) => {
-        if (e.target === modalIntensivo) closeIntensivoModal();
-      });
-      modalIntensivo.querySelector('[data-prueba-modal]')?.addEventListener('click', closeIntensivoModal);
-    })();
-    // INTENSIVO_VERANO_2026 END
     // TEMPORADA_2026_2027 START — eliminar este bloque cuando se publique la información completa de la temporada
     (function () {
       const modalTemporada = document.getElementById('modal-temporada');
