@@ -255,13 +255,8 @@ if (!(window as any).__mcaModalInit) {
 
       const titleEl = document.getElementById("modal-prueba-title");
       const subtitleEl = document.getElementById("modal-prueba-subtitle");
-      if (source === "intensivo_verano") {
-        if (titleEl) titleEl.textContent = "Reserva tu plaza para el Intensivo de Verano";
-        if (subtitleEl) subtitleEl.textContent = "Viernes de julio · 19h–22h. Sin compromiso.";
-      } else {
-        if (titleEl) titleEl.textContent = "Reserva tu clase gratuita";
-        if (subtitleEl) subtitleEl.textContent = "Sin compromiso. Te confirmamos.";
-      }
+      if (titleEl) titleEl.textContent = "Reserva tu clase gratuita";
+      if (subtitleEl) subtitleEl.textContent = "Sin compromiso. Te confirmamos.";
 
       modal?.classList.remove("hidden");
       modal?.classList.add("flex");
