@@ -211,6 +211,23 @@ const { title, description } = Astro.props;
     </div>
   </div>
   <!-- INTENSIVO_VERANO_2026 END -->
+  <!-- TEMPORADA_2026_2027 START — eliminar este bloque cuando se publique la información completa de la temporada -->
+  <div id="modal-temporada" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4">
+    <div class="relative bg-white rounded-lg max-w-md w-full p-6 md:p-8">
+      <button id="modal-temporada-close" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <p class="text-xs uppercase tracking-widest text-mca-red font-semibold mb-2">Temporada 2026-2027</p>
+      <h2 class="text-2xl font-bold text-mca-navy mb-3">Nueva temporada, muy pronto</h2>
+      <p class="text-sm text-gray-600 mb-4">
+        Estamos preparando toda la información de la temporada 2026-2027: niveles, horarios y fechas de inscripción. Muy pronto lo compartimos.
+      </p>
+      <button id="modal-temporada-ok" class="w-full bg-mca-red text-white font-bold py-3 rounded hover:opacity-90 transition-opacity uppercase tracking-wide text-sm">
+        Entendido
+      </button>
+    </div>
+  </div>
+  <!-- TEMPORADA_2026_2027 END -->
 
   <script>
 import { supabase } from "../lib/supabase";
@@ -411,6 +428,35 @@ if (!(window as any).__mcaModalInit) {
       modalIntensivo.querySelector('[data-prueba-modal]')?.addEventListener('click', closeIntensivoModal);
     })();
     // INTENSIVO_VERANO_2026 END
+    // TEMPORADA_2026_2027 START — eliminar este bloque cuando se publique la información completa de la temporada
+    (function () {
+      const modalTemporada = document.getElementById('modal-temporada');
+      const closeTemporada = document.getElementById('modal-temporada-close');
+      const okTemporada = document.getElementById('modal-temporada-ok');
+      if (!modalTemporada) return;
+
+      function closeTemporadaModal() {
+        modalTemporada?.classList.add('hidden');
+        modalTemporada?.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      if (!sessionStorage.getItem('temporadaPopupShown')) {
+        setTimeout(() => {
+          modalTemporada.classList.remove('hidden');
+          modalTemporada.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }, 1200);
+        sessionStorage.setItem('temporadaPopupShown', '1');
+      }
+
+      closeTemporada?.addEventListener('click', closeTemporadaModal);
+      okTemporada?.addEventListener('click', closeTemporadaModal);
+      modalTemporada.addEventListener('click', (e) => {
+        if (e.target === modalTemporada) closeTemporadaModal();
+      });
+    })();
+    // TEMPORADA_2026_2027 END
 }
   </script>
 </BaseLayout>
