@@ -205,8 +205,10 @@ const { title, description } = Astro.props;
   <div id="modal-temporada" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 p-4">
     <div class="modal-temporada-card relative bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl">
 
-      <div class="absolute top-[22px] -right-[42px] rotate-45 bg-mca-red text-white text-[10px] font-black uppercase tracking-[0.15em] py-1.5 w-[160px] text-center shadow-md z-20">
-        Próximamente
+      <div class="absolute top-0 right-0 w-[100px] h-[100px] overflow-hidden z-20">
+        <div class="absolute top-[36px] -right-[25px] rotate-45 bg-mca-red text-white text-[10px] font-black uppercase tracking-[0.1em] py-1.5 w-[150px] text-center whitespace-nowrap shadow-md">
+          Próximamente
+        </div>
       </div>
 
       <button id="modal-temporada-close" class="absolute top-3 left-3 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/30 transition-colors">
@@ -226,7 +228,7 @@ const { title, description } = Astro.props;
           Empezamos el viernes 4 de septiembre
         </div>
         <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-          Estamos cerrando niveles, horarios y fechas de inscripción. Muy pronto lo compartimos aquí.
+          Ultimando detalles para ofrecer una temporada increíble. Pronto toda la info aquí 🌟
         </p>
         <button id="modal-temporada-ok" class="w-full bg-mca-red text-white font-bold py-3.5 rounded-lg hover:opacity-90 active:scale-[0.98] transition-all uppercase tracking-wide text-sm shadow-lg shadow-mca-red/30">
           Entendido
