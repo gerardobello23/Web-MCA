@@ -205,8 +205,10 @@ const { title, description } = Astro.props;
   <div id="modal-temporada" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 p-4">
     <div class="modal-temporada-card relative bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl">
 
-      <div class="absolute top-[18px] right-[18px] translate-x-1/2 -translate-y-1/2 rotate-45 bg-mca-red text-white text-[10px] font-black uppercase tracking-[0.15em] py-1.5 w-[200px] text-center whitespace-nowrap shadow-md z-20">
-        Próximamente
+      <div class="absolute top-4 right-4 z-20">
+        <span class="inline-block px-3 py-1 rounded-full bg-mca-red text-white text-[10px] font-black uppercase tracking-[0.15em] whitespace-nowrap shadow-md">
+          Próximamente
+        </span>
       </div>
 
       <button id="modal-temporada-close" class="absolute top-3 left-3 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/30 transition-colors">
