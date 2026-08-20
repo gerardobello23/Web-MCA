@@ -189,7 +189,7 @@ const { title, description } = Astro.props;
     </div>
   </div>
 
-  <!-- TEMPORADA_2026_2027 START — eliminar este bloque cuando se publique la información completa de la temporada -->
+  <!-- TEMPORADA_2026_2027 START — eliminar este bloque cuando cierre la campaña de apertura de inscripciones -->
   <style>
     @media (prefers-reduced-motion: no-preference) {
       #modal-temporada .modal-temporada-card {
@@ -207,7 +207,7 @@ const { title, description } = Astro.props;
 
       <div class="absolute top-4 right-4 z-20">
         <span class="inline-block px-3 py-1 rounded-full bg-mca-red text-white text-[10px] font-black uppercase tracking-[0.15em] whitespace-nowrap shadow-md">
-          Próximamente
+          ¡Ya disponible!
         </span>
       </div>
 
@@ -216,23 +216,23 @@ const { title, description } = Astro.props;
       </button>
 
       <div class="bg-gradient-to-br from-mca-navy to-[#0a4d85] px-7 pt-12 pb-8 md:px-8 md:pt-14">
-        <p class="text-xs uppercase tracking-[0.2em] text-mca-red font-bold mb-2">Temporada 2026–2027</p>
+        <p class="text-xs uppercase tracking-[0.2em] text-mca-red font-bold mb-2">Temporada 26/27</p>
         <h2 class="text-3xl md:text-[2.25rem] font-black text-white leading-[0.95] uppercase">
-          Se acerca<br/>la nueva<br/>temporada
+          Inscripciones<br/>abiertas
         </h2>
       </div>
 
       <div class="relative -mt-6 bg-white rounded-t-[1.75rem] px-7 pt-6 pb-7 md:px-8 md:pb-8">
         <div class="inline-flex items-center gap-2 bg-mca-navy/5 text-mca-navy font-bold text-sm rounded-full px-4 py-2 mb-4">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Empezamos el viernes 4 de septiembre
+          Empezamos el viernes 11 de septiembre
         </div>
         <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-          Ultimando detalles para ofrecer una temporada increíble. Pronto toda la info aquí 🌟
+          Plazas limitadas para todos los niveles. Reserva la tuya antes de que se agoten.
         </p>
-        <button id="modal-temporada-ok" class="w-full bg-mca-red text-white font-bold py-3.5 rounded-lg hover:opacity-90 active:scale-[0.98] transition-all uppercase tracking-wide text-sm shadow-lg shadow-mca-red/30">
-          Entendido
-        </button>
+        <a href="/inscripcion" class="block w-full text-center bg-mca-red text-white font-bold py-3.5 rounded-lg hover:opacity-90 active:scale-[0.98] transition-all uppercase tracking-wide text-sm shadow-lg shadow-mca-red/30">
+          Inscríbete ahora
+        </a>
       </div>
     </div>
   </div>
@@ -397,7 +397,6 @@ if (!(window as any).__mcaModalInit) {
     (function () {
       const modalTemporada = document.getElementById('modal-temporada');
       const closeTemporada = document.getElementById('modal-temporada-close');
-      const okTemporada = document.getElementById('modal-temporada-ok');
       if (!modalTemporada) return;
 
       function closeTemporadaModal() {
@@ -416,7 +415,6 @@ if (!(window as any).__mcaModalInit) {
       }
 
       closeTemporada?.addEventListener('click', closeTemporadaModal);
-      okTemporada?.addEventListener('click', closeTemporadaModal);
       modalTemporada.addEventListener('click', (e) => {
         if (e.target === modalTemporada) closeTemporadaModal();
       });
