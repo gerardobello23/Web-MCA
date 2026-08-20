@@ -47,17 +47,29 @@ const steps = [
       aria-hidden="true"
       class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
     />
-    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24">
-      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
-        Inscripción
-      </p>
-      <h1 class="text-5xl md:text-7xl leading-none font-display font-bold mb-6 max-w-3xl">
-        Únete a Madrid Cheer Athletics
-      </h1>
-      <p class="text-lg md:text-xl text-mca-white/70 max-w-2xl">
-        Estamos encantados de que quieras formar parte de nuestra comunidad. El
-        proceso es sencillo y empezarás a entrenar antes de lo que imaginas.
-      </p>
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
+          Inscripción
+        </p>
+        <h1 class="text-5xl md:text-7xl leading-none font-display font-bold mb-6 max-w-3xl">
+          Únete a Madrid Cheer Athletics
+        </h1>
+        <p class="text-lg md:text-xl text-mca-white/70 max-w-2xl">
+          Estamos encantados de que quieras formar parte de nuestra comunidad. El
+          proceso es sencillo y empezarás a entrenar antes de lo que imaginas.
+        </p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-8 text-center md:text-left">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-mca-red mb-4 mx-auto md:mx-0"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+        <h2 class="text-2xl font-display font-bold mb-2">¿List@ para unirte?</h2>
+        <p class="text-mca-white/70 text-sm mb-6">
+          Completa el formulario de inscripción y nos pondremos en contacto contigo lo antes posible.
+        </p>
+        <a href="#formulario" class="block w-full bg-mca-red text-white font-bold py-3 rounded hover:opacity-90 transition-opacity uppercase tracking-wide text-sm text-center">
+          Ir al formulario
+        </a>
+      </div>
     </div>
   </section>
 
@@ -93,7 +105,7 @@ const steps = [
   </section>
 
   <!-- FORMULARIO -->
-  <section class="py-16 md:py-24 bg-mca-slate-50">
+  <section id="formulario" class="py-16 md:py-24 bg-mca-slate-50">
     <div class="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 text-center">
       <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
         ¿Listo para dar el paso?
