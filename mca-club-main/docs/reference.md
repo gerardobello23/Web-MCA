@@ -55,6 +55,6 @@ Webs y recursos a consultar como inspiración o validación durante el diseño.
 
 ## Datos físicos del club
 
-- **Dirección:** Cam. de las Hormigueras, 166, Villa de Vallecas, 28031 Madrid
+- **Dirección:** C. de Vital Aza, 56, Ciudad Lineal, 28017 Madrid
 - **Google Maps:** búsqueda directa por la dirección anterior (URL del brief original era genérica).
 

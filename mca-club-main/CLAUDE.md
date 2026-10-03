@@ -88,7 +88,7 @@ Resumen rápido (detalle completo en `docs/brand/brand-guidelines.md`):
 ## Información del cliente / club
 
 - **URL actual:** http://madridcheer.com/
-- **Dirección física:** Cam. de las Hormigueras, 166, Villa de Vallecas, 28031 Madrid
+- **Dirección física:** C. de Vital Aza, 56, Ciudad Lineal, 28017 Madrid
 - **Email:** hola@madridcheer.com
 - **Tel/WhatsApp:** +34 643 51 58 20
 - **Instagram:** [@mca_cheerleadingclub](https://www.instagram.com/mca_cheerleadingclub/)
