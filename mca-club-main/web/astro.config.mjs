@@ -6,7 +6,11 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.madridcheer.com',
   trailingSlash: 'never',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => !/\/(styleguide|privacidad-modal)\/?$/.test(page),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()]
   }
