@@ -8,7 +8,7 @@ Documento de referencia visual y técnica para la web de MCA. Versión: **Hand-o
 
 - **Nombre:** Madrid Cheer Athletics
 - **Acrónimo:** MCA
-- **Categoría:** Club deportivo de cheerleading (Villa de Vallecas, Madrid)
+- **Categoría:** Club deportivo de cheerleading (Ciudad Lineal, Madrid)
 - **Eslogan oficial:** *"No soñamos con ganar. Entrenamos para hacerlo."*
 - **Personalidad:** energética, disciplinada, comunitaria, aspiracional, estética collegiate USA.
 

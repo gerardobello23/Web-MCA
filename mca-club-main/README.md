@@ -1,6 +1,6 @@
 # Madrid Cheer Athletics · Web
 
-Sitio web público de **Madrid Cheer Athletics** (MCA), club de cheerleading en Villa de Vallecas, Madrid.
+Sitio web público de **Madrid Cheer Athletics** (MCA), club de cheerleading en Ciudad Lineal, Madrid.
 
 > "No soñamos con ganar. Entrenamos para hacerlo."
 

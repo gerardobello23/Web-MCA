@@ -6,7 +6,7 @@ Rediseño completo de la web pública del club de cheerleading **Madrid Cheer At
 
 ## Resumen ejecutivo
 
-MCA es un club de cheerleading en Villa de Vallecas (Madrid) en pleno crecimiento, con oferta deportiva que va desde clases recreativas para niños hasta equipos competitivos de alto rendimiento. El sitio actual (`madridcheer.com`) no comunica adecuadamente esa propuesta. Este proyecto entrega una web nueva enfocada en:
+MCA es un club de cheerleading en Ciudad Lineal (Madrid) en pleno crecimiento, con oferta deportiva que va desde clases recreativas para niños hasta equipos competitivos de alto rendimiento. El sitio actual (`madridcheer.com`) no comunica adecuadamente esa propuesta. Este proyecto entrega una web nueva enfocada en:
 
 - **Captar inscripciones** a clase de prueba gratuita.
 - **Posicionar el club** como referente profesional del cheerleading madrileño.

@@ -6,7 +6,7 @@ Contexto operativo para futuras sesiones de trabajo en este proyecto.
 
 ## Qué es este proyecto
 
-Web pública del club de cheerleading **Madrid Cheer Athletics** (MCA), ubicado en Madrid (Villa de Vallecas). El cliente es Gerardo, responsable del club. La web sustituye a `madridcheer.com` (sitio actual existente) con un rediseño completo enfocado en captación de nuevos atletas, presencia profesional y catálogo de equipos/productos.
+Web pública del club de cheerleading **Madrid Cheer Athletics** (MCA), ubicado en Madrid (Ciudad Lineal). El cliente es Gerardo, responsable del club. La web sustituye a `madridcheer.com` (sitio actual existente) con un rediseño completo enfocado en captación de nuevos atletas, presencia profesional y catálogo de equipos/productos.
 
 **Objetivos del sitio:**
 1. Captar inscripciones a clase de prueba gratuita.
