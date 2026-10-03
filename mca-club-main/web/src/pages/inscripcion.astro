@@ -3,7 +3,6 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 
-// TODO: reemplazar por la URL real del Google Forms del cliente cuando Gerardo la facilite.
 const googleFormsUrl = "https://forms.gle/WwwvoBnu9KF2tjL7A";
 
 const steps = [
@@ -122,27 +121,9 @@ const steps = [
         Ya probaste, ya conociste el equipo. Rellena el formulario de inscripción y nos pondremos en contacto contigo a la brevedad posible.
       </p>
 
-      {
-        googleFormsUrl === "#" ? (
-          <div class="border border-dashed border-mca-slate-300 rounded-sm p-8 bg-mca-white text-left">
-            <p class="text-xs uppercase tracking-widest text-mca-warning font-medium mb-2">
-              Pendiente
-            </p>
-            <p class="text-mca-slate-700 text-sm mb-4">
-              El club ya gestiona inscripciones a través de Google Forms. Cuando
-              Gerardo facilite la URL pública del formulario, este botón apuntará
-              directamente a él (o se incrustará dentro de la página si lo prefiere).
-            </p>
-            <Button variant="primary" disabled>
-              Abrir formulario
-            </Button>
-          </div>
-        ) : (
-          <Button variant="primary" href={googleFormsUrl} target="_blank" rel="noopener noreferrer">
-            Abrir formulario de inscripción
-          </Button>
-        )
-      }
+      <Button variant="primary" href={googleFormsUrl} target="_blank" rel="noopener noreferrer">
+        Abrir formulario de inscripción
+      </Button>
 
       <p class="mt-6 text-sm text-mca-slate-500">
         ¿Prefieres escribirnos? <a
