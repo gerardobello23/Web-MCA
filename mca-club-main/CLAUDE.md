@@ -25,7 +25,7 @@ Web pública del club de cheerleading **Madrid Cheer Athletics** (MCA), ubicado 
 | CSS | **Tailwind CSS** | Sistema de diseño consistente, sin CSS muerto, productividad alta |
 | CMS | **Keystatic** | Dashboard `/admin` para que el cliente edite contenido sin tocar código. Git-based, gratis |
 | Hosting | **Vercel** (plan Hobby) | DX excelente, previews por PR, Astro adapter de primera clase. Gratuito para uso no comercial. Cliente ya tiene cuenta. |
-| Repositorio | **GitHub** [`davidrc/mca-club`](https://github.com/davidrc/mca-club) | Conectado a Vercel para auto-deploy. |
+| Repositorio | **GitHub** [`gerardobello23/Web-MCA`](https://github.com/gerardobello23/Web-MCA) | Conectado a Vercel para auto-deploy. |
 | Formularios inscripción | **Google Forms del cliente** (según `web-content-original.txt`) | El club ya gestiona inscripciones por Google Forms; integramos su link |
 | Formulario contacto | Por confirmar (nativo + Resend/Formspree) | Para el formulario de la página Contacto, distinto al de inscripción |
 | Dominio | `madridcheer.com` | Ya en posesión del cliente |
@@ -111,7 +111,7 @@ Resumen rápido (detalle completo en `docs/brand/brand-guidelines.md`):
 ## Estado actual
 
 - **URL pública:** https://mca-club.vercel.app/
-- **Repo:** https://github.com/davidrc/mca-club (rama `main`)
+- **Repo:** https://github.com/gerardobello23/Web-MCA (rama `main`)
 - **Las 7 páginas del brief están live** + `/styleguide` interna.
 - **Header con drawer móvil**, **Footer con datos del club**, **favicon "M" del logo MCA**.
 - **Formulario de contacto** sin backend (validación HTML5 + handler JS de feedback).
