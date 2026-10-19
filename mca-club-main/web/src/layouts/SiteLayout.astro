@@ -239,6 +239,7 @@ const { title, description } = Astro.props;
 
   <script>
 import { supabase } from "../lib/supabase";
+import { isTemporadaPopupActive } from "../lib/temporada-popup";
 if (!(window as any).__mcaModalInit) {
   (window as any).__mcaModalInit = true;
 
@@ -392,7 +393,7 @@ if (!(window as any).__mcaModalInit) {
     fechaNacInput?.addEventListener('input', checkAge);
     fechaNacInput?.addEventListener('blur', checkAge);
 
-    // TEMPORADA_2026_2027 START — eliminar este bloque cuando se publique la información completa de la temporada
+    // TEMPORADA_2026_2027 START: inactivo por fecha (ver src/lib/temporada-popup.ts), no borrar: reutilizable
     (function () {
       const modalTemporada = document.getElementById('modal-temporada');
       const closeTemporada = document.getElementById('modal-temporada-close');
@@ -404,7 +405,8 @@ if (!(window as any).__mcaModalInit) {
         document.body.style.overflow = '';
       }
 
-      if (!sessionStorage.getItem('temporadaPopupShown')) {
+      // Hidden from TEMPORADA_POPUP_END (Madrid time), checked on every page load.
+      if (isTemporadaPopupActive() && !sessionStorage.getItem('temporadaPopupShown')) {
         setTimeout(() => {
           modalTemporada.classList.remove('hidden');
           modalTemporada.classList.add('flex');

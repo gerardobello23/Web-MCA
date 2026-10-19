@@ -119,6 +119,7 @@ Resumen rápido (detalle completo en `docs/brand/brand-guidelines.md`):
 - **Tienda** funciona como catálogo informativo con CTAs WhatsApp pre-rellenados.
 - **Mapa Google embebido** en `/contacto` con la dirección real.
 - **Páginas legales** (`/aviso-legal`, `/privacidad`, `/cookies`) referenciadas desde el footer pero aún sin crear (404).
+- **Pop-up "Temporada 26/27 · Inscripciones abiertas"** (`#modal-temporada`): marcado y script en `web/src/layouts/SiteLayout.astro` (bloques `TEMPORADA_2026_2027`). Se desactiva solo por fecha: **deja de mostrarse el 2026-11-01 a las 00:00 hora de Madrid** (se muestra hasta el 31/10 a las 23:59 incluido). La fecha de fin es la constante `TEMPORADA_POPUP_END` en `web/src/lib/temporada-popup.ts` (único sitio). La comprobación se hace en el navegador en cada carga, convirtiendo la hora del visitante a `Europe/Madrid`; el HTML del servidor siempre lo entrega oculto. No borrar: para reutilizarlo en otra campaña, cambiar la constante (y el texto si hace falta).
 
 ---
 
