@@ -2,6 +2,7 @@
 import SiteLayout from "../layouts/SiteLayout.astro";
 import Button from "../components/Button.astro";
 import Input from "../components/Input.astro";
+import { EMAIL_PATTERN } from "../lib/web-forms";
 
 const mapEmbedSrc =
   "https://maps.google.com/maps?q=C.+de+Vital+Aza+56+Madrid&t=&z=16&ie=UTF8&iwloc=&output=embed";
@@ -156,8 +157,17 @@ const subjectOptions = [
           </p>
 
           <form id="contact-form" class="grid gap-6">
-            <Input id="contact-nombre" label="Nombre" placeholder="Tu nombre" required />
-            <Input id="contact-email" label="Email" type="email" placeholder="tu@email.com" required />
+            <Input id="contact-nombre" label="Nombre" placeholder="Tu nombre" required maxlength={200} />
+            <Input
+              id="contact-email"
+              label="Email"
+              type="email"
+              placeholder="tu@email.com"
+              required
+              maxlength={200}
+              pattern={EMAIL_PATTERN}
+              title="Introduce un email válido, por ejemplo nombre@dominio.com"
+            />
             <div class="flex flex-col">
   <label class="text-sm font-medium text-mca-navy mb-1">Teléfono (opcional)</label>
   <div class="flex gap-2">
@@ -207,7 +217,7 @@ const subjectOptions = [
       <option value="+27">🇿🇦 +27</option>
       <option value="+234">🇳🇬 +234</option>
     </select>
-    <input type="tel" id="contact-telefono" name="telefono" placeholder="600 000 000" class="flex-1 px-4 py-2 rounded-sm border border-mca-slate-300 bg-mca-white text-mca-navy text-sm focus:outline-none focus:ring-2 focus:ring-mca-navy">
+    <input type="tel" id="contact-telefono" name="telefono" maxlength="43" placeholder="600 000 000" class="flex-1 px-4 py-2 rounded-sm border border-mca-slate-300 bg-mca-white text-mca-navy text-sm focus:outline-none focus:ring-2 focus:ring-mca-navy">
   </div>
 </div>
 
@@ -235,6 +245,7 @@ const subjectOptions = [
                 name="mensaje"
                 rows="5"
                 required
+                maxlength="2000"
                 placeholder="Cuéntanos en qué podemos ayudarte..."
                 class="w-full px-4 py-2 rounded-sm border border-mca-slate-300 bg-mca-white text-mca-navy placeholder:text-mca-slate-400 transition-shadow duration-150 ease-out focus:outline-none focus:ring-2 focus:ring-mca-navy focus:ring-offset-1 resize-y"
               ></textarea>
@@ -259,7 +270,7 @@ const subjectOptions = [
               aria-live="polite"
             ></div>
 
-            <Button variant="primary" type="submit">Enviar mensaje</Button>
+            <Button variant="primary" type="submit" class="disabled:opacity-60 disabled:cursor-wait">Enviar mensaje</Button>
           </form>
         </div>
       </div>
@@ -327,15 +338,19 @@ const subjectOptions = [
 </SiteLayout>
 
 <script>
-  import { supabase } from "../lib/supabase";
+  import { sendToApp, trimTextFields } from "../lib/web-forms";
 
   const form = document.getElementById("contact-form") as HTMLFormElement | null;
   const feedback = document.getElementById("contact-feedback") as HTMLDivElement | null;
+  const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+  const submitLabel = submitBtn?.textContent ?? "";
 
   if (form && feedback) {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
+      // Spaces are trimmed before validating, so a field with only spaces counts as empty
+      trimTextFields(form);
       if (!form.checkValidity()) {
         feedback.className = "rounded-sm p-4 text-sm bg-mca-error/10 text-mca-error border border-mca-error/30";
         feedback.textContent = "Revisa los campos marcados antes de enviar.";
@@ -343,10 +358,12 @@ const subjectOptions = [
         return;
       }
 
+      // Disabled while sending, so a double click cannot send it twice
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Enviando..."; }
       const formData = new FormData(form);
 
       const prefijoContacto = (document.getElementById("prefijo-contacto") as HTMLSelectElement)?.value || "+34";
-      const telefonoRaw = (formData.get("telefono") as string || "").trim();
+      const telefonoRaw = formData.get("telefono") as string;
       const telefono = telefonoRaw ? `${prefijoContacto} ${telefonoRaw}` : null;
 
       const payload = {
@@ -357,27 +374,20 @@ const subjectOptions = [
         mensaje: formData.get("mensaje"),
       };
 
-      try {
-        const { error } = await supabase.from("contact_messages").insert(payload);
+      const result = await sendToApp("/contact/notify", payload, {
+        error: "Error al enviar. Por favor, inténtalo de nuevo.",
+        network: "Error de conexión. Por favor, inténtalo de nuevo.",
+      });
 
-        if (!error) {
-          feedback.className = "rounded-sm p-4 text-sm bg-mca-success/10 text-mca-success border border-mca-success/30";
-          feedback.textContent = "Mensaje enviado correctamente. Te responderemos a la brevedad posible.";
-          form.reset();
-
-          fetch("https://app.madridcheer.com/api/contact/notify", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          }).then(r => console.log('notify status:', r.status)).catch(err => console.error('notify error:', err));
-        } else {
-          feedback.className = "rounded-sm p-4 text-sm bg-mca-error/10 text-mca-error border border-mca-error/30";
-          feedback.textContent = "Error al enviar. Por favor, inténtalo de nuevo.";
-        }
-      } catch {
+      if (result.ok) {
+        feedback.className = "rounded-sm p-4 text-sm bg-mca-success/10 text-mca-success border border-mca-success/30";
+        feedback.textContent = "Mensaje enviado correctamente. Te responderemos a la brevedad posible.";
+        form.reset();
+      } else {
         feedback.className = "rounded-sm p-4 text-sm bg-mca-error/10 text-mca-error border border-mca-error/30";
-        feedback.textContent = "Error de conexión. Por favor, inténtalo de nuevo.";
+        feedback.textContent = result.message;
       }
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = submitLabel; }
     });
   }
 </script>

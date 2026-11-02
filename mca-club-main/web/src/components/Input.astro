@@ -9,6 +9,9 @@ interface Props {
   disabled?: boolean;
   error?: string;
   value?: string;
+  maxlength?: number;
+  pattern?: string;
+  title?: string;
 }
 
 const {
@@ -21,6 +24,9 @@ const {
   disabled = false,
   error,
   value,
+  maxlength,
+  pattern,
+  title,
 } = Astro.props;
 
 const baseInput =
@@ -44,6 +50,9 @@ const disabledInput = "bg-mca-slate-50 text-mca-slate-400 cursor-not-allowed";
     required={required}
     disabled={disabled}
     value={value}
+    maxlength={maxlength}
+    pattern={pattern}
+    title={title}
     aria-invalid={error ? "true" : undefined}
     aria-describedby={error ? `${id}-error` : undefined}
     class={[baseInput, disabled ? disabledInput : stateInput].join(" ")}
