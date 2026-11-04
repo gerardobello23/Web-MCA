@@ -54,7 +54,7 @@ const sessionIncludes = [
   <!-- HERO -->
   <section class="relative bg-mca-navy-dark text-mca-white overflow-hidden">
     <img
-      src="/brand/logo-circular-blanco.png"
+      src="/brand/logo-circular-blanco.png" width="1446" height="1446"
       alt=""
       aria-hidden="true"
       class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
@@ -146,7 +146,7 @@ const sessionIncludes = [
   <!-- INSTALACIONES -->
   <section class="relative bg-mca-navy text-mca-white overflow-hidden">
     <img
-      src="/brand/logo-circular-blanco.png"
+      src="/brand/logo-circular-blanco.png" width="1446" height="1446"
       alt=""
       aria-hidden="true"
       class="absolute -left-24 -top-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
@@ -192,8 +192,11 @@ const sessionIncludes = [
         ].map((src, i) => (
           <img
             src={src}
+            width="1600"
+            height="1200"
             alt=""
             aria-hidden="true"
+            loading="lazy"
             class="absolute inset-0 w-full h-full object-cover"
             data-slide-inst={i}
           />
@@ -232,12 +235,19 @@ const sessionIncludes = [
     slide.style.transform = `translateX(${i * 100}%)`;
   });
 
+  // All slides are lazy (the section is below the fold); the next one is requested one step ahead
+  const loadNext = () => {
+    (slides[(current + 1) % total] as HTMLImageElement).loading = "eager";
+  };
+  window.addEventListener("load", loadNext, { once: true });
+
   setInterval(() => {
     current = (current + 1) % total;
     slides.forEach((slide, i) => {
       slide.style.transition = "transform 0.8s ease-in-out";
       slide.style.transform = `translateX(${(i - current) * 100}%)`;
     });
+    loadNext();
   }, 2000);
 </script>
 </SiteLayout>

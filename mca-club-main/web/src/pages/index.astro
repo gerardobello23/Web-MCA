@@ -65,18 +65,22 @@ const steps = [
   <!-- Carrusel de fondo -->
   <div id="hero-carousel" class="absolute inset-0 z-0">
     {[
-      "/images/Fotos Gerardo-02.webp",
-      "/images/Fotos Gerardo-03.webp",
-      "/images/Fotos Gerardo-05.webp",
-      "/images/Fotos Gerardo-08.webp",
-      "/images/Fotos Gerardo-09.webp",
-      "/images/Fotos Gerardo-10.webp",
-      "/images/Fotos Gerardo-12.webp",
-      "/images/Fotos Gerardo-13.webp",
-    ].map((src, i) => (
+      { src: "/images/Fotos Gerardo-02.webp", width: 1770, height: 2821 },
+      { src: "/images/Fotos Gerardo-03.webp", width: 799, height: 1298 },
+      { src: "/images/Fotos Gerardo-05.webp", width: 1352, height: 2249 },
+      { src: "/images/Fotos Gerardo-08.webp", width: 1391, height: 2204 },
+      { src: "/images/Fotos Gerardo-09.webp", width: 1177, height: 787 },
+      { src: "/images/Fotos Gerardo-10.webp", width: 1649, height: 1108 },
+      { src: "/images/Fotos Gerardo-12.webp", width: 1083, height: 1666 },
+      { src: "/images/Fotos Gerardo-13.webp", width: 1313, height: 815 },
+    ].map((img, i) => (
       <img
-        src={src}
+        src={img.src}
+        width={img.width}
+        height={img.height}
         alt={`Entrenamiento de cheerleading en Madrid Cheer Athletics - foto ${i + 1}`}
+        loading={i === 0 ? "eager" : "lazy"}
+        fetchpriority={i === 0 ? "high" : undefined}
         class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === 0 ? "opacity-100" : "opacity-0"}`}
         data-slide={i}
       />
@@ -88,7 +92,7 @@ const steps = [
 
   <!-- Logo circular -->
   <img
-    src="/brand/logo-circular-blanco.png"
+    src="/brand/logo-circular-blanco.png" width="1446" height="1446"
     alt=""
     aria-hidden="true"
     class="absolute z-20 -right-32 -bottom-32 w-[36rem] h-[36rem] opacity-5 pointer-events-none"
@@ -132,12 +136,19 @@ const steps = [
     slide.style.transform = `translateX(${i * 100}%)`;
   });
 
+  // Slides after the first are lazy and sit off-screen, so the next one is requested one step ahead
+  const loadNext = () => {
+    (slides[(current + 1) % total] as HTMLImageElement).loading = "eager";
+  };
+  window.addEventListener("load", loadNext, { once: true });
+
   setInterval(() => {
     current = (current + 1) % total;
     slides.forEach((slide, i) => {
       slide.style.transition = "transform 0.8s ease-in-out";
       slide.style.transform = `translateX(${(i - current) * 100}%)`;
     });
+    loadNext();
   }, 4000);
 </script>
 
@@ -241,7 +252,7 @@ const steps = [
   <!-- CTA final -->
   <section class="relative bg-mca-red text-mca-white overflow-hidden">
     <img
-      src="/brand/logo-circular-blanco.png"
+      src="/brand/logo-circular-blanco.png" width="1446" height="1446"
       alt=""
       aria-hidden="true"
       class="absolute -left-24 -top-24 w-[28rem] h-[28rem] opacity-10 pointer-events-none"
