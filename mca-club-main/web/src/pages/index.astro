@@ -65,20 +65,44 @@ const steps = [
   <!-- Carrusel de fondo -->
   <div id="hero-carousel" class="absolute inset-0 z-0">
     {[
-      { src: "/images/Fotos Gerardo-02.webp", width: 1770, height: 2821 },
-      { src: "/images/Fotos Gerardo-03.webp", width: 799, height: 1298 },
-      { src: "/images/Fotos Gerardo-05.webp", width: 1352, height: 2249 },
-      { src: "/images/Fotos Gerardo-08.webp", width: 1391, height: 2204 },
-      { src: "/images/Fotos Gerardo-09.webp", width: 1177, height: 787 },
-      { src: "/images/Fotos Gerardo-10.webp", width: 1649, height: 1108 },
-      { src: "/images/Fotos Gerardo-12.webp", width: 1083, height: 1666 },
-      { src: "/images/Fotos Gerardo-13.webp", width: 1313, height: 815 },
+      {
+        src: "/images/Fotos Gerardo-02.webp", width: 1770, height: 2821,
+        alt: "Flyer de Madrid Cheer Athletics elevada sobre una pierna por sus bases durante una rutina",
+      },
+      {
+        src: "/images/Fotos Gerardo-03.webp", width: 799, height: 1298,
+        alt: "Equipo de Madrid Cheer Athletics ejecutando un stunt en una competición, con la flyer en lo alto",
+      },
+      {
+        src: "/images/Fotos Gerardo-05.webp", width: 1352, height: 2249,
+        alt: "Atletas de Madrid Cheer Athletics en fila sobre el tapiz con el uniforme rojo y blanco del club",
+      },
+      {
+        src: "/images/Fotos Gerardo-08.webp", width: 1391, height: 2204,
+        alt: "Atletas de Madrid Cheer Athletics de perfil con el uniforme del club",
+      },
+      {
+        src: "/images/Fotos Gerardo-09.webp", width: 1177, height: 787,
+        alt: "Flyer de Madrid Cheer Athletics en el aire durante un lanzamiento, con las bases preparadas para la recepción",
+      },
+      {
+        src: "/images/Fotos Gerardo-10.webp", width: 1649, height: 1108,
+        alt: "Equipo de Madrid Cheer Athletics posando con sus medallas y un cartel del club tras una competición",
+      },
+      {
+        src: "/images/Fotos Gerardo-12.webp", width: 1083, height: 1666,
+        alt: "Flyer de Madrid Cheer Athletics con los brazos en alto sostenida por su base en una competición",
+      },
+      {
+        src: "/images/Fotos Gerardo-13.webp", width: 1313, height: 815,
+        alt: "Equipo de Madrid Cheer Athletics sincronizando una secuencia de brazos sobre el tapiz de competición",
+      },
     ].map((img, i) => (
       <img
         src={img.src}
         width={img.width}
         height={img.height}
-        alt={`Entrenamiento de cheerleading en Madrid Cheer Athletics - foto ${i + 1}`}
+        alt={img.alt}
         loading={i === 0 ? "eager" : "lazy"}
         fetchpriority={i === 0 ? "high" : undefined}
         class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === 0 ? "opacity-100" : "opacity-0"}`}

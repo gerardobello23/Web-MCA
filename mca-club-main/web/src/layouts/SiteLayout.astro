@@ -24,11 +24,12 @@ const { title, description, image, imageAlt, noindex } = Astro.props;
 
   <!-- MODAL PRUEBA GRATUITA -->
   <div id="modal-prueba" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4">
-    <div class="relative bg-white rounded-lg max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 md:p-8">
-      <button id="modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <div role="dialog" aria-modal="true" aria-labelledby="modal-prueba-title" class="relative bg-white rounded-lg max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 md:p-8">
+      <button type="button" id="modal-close" aria-label="Cerrar" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-      <h2 id="modal-prueba-title" class="text-2xl font-bold text-mca-navy mb-1">Reserva tu clase gratuita</h2>
+      <!-- Not a heading: this dialog is in every page's markup and would add a hidden H2 to all of them -->
+      <p id="modal-prueba-title" class="text-2xl font-display font-bold uppercase tracking-[0.01em] text-mca-navy mb-1">Reserva tu clase gratuita</p>
       <p id="modal-prueba-subtitle" class="text-sm text-gray-500 mb-6">Sin compromiso. Te confirmamos.</p>
 
       <form id="prueba-form" class="space-y-4">
@@ -36,19 +37,19 @@ const { title, description, image, imageAlt, noindex } = Astro.props;
         <input type="hidden" name="fuente" id="prueba-fuente" value="">
 
         <div>
-          <label class="block text-sm font-medium text-mca-navy mb-1">Nombre completo <span class="text-mca-red">*</span></label>
-          <input type="text" name="nombre" required maxlength="200" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-sm focus:outline-none focus:border-mca-red">
+          <label for="prueba-nombre" class="block text-sm font-medium text-mca-navy mb-1">Nombre completo <span class="text-mca-red">*</span></label>
+          <input type="text" id="prueba-nombre" name="nombre" required maxlength="200" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-base md:text-sm focus:outline-none focus:border-mca-red">
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-mca-navy mb-1">Email <span class="text-mca-red">*</span></label>
-          <input type="email" name="email" required maxlength="200" pattern={EMAIL_PATTERN} title="Introduce un email válido, por ejemplo nombre@dominio.com" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-sm focus:outline-none focus:border-mca-red">
+          <label for="prueba-email" class="block text-sm font-medium text-mca-navy mb-1">Email <span class="text-mca-red">*</span></label>
+          <input type="email" id="prueba-email" name="email" required maxlength="200" pattern={EMAIL_PATTERN} title="Introduce un email válido, por ejemplo nombre@dominio.com" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-base md:text-sm focus:outline-none focus:border-mca-red">
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-mca-navy mb-1">Teléfono <span class="text-mca-red">*</span></label>
+          <label for="prueba-telefono" class="block text-sm font-medium text-mca-navy mb-1">Teléfono <span class="text-mca-red">*</span></label>
           <div class="flex gap-2">
-            <select id="prefijo-tel" class="px-2 py-2 rounded border border-gray-300 text-mca-navy text-sm focus:outline-none focus:border-mca-red bg-white w-32 shrink-0">
+            <select id="prefijo-tel" aria-label="Prefijo telefónico" class="px-2 py-2 rounded border border-gray-300 text-mca-navy text-base md:text-sm focus:outline-none focus:border-mca-red bg-white w-32 shrink-0">
               <option value="+34">🇪🇸 +34</option>
               <option value="+57">🇨🇴 +57</option>
               <option value="+52">🇲🇽 +52</option>
@@ -95,25 +96,25 @@ const { title, description, image, imageAlt, noindex } = Astro.props;
               <option value="+27">🇿🇦 +27</option>
               <option value="+234">🇳🇬 +234</option>
             </select>
-            <input type="tel" name="telefono" required maxlength="43" placeholder="600 000 000" class="flex-1 px-3 py-2 rounded border border-gray-300 text-mca-navy text-sm focus:outline-none focus:border-mca-red">
+            <input type="tel" id="prueba-telefono" name="telefono" required maxlength="43" placeholder="600 000 000" class="flex-1 min-w-0 px-3 py-2 rounded border border-gray-300 text-mca-navy text-base md:text-sm focus:outline-none focus:border-mca-red">
           </div>
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-mca-navy mb-1">Fecha de nacimiento <span class="text-mca-red">*</span></label>
-          <input type="date" name="fecha_nacimiento" required class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-sm focus:outline-none focus:border-mca-red">
+          <label for="prueba-fecha-nacimiento" class="block text-sm font-medium text-mca-navy mb-1">Fecha de nacimiento <span class="text-mca-red">*</span></label>
+          <input type="date" id="prueba-fecha-nacimiento" name="fecha_nacimiento" required class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-base md:text-sm focus:outline-none focus:border-mca-red">
         </div>
 
         <!-- SECCIÓN TUTOR — visible solo si el solicitante es menor de 18 -->
         <div id="tutor-section" class="hidden space-y-4 p-4 bg-blue-50 rounded border border-blue-200">
           <p class="text-sm font-medium text-mca-navy">Datos del padre/madre/tutor legal</p>
           <div>
-            <label class="block text-sm font-medium text-mca-navy mb-1">Nombre completo del tutor <span class="text-mca-red">*</span></label>
-            <input type="text" name="tutor_nombre" maxlength="200" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-sm focus:outline-none focus:border-mca-red">
+            <label for="prueba-tutor-nombre" class="block text-sm font-medium text-mca-navy mb-1">Nombre completo del tutor <span class="text-mca-red">*</span></label>
+            <input type="text" id="prueba-tutor-nombre" name="tutor_nombre" maxlength="200" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-base md:text-sm focus:outline-none focus:border-mca-red">
           </div>
           <div>
-            <label class="block text-sm font-medium text-mca-navy mb-1">Relación con el menor <span class="text-mca-red">*</span></label>
-            <select name="tutor_relacion" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-sm focus:outline-none focus:border-mca-red bg-white">
+            <label for="prueba-tutor-relacion" class="block text-sm font-medium text-mca-navy mb-1">Relación con el menor <span class="text-mca-red">*</span></label>
+            <select id="prueba-tutor-relacion" name="tutor_relacion" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-base md:text-sm focus:outline-none focus:border-mca-red bg-white">
               <option value="">Selecciona</option>
               <option value="Padre">Padre</option>
               <option value="Madre">Madre</option>
@@ -121,13 +122,13 @@ const { title, description, image, imageAlt, noindex } = Astro.props;
             </select>
           </div>
           <div>
-            <label class="block text-sm font-medium text-mca-navy mb-1">DNI/NIE del tutor <span class="text-mca-red">*</span></label>
-            <input type="text" name="tutor_dni" maxlength="20" placeholder="12345678A" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-sm focus:outline-none focus:border-mca-red">
+            <label for="prueba-tutor-dni" class="block text-sm font-medium text-mca-navy mb-1">DNI/NIE del tutor <span class="text-mca-red">*</span></label>
+            <input type="text" id="prueba-tutor-dni" name="tutor_dni" maxlength="20" placeholder="12345678A" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-base md:text-sm focus:outline-none focus:border-mca-red">
           </div>
         </div>
 
-        <div>
-          <label class="block text-sm font-medium text-mca-navy mb-2">Experiencia <span class="text-mca-red">*</span></label>
+        <fieldset>
+          <legend class="block text-sm font-medium text-mca-navy mb-2">Experiencia <span class="text-mca-red">*</span></legend>
           <div class="space-y-2">
             <label class="flex items-start gap-2 text-sm text-mca-navy cursor-pointer">
               <input type="radio" name="experiencia" value="Sin experiencia" required class="mt-0.5 accent-mca-red"> Nunca practiqué este deporte
@@ -145,10 +146,10 @@ const { title, description, image, imageAlt, noindex } = Astro.props;
               <input type="radio" name="experiencia" value="Nivel 4-7 competitivo" class="mt-0.5 accent-mca-red"> Hice nivel 4; 5; 6 y/o 7 competitivo
             </label>
           </div>
-        </div>
+        </fieldset>
 
-        <div>
-          <label class="block text-sm font-medium text-mca-navy mb-2">Rol (puedes elegir varios)</label>
+        <fieldset>
+          <legend class="block text-sm font-medium text-mca-navy mb-2">Rol (puedes elegir varios)</legend>
           <div class="space-y-2">
             <label class="flex items-center gap-2 text-sm text-mca-navy cursor-pointer">
               <input type="checkbox" name="rol_base" value="Base" class="accent-mca-red"> Soy base (principal, secundaria o spotter)
@@ -160,16 +161,16 @@ const { title, description, image, imageAlt, noindex } = Astro.props;
               <input type="checkbox" name="rol_gimnasia" value="Gimnasia" class="accent-mca-red"> Hago gimnasia (básica o avanzada)
             </label>
           </div>
+        </fieldset>
+
+        <div>
+          <label for="prueba-condiciones-medicas" class="block text-sm font-medium text-mca-navy mb-1">Condiciones médicas y/o lesiones <span class="text-mca-red">*</span></label>
+          <input type="text" id="prueba-condiciones-medicas" name="condiciones_medicas" placeholder="Escribe 'Ninguna' si no tienes" required maxlength="1000" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-base md:text-sm focus:outline-none focus:border-mca-red">
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-mca-navy mb-1">Condiciones médicas y/o lesiones <span class="text-mca-red">*</span></label>
-          <input type="text" name="condiciones_medicas" placeholder="Escribe 'Ninguna' si no tienes" required maxlength="1000" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-sm focus:outline-none focus:border-mca-red">
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-mca-navy mb-1">Comentarios, preguntas o dudas</label>
-          <textarea name="comentarios" rows="3" maxlength="2000" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-sm focus:outline-none focus:border-mca-red"></textarea>
+          <label for="prueba-comentarios" class="block text-sm font-medium text-mca-navy mb-1">Comentarios, preguntas o dudas</label>
+          <textarea id="prueba-comentarios" name="comentarios" rows="3" maxlength="2000" class="w-full px-3 py-2 rounded border border-gray-300 text-mca-navy text-base md:text-sm focus:outline-none focus:border-mca-red"></textarea>
         </div>
 
         <!-- CONSENTIMIENTO ADULTO -->
@@ -207,7 +208,7 @@ const { title, description, image, imageAlt, noindex } = Astro.props;
   </style>
 
   <div id="modal-temporada" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 p-4">
-    <div class="modal-temporada-card relative bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl">
+    <div role="dialog" aria-modal="true" aria-labelledby="modal-temporada-title" class="modal-temporada-card relative bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl">
 
       <div class="absolute top-4 right-4 z-20">
         <span class="inline-block px-4 py-2 rounded-full bg-mca-red text-white text-xs font-black uppercase tracking-[0.15em] whitespace-nowrap shadow-lg animate-pulse">
@@ -215,15 +216,16 @@ const { title, description, image, imageAlt, noindex } = Astro.props;
         </span>
       </div>
 
-      <button id="modal-temporada-close" class="absolute top-3 left-3 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/30 transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <button type="button" id="modal-temporada-close" aria-label="Cerrar" class="absolute top-3 left-3 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/30 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
 
       <div class="bg-gradient-to-br from-mca-navy to-[#0a4d85] px-7 pt-12 pb-8 md:px-8 md:pt-14">
         <p class="text-xs uppercase tracking-[0.2em] text-mca-red font-bold mb-2">Temporada 26/27</p>
-        <h2 class="text-3xl md:text-[2.25rem] font-black text-white leading-[0.95] uppercase">
+        <!-- Not a heading, for the same reason as the free-trial dialog title -->
+        <p id="modal-temporada-title" class="text-3xl md:text-[2.25rem] font-display font-black text-white leading-[0.95] uppercase tracking-[0.01em]">
           Inscripciones<br/>abiertas
-        </h2>
+        </p>
       </div>
 
       <div class="relative -mt-6 bg-white rounded-t-[1.75rem] px-7 pt-6 pb-7 md:px-8 md:pb-8">

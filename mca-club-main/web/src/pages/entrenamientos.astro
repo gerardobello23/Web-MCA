@@ -183,19 +183,36 @@ const sessionIncludes = [
 
       <div id="instalaciones-carousel" class="relative aspect-video rounded-sm overflow-hidden min-h-72">
 {[
-          "/images/IMG_6468.webp",
-          "/images/IMG_6471.webp",
-          "/images/IMG_6473.webp",
-          "/images/IMG_6459.webp",
-          "/images/IMG_6464.webp",
-          "/images/IMG_6458.webp",
-        ].map((src, i) => (
+          {
+            src: "/images/IMG_6468.webp",
+            alt: "Sala de entrenamiento con tapiz amarillo, techo alto con lucernarios y banderolas de MCA",
+          },
+          {
+            src: "/images/IMG_6471.webp",
+            alt: "Vista lateral de la sala de entrenamiento con el tapiz amarillo y paredes de ladrillo",
+          },
+          {
+            src: "/images/IMG_6473.webp",
+            alt: "Vestuario con lavabos, banco de madera, perchas y duchas individuales",
+          },
+          {
+            src: "/images/IMG_6459.webp",
+            alt: "Tapiz amarillo de entrenamiento con la lona de MCA en el gimnasio KAIROS de Ciudad Lineal",
+          },
+          {
+            src: "/images/IMG_6464.webp",
+            alt: "Tapiz amarillo de la sala de entrenamiento visto a ras de suelo",
+          },
+          {
+            src: "/images/IMG_6458.webp",
+            alt: "Vestuario con bancos de madera, perchas, lavabos y cabinas",
+          },
+        ].map((img, i) => (
           <img
-            src={src}
+            src={img.src}
             width="1600"
             height="1200"
-            alt=""
-            aria-hidden="true"
+            alt={img.alt}
             loading="lazy"
             class="absolute inset-0 w-full h-full object-cover"
             data-slide-inst={i}
