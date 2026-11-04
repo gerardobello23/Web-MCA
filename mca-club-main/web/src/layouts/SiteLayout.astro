@@ -7,12 +7,15 @@ import { EMAIL_PATTERN } from "../lib/web-forms";
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  imageAlt?: string;
+  noindex?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, imageAlt, noindex } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} image={image} imageAlt={imageAlt} noindex={noindex}>
   <Header />
   <main>
     <slot />

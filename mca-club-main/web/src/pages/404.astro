@@ -1,0 +1,44 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import Button from "../components/Button.astro";
+---
+
+<SiteLayout
+  title="Página no encontrada · Madrid Cheer Athletics"
+  description="La página que buscas no existe o ha cambiado de dirección."
+  noindex
+>
+  <section class="relative bg-mca-navy-dark text-mca-white overflow-hidden">
+    <img
+      src="/brand/logo-circular-blanco.png"
+      width="1446"
+      height="1446"
+      alt=""
+      aria-hidden="true"
+      class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] opacity-5 pointer-events-none"
+    />
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-20 md:py-32">
+      <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
+        Error 404
+      </p>
+      <h1 class="text-5xl md:text-7xl leading-none font-display font-bold mb-6 max-w-3xl">
+        Página no encontrada
+      </h1>
+      <p class="text-lg md:text-xl text-mca-white/70 max-w-2xl mb-8">
+        La dirección que buscas no existe o ha cambiado. Revisa el enlace o
+        continúa desde una de estas secciones.
+      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <Button variant="primary-on-navy" href="/inscripcion">
+          Inscríbete
+        </Button>
+        <Button variant="ghost" href="/entrenamientos" class="border-mca-white text-mca-white hover:bg-mca-white/10">
+          Conoce los entrenamientos
+        </Button>
+        <Button variant="ghost" href="/" class="border-mca-white text-mca-white hover:bg-mca-white/10">
+          Vuelve al inicio
+        </Button>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

@@ -4,13 +4,51 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  // Social card image: a path under public/ (1200x630 recommended) and its alt text
+  image?: string;
+  imageAlt?: string;
   noindex?: boolean;
 }
+
+const SITE = "https://www.madridcheer.com";
+const DEFAULT_IMAGE = "/images/og-madrid-cheer-athletics.jpg";
 
 const {
   title = "Madrid Cheer Athletics",
   description = "Club de cheerleading en Madrid. Entrenamientos, equipos competitivos y recreativos. No soñamos con ganar. Entrenamos para hacerlo.",
+  image = DEFAULT_IMAGE,
+  imageAlt = "Logo de Madrid Cheer Athletics junto al equipo del club con sus medallas",
+  noindex = false,
 } = Astro.props;
+
+const canonical = `${SITE}${Astro.url.pathname}`;
+const imageUrl = new URL(image, SITE).href;
+
+// The club as a whole. Pages with their own entity (e.g. /mca-kids) point to it via this @id.
+const club = {
+  "@context": "https://schema.org",
+  "@type": "SportsClub",
+  "@id": `${SITE}/#club`,
+  name: "Madrid Cheer Athletics",
+  url: `${SITE}/`,
+  logo: `${SITE}/brand/logo-circular-rojo.png`,
+  image: `${SITE}${DEFAULT_IMAGE}`,
+  sport: "Cheerleading",
+  telephone: "+34 643 51 58 20",
+  email: "hola@madridcheer.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "C. de Vital Aza, 56",
+    addressLocality: "Madrid",
+    addressRegion: "Madrid",
+    postalCode: "28017",
+    addressCountry: "ES",
+  },
+  sameAs: [
+    "https://www.instagram.com/mca_cheerleadingclub/",
+    "https://www.tiktok.com/@mca_cheerleadingclub",
+  ],
+};
 ---
 
 <!doctype html>
@@ -18,9 +56,23 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {Astro.props.noindex && <meta name="robots" content="noindex, nofollow" />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="description" content={description} />
-    <link rel="canonical" href={`https://www.madridcheer.com${Astro.url.pathname}`} />
+    {!noindex && <link rel="canonical" href={canonical} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Madrid Cheer Athletics" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {!noindex && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={imageUrl} />
+    {image === DEFAULT_IMAGE && <meta property="og:image:width" content="1200" />}
+    {image === DEFAULT_IMAGE && <meta property="og:image:height" content="630" />}
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(club)} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="theme-color" content="#E31837" />
