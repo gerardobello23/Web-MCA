@@ -8,6 +8,8 @@ interface Props {
   image?: string;
   imageAlt?: string;
   noindex?: boolean;
+  // false leaves out GA entirely (e.g. /privacidad-modal, shown inside an iframe)
+  analytics?: boolean;
 }
 
 const SITE = "https://www.madridcheer.com";
@@ -19,6 +21,7 @@ const {
   image = DEFAULT_IMAGE,
   imageAlt = "Logo de Madrid Cheer Athletics junto al equipo del club con sus medallas",
   noindex = false,
+  analytics = true,
 } = Astro.props;
 
 const canonical = `${SITE}${Astro.url.pathname}`;
@@ -92,6 +95,8 @@ const club = {
     </noscript>
 
     <title>{title}</title>
+{analytics && (
+  <>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-167EYGMGDN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -99,6 +104,12 @@ const club = {
   gtag('js', new Date());
   gtag('config', 'G-167EYGMGDN');
 </script>
+<script>
+  import { initLinkTracking } from "../lib/analytics";
+  initLinkTracking();
+</script>
+  </>
+)}
   </head>
   <body class="min-h-screen antialiased">
     <slot />

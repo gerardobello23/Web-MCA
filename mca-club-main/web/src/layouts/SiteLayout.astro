@@ -246,6 +246,7 @@ const { title, description, image, imageAlt, noindex } = Astro.props;
   <script>
 import { isTemporadaPopupActive } from "../lib/temporada-popup";
 import { ageInMadrid, limitBirthDate, sendToApp, trimTextFields } from "../lib/web-forms";
+import { track } from "../lib/analytics";
 if (!(window as any).__mcaModalInit) {
   (window as any).__mcaModalInit = true;
 
@@ -332,6 +333,7 @@ if (!(window as any).__mcaModalInit) {
 
       if (pruebaFeedback) pruebaFeedback.classList.remove("hidden");
       if (result.ok) {
+        track("envio_prueba_gratuita", { fuente: (formData.get("fuente") as string) || undefined });
         if (pruebaFeedback) {
           pruebaFeedback.className = "rounded p-3 text-sm bg-green-50 text-green-700 border border-green-200";
           pruebaFeedback.textContent = "¡Solicitud enviada! Te contactaremos lo antes posible.";
