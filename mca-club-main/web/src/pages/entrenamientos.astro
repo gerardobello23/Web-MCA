@@ -38,6 +38,27 @@ const modalities = [
   },
 ];
 
+const competitionSchedule = [
+  { day: "Viernes", time: "19:00–22:00" },
+  { day: "Sábado", time: "10:00–12:00", note: "Opcional" },
+  { day: "Domingo", time: "10:00–12:00" },
+];
+
+const registrationIncludes = [
+  "Equipación",
+  "Seguro deportivo",
+  "Seguro de responsabilidad civil",
+  "Licencia federativa",
+  "Alta y gestión de la temporada",
+  "App del club",
+];
+
+const monthlyFeeIncludes = [
+  "Entrenadores y entrenamientos",
+  "Instalación",
+  "Coreografías y música",
+];
+
 const sessionIncludes = [
   "Calentamiento y preparación física",
   "Técnica específica de cheerleading",
@@ -48,8 +69,8 @@ const sessionIncludes = [
 ---
 
 <SiteLayout
-  title="Clases de Cheerleading en Madrid · MCA"
-  description="Clases de cheerleading en Madrid todos los niveles. Viernes 19-22h y domingos 10-12h en Ciudad Lineal."
+  title="Clases de cheerleading en Madrid: horarios y cuotas | MCA"
+  description="Clases de cheerleading en Ciudad Lineal, Madrid: recreativo, competición, tumbling y stunts. Equipo de competición: viernes y domingos, sábados opcionales."
 >
   <!-- HERO -->
   <section class="relative bg-mca-navy-dark text-mca-white overflow-hidden">
@@ -63,8 +84,9 @@ const sessionIncludes = [
       <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-4">
         Entrenamientos
       </p>
-      <h1 class="text-5xl md:text-7xl leading-none font-display font-bold mb-6 max-w-3xl">
-        Diseñados para ti
+      <h1 class="font-display font-bold mb-6 max-w-4xl">
+        <span class="block text-3xl md:text-4xl leading-tight mb-2">Entrenamientos de cheerleading en Madrid</span><span class="sr-only"> - </span>
+        <span class="block text-5xl md:text-7xl leading-none">Diseñados para ti</span>
       </h1>
       <p class="text-lg md:text-xl text-mca-white/70 max-w-2xl">
         Clases de cheer en Madrid que combinan técnica, acondicionamiento físico y diversión. Programas adaptados a diferentes niveles y objetivos deportivos.
@@ -140,6 +162,106 @@ const sessionIncludes = [
           ))
         }
       </ul>
+    </div>
+  </section>
+
+  <!-- HORARIOS Y CUOTAS -->
+  <section id="horarios-cuotas" class="py-16 md:py-24 bg-mca-white scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <p class="text-sm uppercase tracking-widest text-mca-red font-medium mb-2">
+          Horarios y cuotas
+        </p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-mca-navy">
+          Cuándo entrenamos y cuánto cuesta
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6 items-start">
+        <!-- Equipo de competición -->
+        <Card class="lg:col-span-2 md:p-8">
+          <h3 class="text-3xl text-mca-navy mb-6">Equipo de competición</h3>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <p class="text-xs uppercase tracking-widest font-medium text-mca-red mb-3">Horarios</p>
+              <dl class="divide-y divide-mca-slate-100 border-y border-mca-slate-100">
+                {competitionSchedule.map((s) => (
+                  <div class="flex items-baseline justify-between gap-4 py-3">
+                    <dt class="text-mca-navy font-medium">
+                      {s.day}
+                      {s.note && (
+                        <span class="ml-2 text-xs uppercase tracking-widest font-medium px-2 py-0.5 rounded-sm bg-mca-slate-100 text-mca-slate-700">{s.note}</span>
+                      )}
+                    </dt>
+                    <dd class="text-mca-navy tabular-nums whitespace-nowrap">{s.time}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <div>
+              <p class="text-xs uppercase tracking-widest font-medium text-mca-red mb-3">Cuotas</p>
+              <dl class="divide-y divide-mca-slate-100 border-y border-mca-slate-100">
+                <div class="grid grid-cols-[1fr_auto] items-baseline gap-x-4 py-3">
+                  <dt class="text-mca-navy font-medium">Inscripción</dt>
+                  <dd class="text-2xl font-display font-bold text-mca-navy whitespace-nowrap">120 €</dd>
+                  <dd class="col-span-2 text-sm text-mca-slate-500 mt-1">
+                    Al contado o en 4 plazos, pagaderos durante los primeros 5 días de cada mes.
+                  </dd>
+                </div>
+                <div class="flex items-baseline justify-between gap-4 py-3">
+                  <dt class="text-mca-navy font-medium">Cuota mensual</dt>
+                  <dd class="text-2xl font-display font-bold text-mca-navy whitespace-nowrap">75 €</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div>
+              <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-3">La inscripción incluye</p>
+              <ul class="space-y-2">
+                {registrationIncludes.map((item) => (
+                  <li class="flex items-start gap-2 text-mca-slate-700">
+                    <span class="text-mca-red shrink-0" aria-hidden="true">✓</span>{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-3">La cuota mensual incluye</p>
+              <ul class="space-y-2">
+                {monthlyFeeIncludes.map((item) => (
+                  <li class="flex items-start gap-2 text-mca-slate-700">
+                    <span class="text-mca-red shrink-0" aria-hidden="true">✓</span>{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Card>
+
+        <div class="grid gap-6">
+          <!-- Recreación / educativo -->
+          <Card class="md:p-8">
+            <h3 class="text-3xl text-mca-navy mb-2">Recreación / educativo</h3>
+            <p class="text-sm text-mca-slate-500 mb-4">Sin compromiso deportivo</p>
+            <p class="text-mca-slate-700 mb-4">Horarios y cuotas a consultar.</p>
+            <a href="/contacto" class="text-sm font-medium uppercase tracking-wide text-mca-red hover:underline">Consúltanos →</a>
+          </Card>
+
+          <!-- mca Kids -->
+          <Card class="md:p-8">
+            <h3 class="font-kids text-4xl text-mca-navy mb-2">mca Kids</h3>
+            <p class="text-sm text-mca-slate-500 mb-4">Desde 5 años</p>
+            <ul class="space-y-1 text-mca-slate-700 mb-4">
+              <li>Viernes, sábados y domingos, horarios a convenir.</li>
+              <li>Cuotas a consultar.</li>
+            </ul>
+            <a href="/mca-kids" class="text-sm font-medium uppercase tracking-wide text-mca-red hover:underline">Más sobre mca Kids →</a>
+          </Card>
+        </div>
+      </div>
     </div>
   </section>
 

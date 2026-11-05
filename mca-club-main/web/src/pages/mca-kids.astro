@@ -3,8 +3,8 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
 <SiteLayout
-  title="mca Kids · Cheerleading para Niños en Madrid | Extraescolar desde 5 años"
-  description="Clases de cheerleading para niños desde 5 años en Madrid, Ciudad Lineal. Actividad extraescolar sábados y domingos. Desarrolla confianza, trabajo en equipo y disciplina. Primera clase gratis."
+  title="mca Kids · Cheerleading para niños en Madrid desde 5 años"
+  description="Cheerleading para niños desde 5 años en Ciudad Lineal, Madrid. Confianza, trabajo en equipo y diversión con entrenadores especializados."
 >
 
   <!-- HERO -->
@@ -32,14 +32,15 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
     <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <h1 class="font-kids text-8xl md:text-[9rem] text-mca-white leading-none mb-6 tracking-wide">
-          mca Kids!
+        <h1 class="font-kids text-mca-white leading-none mb-6 tracking-wide">
+          <span class="block text-8xl md:text-[9rem]">mca Kids:</span>
+          <span class="block max-w-xl text-4xl md:text-5xl leading-tight mt-3">cheerleading para niños en Madrid</span>
         </h1>
         <p class="font-kids text-lg md:text-xl text-mca-white/85 max-w-xl mb-6 leading-relaxed">
   Clases de cheerleading para niños desde 5 años en Madrid. Creemos que cuanto antes empieza un niño a moverse, a trabajar en equipo y a superarse, más lejos llega.
 </p>
 <p class="font-kids text-lg md:text-xl text-mca-white/85 max-w-xl mb-10 leading-relaxed">
-  mca Kids es el espacio donde los más pequeños dan sus primeros pasos en el deporte, con entrenadores especializados, en un ambiente seguro y divertido. Sábados y domingos en Ciudad Lineal.
+  mca Kids es el espacio donde los más pequeños dan sus primeros pasos en el deporte, con entrenadores especializados, en un ambiente seguro y divertido. Viernes, sábados y domingos en Ciudad Lineal.
 </p>
 
         <div class="flex items-center gap-8 flex-wrap">
@@ -122,7 +123,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
         <h2 class="font-kids text-5xl md:text-6xl text-mca-white">¡Anímate!</h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
         <div class="bg-mca-navy/40 rounded-sm p-8 border border-mca-white/10 text-center">
           <p class="font-kids text-lg uppercase tracking-widest text-mca-red mb-4">Edades</p>
@@ -131,8 +132,13 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
         <div class="bg-mca-navy/40 rounded-sm p-8 border border-mca-white/10 text-center">
           <p class="font-kids text-lg uppercase tracking-widest text-mca-red mb-4">Horarios</p>
-          <p class="font-kids text-4xl text-mca-white leading-tight">Sábados y domingos</p>
-          <p class="font-kids text-mca-white/50 text-xl mt-3">Horarios a consultar</p>
+          <p class="font-kids text-4xl text-mca-white leading-tight">Viernes, sábados y domingos</p>
+          <p class="font-kids text-mca-white/50 text-xl mt-3">Horarios a convenir</p>
+        </div>
+
+        <div class="bg-mca-navy/40 rounded-sm p-8 border border-mca-white/10 text-center">
+          <p class="font-kids text-lg uppercase tracking-widest text-mca-red mb-4">Precios</p>
+          <p class="font-kids text-4xl text-mca-white leading-tight">A consultar</p>
         </div>
 
         <div class="bg-mca-navy/40 rounded-sm p-8 border border-mca-white/10 text-center">
@@ -178,7 +184,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
       <dl class="max-w-3xl space-y-8">
         {[
           { q: "¿Desde qué edad pueden apuntarse los niños?", a: "mca Kids está abierto a niños desde 5 años en adelante. No hace falta experiencia previa en cheerleading ni en ningún otro deporte." },
-          { q: "¿Es una actividad extraescolar?", a: "Sí. Los entrenamientos son los sábados y domingos, fuera del horario escolar, por lo que son perfectamente compatibles con el colegio y otras actividades." },
+          { q: "¿Es una actividad extraescolar?", a: "Sí. Los entrenamientos son los viernes, sábados y domingos, fuera del horario escolar, por lo que son perfectamente compatibles con el colegio y otras actividades." },
           { q: "¿Necesitan experiencia previa en gimnasia o danza?", a: "No. mca Kids está diseñado para que los niños empiecen desde cero. Nuestros entrenadores especializados adaptan cada sesión al nivel de cada participante." },
           { q: "¿Dónde se realizan los entrenamientos?", a: <>En el gimnasio KAIROS, <a href="https://maps.google.com/?q=C.+de+Vital+Aza,+56,+Madrid" target="_blank" rel="noopener" class="text-mca-red underline hover:opacity-80">C. de Vital Aza, 56, Ciudad Lineal, Madrid</a>. Una zona bien comunicada y de fácil acceso.</> },
           { q: "¿Qué aprenden los niños en las clases?", a: "Aprenden fundamentos de cheerleading: acrobacias básicas, coreografías, trabajo en equipo y disciplina deportiva. Todo en un ambiente seguro, divertido y supervisado." },
@@ -247,7 +253,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
   "@id": "https://www.madridcheer.com/mca-kids#programa",
   "parentOrganization": { "@id": "https://www.madridcheer.com/#club" },
   "name": "mca Kids · Madrid Cheer Athletics",
-  "description": "Programa de cheerleading para niños desde 5 años en Madrid. Actividad extraescolar los sábados y domingos.",
+  "description": "Programa de cheerleading para niños desde 5 años en Madrid. Actividad extraescolar los viernes, sábados y domingos.",
   "url": "https://www.madridcheer.com/mca-kids",
   "telephone": "+34643515820",
   "email": "hola@madridcheer.com",
