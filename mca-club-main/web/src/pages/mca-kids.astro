@@ -31,17 +31,12 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     />
 
     <div class="relative max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <h1 class="font-kids text-mca-white leading-none mb-6 tracking-wide">
-          <span class="block text-8xl md:text-[9rem]">mca Kids:</span>
-          <span class="block max-w-xl text-4xl md:text-5xl leading-tight mt-3">cheerleading para niños en Madrid</span>
+      <div class="max-w-3xl md:max-w-[min(39rem,calc(50vw-3rem))]">
+        <!-- Line widths are capped so the title never runs into the photo (right half from md) -->
+        <h1 class="font-kids text-mca-white leading-none mb-12 tracking-wide">
+          <span class="block text-7xl sm:text-8xl md:text-[min(10vw,9rem)]">mca Kids:</span>
+          <span class="block text-[2.5rem] leading-[1.05] mt-3 md:text-[min(4.4vw,4rem)] md:max-w-[min(42vw,38rem)]">cheerleading para niños en Madrid</span>
         </h1>
-        <p class="font-kids text-lg md:text-xl text-mca-white/85 max-w-xl mb-6 leading-relaxed">
-  Clases de cheerleading para niños desde 5 años en Madrid. Creemos que cuanto antes empieza un niño a moverse, a trabajar en equipo y a superarse, más lejos llega.
-</p>
-<p class="font-kids text-lg md:text-xl text-mca-white/85 max-w-xl mb-10 leading-relaxed">
-  mca Kids es el espacio donde los más pequeños dan sus primeros pasos en el deporte, con entrenadores especializados, en un ambiente seguro y divertido. Viernes, sábados y domingos en Ciudad Lineal.
-</p>
 
         <div class="flex items-center gap-8 flex-wrap">
           <a
@@ -79,6 +74,9 @@ import SiteLayout from "../layouts/SiteLayout.astro";
       <div class="max-w-3xl mb-12">
         <p class="font-kids text-sm uppercase tracking-widest text-mca-red font-medium mb-2">El programa</p>
         <h2 class="font-kids text-5xl md:text-6xl text-mca-navy mb-6">Más que un deporte</h2>
+        <p class="font-kids text-xl text-mca-slate-700 leading-relaxed mb-6">
+          Clases de cheerleading para niños desde 5 años en Madrid. mca Kids es el espacio donde los más pequeños dan sus primeros pasos en el deporte, en un ambiente seguro y divertido, porque creemos que cuanto antes empieza un niño a moverse, a trabajar en equipo y a superarse, más lejos llega.
+        </p>
         <p class="font-kids text-xl text-mca-slate-700 leading-relaxed">
           El cheerleading ofrece a los niños mucho más que actividad física. Les brinda confianza, disciplina y un entorno donde crecer rodeados de compañeros y entrenadores especializados.
         </p>
