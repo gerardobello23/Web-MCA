@@ -1,5 +1,13 @@
 # CLAUDE.md · Madrid Cheer Athletics (MCA)
 
+## Sincronización con Git (primero de todo)
+
+Al empezar cada sesión, antes de nada: ejecuta `git fetch` y `git status`. Si hay commits nuevos en `origin/main`, haz `git pull`. Si hay cambios locales sin commit o commits sin push, avísame antes de hacer nada.
+
+Al terminar un trabajo aprobado, confirma que `git status` queda limpio y al día con `origin/main`.
+
+---
+
 Contexto operativo para futuras sesiones de trabajo en este proyecto.
 
 ---
