@@ -9,7 +9,7 @@ const buildWhatsApp = (product: string) =>
     `Hola, me interesa el producto "${product}" del catálogo de Madrid Cheer Athletics. ¿Podéis darme detalles de tallas, precio y forma de pago?`
   )}`;
 
-const kidsSizes = ["3/4 años", "5/6 años", "7/8 años", "9/11 años", "12/14 años"];
+const kidsSizes = ["3/4", "5/6", "7/8", "9/11", "12/14"];
 const adultSizes = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
 
 interface ApparelItem {
@@ -24,7 +24,7 @@ const apparel: ApparelItem[] = [
   {
     title: "Camiseta de temporada",
     description:
-      "Camiseta deportiva con logos del club.",
+      "Camiseta deportiva con logos del club. Temporada 26-27.",
     image: {
       src: "/images/tienda/camiseta-temporada-26-27.webp",
       alt: "Camiseta roja de la temporada 26/27 de Madrid Cheer Athletics: delante, el nombre del club en letras blancas; detrás, óvalo con siete estrellas en la parte alta de la espalda.",
@@ -36,23 +36,23 @@ const apparel: ApparelItem[] = [
     fit: ["Adulto chico: recto", "Adulto chica: entallado"],
   },
   {
-    title: "Sudadera Roja",
-    description:
-      "Sudadera con capucha color rojo.",
-    image: {
-      src: "/images/tienda/sudadera-roja.webp",
-      alt: "Sudadera roja con capucha de Madrid Cheer Athletics: delante, óvalo blanco con siete estrellas; detrás, logo circular blanco con la M y el nombre del club.",
-    },
-    prices: [{ value: "28 €" }],
-    fit: ["Recto, sin distinción de chico y chica"],
-  },
-  {
     title: "Sudadera Blanca",
     description:
       "Sudadera con capucha color blanco.",
     image: {
       src: "/images/tienda/sudadera-blanca.webp",
       alt: "Sudadera blanca con capucha de Madrid Cheer Athletics: delante, óvalo rojo con siete estrellas; detrás, logo circular rojo con la M y el nombre del club.",
+    },
+    prices: [{ value: "28 €" }],
+    fit: ["Recto, sin distinción de chico y chica"],
+  },
+  {
+    title: "Sudadera Roja",
+    description:
+      "Sudadera con capucha color rojo.",
+    image: {
+      src: "/images/tienda/sudadera-roja.webp",
+      alt: "Sudadera roja con capucha de Madrid Cheer Athletics: delante, óvalo blanco con siete estrellas; detrás, logo circular blanco con la M y el nombre del club.",
     },
     prices: [{ value: "28 €" }],
     fit: ["Recto, sin distinción de chico y chica"],
@@ -196,7 +196,7 @@ const orderSteps = [
                   <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-2">Precio</p>
                   <ul class="flex flex-col gap-1">
                     {p.prices.map((pr) => (
-                      <li class="text-sm text-mca-slate-700">
+                      <li class="font-display font-bold text-2xl leading-tight text-mca-red whitespace-nowrap">
                         {pr.label ? `${pr.label}: ${pr.value}` : pr.value}
                       </li>
                     ))}
