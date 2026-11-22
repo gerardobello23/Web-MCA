@@ -35,7 +35,7 @@ const apparel: ApparelItem[] = [
       { label: "Adulto", value: "20 €" },
     ],
     fit: "adulto, chico recto y chica entallado",
-    whatsapp: "Hola, me interesa la camiseta de temporada",
+    whatsapp: "Hola MCA, quiero comprar la camiseta de temporada, talla ___. ¿Qué formas de pago tenéis?",
   },
   {
     title: "Sudadera Blanca",
@@ -47,7 +47,7 @@ const apparel: ApparelItem[] = [
     },
     prices: [{ value: "28 €" }],
     fit: "recto, sin distinción de chico y chica",
-    whatsapp: "Hola, me interesa la sudadera blanca",
+    whatsapp: "Hola MCA, quiero comprar la sudadera blanca, talla ___. ¿Qué formas de pago tenéis?",
   },
   {
     title: "Sudadera Roja",
@@ -59,7 +59,7 @@ const apparel: ApparelItem[] = [
     },
     prices: [{ value: "28 €" }],
     fit: "recto, sin distinción de chico y chica",
-    whatsapp: "Hola, me interesa la sudadera roja",
+    whatsapp: "Hola MCA, quiero comprar la sudadera roja, talla ___. ¿Qué formas de pago tenéis?",
   },
 ];
 
@@ -75,7 +75,7 @@ const accessories = [
       "Pompones profesionales en colores del club. Material metálico, gran volumen.",
     sizes: ["Talla única"],
     gradient: "from-mca-red-dark to-mca-navy",
-    whatsapp: "Hola, me interesan los pom poms oficiales",
+    whatsapp: "Hola MCA, quiero comprar los pom poms oficiales. ¿Qué precio y formas de pago tenéis?",
   },
   {
     title: "Mochila Madrid Cheer Athletics",
@@ -83,14 +83,14 @@ const accessories = [
       "Mochila deportiva con compartimentos y logo bordado. Color negro con detalles en rojo.",
     sizes: ["Talla única"],
     gradient: "from-mca-navy-dark to-mca-red",
-    whatsapp: "Hola, me interesa la mochila de Madrid Cheer Athletics",
+    whatsapp: "Hola MCA, quiero comprar la mochila de Madrid Cheer Athletics. ¿Qué precio y formas de pago tenéis?",
   },
   {
     title: "Botella de agua del club",
     description: "Botella reutilizable con logo del club. Capacidad 750ml.",
     sizes: ["750 ml"],
     gradient: "from-mca-red to-mca-navy",
-    whatsapp: "Hola, me interesa la botella de agua del club",
+    whatsapp: "Hola MCA, quiero comprar la botella de agua del club. ¿Qué precio y formas de pago tenéis?",
   },
 ];
 
@@ -327,7 +327,7 @@ const orderSteps = [
       </div>
       <div class="flex flex-wrap gap-4 md:justify-end">
         <a
-          href={buildWhatsApp("Hola, me interesan varios productos de la tienda")}
+          href={buildWhatsApp("Hola MCA, quiero comprar varios productos de la tienda. ¿Qué precio y formas de pago tenéis?")}
           target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm bg-mca-white text-mca-red font-body font-medium uppercase tracking-wide text-sm transition-all duration-150 ease-out hover:bg-mca-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-white focus-visible:ring-offset-2 focus-visible:ring-offset-mca-red"
         >
