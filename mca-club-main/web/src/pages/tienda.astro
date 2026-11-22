@@ -4,10 +4,8 @@ import Button from "../components/Button.astro";
 
 const phone = "34643515820";
 
-const buildWhatsApp = (product: string) =>
-  `https://wa.me/${phone}?text=${encodeURIComponent(
-    `Hola, me interesa el producto "${product}" del catálogo de Madrid Cheer Athletics. ¿Podéis darme detalles de tallas, precio y forma de pago?`
-  )}`;
+const buildWhatsApp = (message: string) =>
+  `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
 const kidsSizes = ["3/4", "5/6", "7/8", "9/11", "12/14"];
 const adultSizes = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
@@ -19,6 +17,7 @@ interface ApparelItem {
   image: { src: string; alt: string };
   prices: { label?: string; value: string }[];
   fit: string;
+  whatsapp: string;
 }
 
 const apparel: ApparelItem[] = [
@@ -36,6 +35,7 @@ const apparel: ApparelItem[] = [
       { label: "Adulto", value: "20 €" },
     ],
     fit: "adulto, chico recto y chica entallado",
+    whatsapp: "Hola, me interesa la camiseta de temporada",
   },
   {
     title: "Sudadera Blanca",
@@ -47,6 +47,7 @@ const apparel: ApparelItem[] = [
     },
     prices: [{ value: "28 €" }],
     fit: "recto, sin distinción de chico y chica",
+    whatsapp: "Hola, me interesa la sudadera blanca",
   },
   {
     title: "Sudadera Roja",
@@ -58,6 +59,7 @@ const apparel: ApparelItem[] = [
     },
     prices: [{ value: "28 €" }],
     fit: "recto, sin distinción de chico y chica",
+    whatsapp: "Hola, me interesa la sudadera roja",
   },
 ];
 
@@ -73,6 +75,7 @@ const accessories = [
       "Pompones profesionales en colores del club. Material metálico, gran volumen.",
     sizes: ["Talla única"],
     gradient: "from-mca-red-dark to-mca-navy",
+    whatsapp: "Hola, me interesan los pom poms oficiales",
   },
   {
     title: "Mochila Madrid Cheer Athletics",
@@ -80,12 +83,14 @@ const accessories = [
       "Mochila deportiva con compartimentos y logo bordado. Color negro con detalles en rojo.",
     sizes: ["Talla única"],
     gradient: "from-mca-navy-dark to-mca-red",
+    whatsapp: "Hola, me interesa la mochila de Madrid Cheer Athletics",
   },
   {
     title: "Botella de agua del club",
     description: "Botella reutilizable con logo del club. Capacidad 750ml.",
     sizes: ["750 ml"],
     gradient: "from-mca-red to-mca-navy",
+    whatsapp: "Hola, me interesa la botella de agua del club",
   },
 ];
 
@@ -197,7 +202,7 @@ const orderSteps = [
 
                 <p class="text-xs text-mca-slate-700 mb-4">Corte: {p.fit}</p>
 
-                <Button variant="primary" href={buildWhatsApp(p.title)} class="w-full mt-auto">
+                <Button variant="primary" href={buildWhatsApp(p.whatsapp)} target="_blank" rel="noopener noreferrer" class="w-full mt-auto">
                   Pedir por WhatsApp
                 </Button>
               </div>
@@ -254,7 +259,7 @@ const orderSteps = [
                   Contacta para precio y disponibilidad
                 </p>
 
-                <Button variant="primary" href={buildWhatsApp(p.title)} class="w-full">
+                <Button variant="primary" href={buildWhatsApp(p.whatsapp)} target="_blank" rel="noopener noreferrer" class="w-full">
                   Pedir por WhatsApp
                 </Button>
               </div>
@@ -322,7 +327,8 @@ const orderSteps = [
       </div>
       <div class="flex flex-wrap gap-4 md:justify-end">
         <a
-          href={buildWhatsApp("varios productos")}
+          href={buildWhatsApp("Hola, me interesan varios productos de la tienda")}
+          target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm bg-mca-white text-mca-red font-body font-medium uppercase tracking-wide text-sm transition-all duration-150 ease-out hover:bg-mca-white/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-mca-white focus-visible:ring-offset-2 focus-visible:ring-offset-mca-red"
         >
           Contactar por WhatsApp
