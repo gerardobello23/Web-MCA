@@ -17,6 +17,7 @@ interface ApparelItem {
   image: { src: string; alt: string };
   prices: { label?: string; value: string }[];
   fit: string;
+  composition: string;
   whatsapp: string;
 }
 
@@ -35,6 +36,7 @@ const apparel: ApparelItem[] = [
       { label: "Adulto", value: "20 €" },
     ],
     fit: "adulto, chico recto y chica entallado",
+    composition: "100% algodón",
     whatsapp: "Hola MCA, quiero comprar la camiseta de temporada, talla ___. ¿Qué formas de pago tenéis?",
   },
   {
@@ -47,6 +49,7 @@ const apparel: ApparelItem[] = [
     },
     prices: [{ value: "28 €" }],
     fit: "recto, sin distinción de chico y chica",
+    composition: "60% algodón y 40% poliéster",
     whatsapp: "Hola MCA, quiero comprar la sudadera blanca, talla ___. ¿Qué formas de pago tenéis?",
   },
   {
@@ -59,6 +62,7 @@ const apparel: ApparelItem[] = [
     },
     prices: [{ value: "28 €" }],
     fit: "recto, sin distinción de chico y chica",
+    composition: "60% algodón y 40% poliéster",
     whatsapp: "Hola MCA, quiero comprar la sudadera roja, talla ___. ¿Qué formas de pago tenéis?",
   },
 ];
@@ -201,7 +205,8 @@ const orderSteps = [
                   ))}
                 </div>
 
-                <p class="text-xs text-mca-slate-700 mb-4">Corte: {p.fit}</p>
+                <p class="text-xs text-mca-slate-700 mb-1">Corte: {p.fit}</p>
+                <p class="text-xs text-mca-slate-700 mb-4">Composición: {p.composition}</p>
 
                 <Button variant="primary" href={buildWhatsApp(p.whatsapp)} target="_blank" rel="noopener noreferrer" class="w-full mt-auto">
                   Pedir por WhatsApp
