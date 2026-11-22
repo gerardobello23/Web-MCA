@@ -80,7 +80,7 @@ MCA es un club de cheerleading en Ciudad Lineal (Madrid) en pleno crecimiento, c
 - [x] Entrenamientos (5 modalidades, qué incluyen, instalaciones).
 - [x] Equipos (recreativos + competitivos, banner "estructura de ejemplo").
 - [x] Inscripción (3 pasos, formulario placeholder, FAQ).
-- [x] Tienda (catálogo + WhatsApp pre-rellenado).
+- [x] Tienda (catálogo + WhatsApp pre-rellenado). Ropa con imágenes, precios, tallas y corte; accesorios con placeholders.
 - [x] Contacto (datos, formulario, mapa Google, horario).
 - [x] Styleguide interna (tokens, componentes, WCAG).
 
@@ -91,7 +91,7 @@ MCA es un club de cheerleading en Ciudad Lineal (Madrid) en pleno crecimiento, c
 
 ### Fase 3 · Iteración con cliente (en espera)
 - [ ] Aplicar feedback de Gerardo sobre el sitio actual.
-- [ ] Reemplazar placeholders por fotos reales del club.
+- [ ] Reemplazar placeholders por fotos reales del club (hecho en la ropa de la tienda; faltan accesorios y galería de la portada).
 - [ ] Confirmar nombres reales de equipos y horarios.
 - [ ] Cerrar modalidad de tienda (catálogo simple vs precios vs e-commerce).
 

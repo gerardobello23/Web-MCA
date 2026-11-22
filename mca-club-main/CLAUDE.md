@@ -55,6 +55,7 @@ mca-gerardo/
 │   ├── public/
 │   │   ├── brand/              # Logos servidos como assets estáticos
 │   │   ├── images/             # Fotos (WebP) + og-madrid-cheer-athletics.jpg (tarjeta social)
+│   │   │   └── tienda/         # Imágenes de la ropa de la tienda (WebP 1536x1024, mockups)
 │   │   ├── favicon-32.png      # Favicon 32 px
 │   │   ├── favicon.png         # Favicon 192 px (Google y Android)
 │   │   ├── apple-touch-icon.png # 180 px con fondo blanco
@@ -128,7 +129,7 @@ Resumen rápido (detalle completo en `docs/brand/brand-guidelines.md`):
 - **Header con drawer móvil**, **Footer con datos del club**, **favicon "M" del logo MCA**.
 - **Formulario de contacto** y **formulario de prueba gratuita** (ventana emergente en todas las páginas): se envían a la app (`app.madridcheer.com/api`, rutas `/contact/notify` y `/prospects/notify`, ver `web/src/lib/web-forms.ts`).
 - **Inscripción:** `/inscripcion` enlaza al Google Forms del club (`https://forms.gle/WwwvoBnu9KF2tjL7A`, constante `googleFormsUrl` en `web/src/pages/inscripcion.astro`).
-- **Tienda** funciona como catálogo informativo con CTAs WhatsApp pre-rellenados. Las fotos de producto y la galería de la portada siguen siendo placeholders hasta que el club entregue fotos reales (no tocarlos).
+- **Tienda** funciona como catálogo informativo con CTAs WhatsApp pre-rellenados. La ropa (camiseta de temporada, sudadera roja y sudadera blanca) tiene imágenes reales (mockups de frente y espalda) en `web/public/images/tienda/`, precios (camiseta niño 15 €, adulto 20 €; sudaderas 28 €), tallas de niño (3/4 a 12/14 años) y adulto (XS a XXXL) y corte. Las fotos de los accesorios y la galería de la portada siguen siendo placeholders hasta que el club entregue fotos reales (no tocarlos).
 - **Mapa Google embebido** en `/contacto` con la dirección real.
 - **Páginas legales** (`/aviso-legal`, `/privacidad`, `/cookies`) creadas y enlazadas desde el footer. `/privacidad-modal` es la versión que se abre en un iframe desde los formularios (noindex, sin GA).
 - **Página 404** propia (`web/src/pages/404.astro`, noindex, sin canonical); Astro genera `404.html`, que Vercel sirve en las rutas inexistentes. Estado 404 comprobado en local con `astro preview`; falta confirmarlo en producción tras el despliegue.
@@ -157,7 +158,7 @@ Resumen rápido (detalle completo en `docs/brand/brand-guidelines.md`):
 
 Antes de avanzar en diseño/implementación, validar con Gerardo:
 
-1. **Tienda:** ¿solo catálogo + WhatsApp, precios visibles, o e-commerce real?
+1. **Tienda:** ¿solo catálogo + WhatsApp, precios visibles, o e-commerce real? (La ropa ya muestra precios; el pedido sigue por WhatsApp. Accesorios sin precio.)
 2. **Mascota pantera:** ¿se usa en web como elemento de marca recurrente?
 3. **MCA Kids:** mostrar como "próximamente" visible o esconder hasta lanzamiento.
 4. **Versiones vectoriales (SVG)** de los logos.
