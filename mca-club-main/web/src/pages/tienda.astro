@@ -13,18 +13,20 @@ const kidsSizes = ["3/4", "5/6", "7/8", "9/11", "12/14"];
 const adultSizes = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
 
 interface ApparelItem {
+  season?: string;
   title: string;
   description: string;
   image: { src: string; alt: string };
   prices: { label?: string; value: string }[];
-  fit: string[];
+  fit: string;
 }
 
 const apparel: ApparelItem[] = [
   {
+    season: "Temporada 26-27",
     title: "Camiseta de temporada",
     description:
-      "Camiseta deportiva con logos del club. Temporada 26-27.",
+      "Camiseta deportiva con logos del club.",
     image: {
       src: "/images/tienda/camiseta-temporada-26-27.webp",
       alt: "Camiseta roja de la temporada 26/27 de Madrid Cheer Athletics: delante, el nombre del club en letras blancas; detrás, óvalo con siete estrellas en la parte alta de la espalda.",
@@ -33,7 +35,7 @@ const apparel: ApparelItem[] = [
       { label: "Niño", value: "15 €" },
       { label: "Adulto", value: "20 €" },
     ],
-    fit: ["Adulto chico: recto", "Adulto chica: entallado"],
+    fit: "adulto, chico recto y chica entallado",
   },
   {
     title: "Sudadera Blanca",
@@ -44,7 +46,7 @@ const apparel: ApparelItem[] = [
       alt: "Sudadera blanca con capucha de Madrid Cheer Athletics: delante, óvalo rojo con siete estrellas; detrás, logo circular rojo con la M y el nombre del club.",
     },
     prices: [{ value: "28 €" }],
-    fit: ["Recto, sin distinción de chico y chica"],
+    fit: "recto, sin distinción de chico y chica",
   },
   {
     title: "Sudadera Roja",
@@ -55,7 +57,7 @@ const apparel: ApparelItem[] = [
       alt: "Sudadera roja con capucha de Madrid Cheer Athletics: delante, óvalo blanco con siete estrellas; detrás, logo circular blanco con la M y el nombre del club.",
     },
     prices: [{ value: "28 €" }],
-    fit: ["Recto, sin distinción de chico y chica"],
+    fit: "recto, sin distinción de chico y chica",
   },
 ];
 
@@ -164,8 +166,18 @@ const orderSteps = [
               </div>
 
               <div class="p-6 flex flex-col flex-1">
+                <p class="h-4 mb-1 text-xs leading-4 uppercase tracking-widest font-medium text-mca-red">{p.season}</p>
                 <h3 class="text-2xl mb-2">{p.title}</h3>
-                <p class="text-mca-slate-700 mb-4 flex-1">{p.description}</p>
+                <p class="text-mca-slate-700 mb-4">{p.description}</p>
+
+                <ul class="flex gap-8 mb-4" aria-label="Precio">
+                  {p.prices.map((pr) => (
+                    <li>
+                      <span class="block h-4 mb-0.5 text-xs leading-4 font-medium text-mca-slate-500">{pr.label}</span>
+                      <span class="block font-display font-bold text-2xl leading-tight text-mca-red whitespace-nowrap">{pr.value}</span>
+                    </li>
+                  ))}
+                </ul>
 
                 <div class="mb-4">
                   <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-2">Tallas</p>
@@ -183,27 +195,9 @@ const orderSteps = [
                   ))}
                 </div>
 
-                <div class="mb-4">
-                  <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-2">Corte</p>
-                  <ul class="flex flex-col gap-1">
-                    {p.fit.map((f) => (
-                      <li class="text-sm text-mca-slate-700">{f}</li>
-                    ))}
-                  </ul>
-                </div>
+                <p class="text-xs text-mca-slate-700 mb-4">Corte: {p.fit}</p>
 
-                <div class="mb-4">
-                  <p class="text-xs uppercase tracking-widest font-medium text-mca-navy mb-2">Precio</p>
-                  <ul class="flex flex-col gap-1">
-                    {p.prices.map((pr) => (
-                      <li class="font-display font-bold text-2xl leading-tight text-mca-red whitespace-nowrap">
-                        {pr.label ? `${pr.label}: ${pr.value}` : pr.value}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Button variant="primary" href={buildWhatsApp(p.title)} class="w-full">
+                <Button variant="primary" href={buildWhatsApp(p.title)} class="w-full mt-auto">
                   Pedir por WhatsApp
                 </Button>
               </div>
